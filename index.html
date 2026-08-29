@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metropolis Technologies</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="shortcut icon" href="favicon.svg" type="text/xml">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyan: '#00FFFF',
+          },
+          fontFamily: {
+            google: ['"Google Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+    html, body {
+      cursor: url('Neon Dragon/Arrow.cur'), url('Arrow.cur'), auto;
+    }
+    a, button, [role="button"], input[type="submit"], input[type="button"] {
+      cursor: url('Neon Dragon/Link.cur'), url('Link.cur'), pointer !important;
+    }
+    input, textarea {
+      cursor: url('Neon Dragon/Text.cur'), url('Text.cur'), text;
+    }
+    .bg-grid-pattern {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-google flex flex-col min-h-screen selection:bg-cyan selection:text-black relative bg-grid-pattern">
+  <header class="flex items-center justify-between px-6 py-4 border-b border-gray-800 sticky top-0 bg-black/80 backdrop-blur-md z-50">
+    <a href="#" class="flex items-center gap-3">
+      <svg class="w-8 h-8" viewBox="0 0 500 500" fill="none" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="250,70 410,160 410,340 250,430 90,340 90,160" />
+        <polygon points="250,150 350,330 150,330" />
+        <circle cx="250" cy="270" r="12" fill="#FFFFFF" />
+      </svg>
+      <span class="text-cyan text-xl font-bold tracking-wide">
+        Metropolis Technologies
+      </span>
+    </a>
+    <nav class="flex items-center gap-6 text-sm text-gray-400">
+      <a href="#about" class="hover:text-cyan transition">About</a>
+      <a href="#projects" class="hover:text-cyan transition">Projects</a>
+      <a href="#connect" class="hover:text-cyan transition">Connect</a>
+      <a href="https://tanzeemrockz.github.io" target="_blank" class="hover:text-cyan transition">CyberSlayerCorpz</a>
+    </nav>
+  </header>
+  <main class="flex flex-col items-center justify-center text-center min-h-[45vh] px-4">
+    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white max-w-none flex items-center justify-center flex-nowrap whitespace-nowrap gap-3">
+      <span>Building Cool Software for fun!</span>
+      <img src="https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f60e.png" alt="Cool Emoji" class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14 inline-block object-contain shrink-0"/>
+    </h1>
+    <div class="flex items-center gap-4 mt-7">
+      <a href="#projects" class="px-6 py-2.5 bg-cyan text-black rounded-lg font-bold hover:text-white hover:bg-cyan/80 transition shadow-[0_0_15px_rgba(0,255,255,0.2)]">
+        View Projects
+      </a>
+      <a href="#about" class="px-6 py-2.5 border border-zinc-800 bg-black/60 rounded-lg font-bold text-gray-300 hover:border-gray-600 transition backdrop-blur-sm">
+        About Metropolis
+      </a>
+    </div>
+  </main>
+  <section id="projects" class="max-w-5xl mx-auto px-6 py-16 w-full">
+    <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-8 text-cyan">
+      Projects & Flagship Builds
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="p-6 bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 rounded-xl hover:border-cyan/50 hover:shadow-[0_0_20px_rgba(0,255,255,0.08)] transition flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-bold text-white">CognitionSlayer</h3>
+            <span class="text-xs font-mono text-cyan">Live</span>
+          </div>
+          <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+            Web application built with React and TypeScript, deployed on Firebase.
+          </p>
+        </div>
+        <div class="flex items-center justify-between pt-4 border-t border-zinc-900">
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-cyan">React</span>
+            <span class="text-xs px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-cyan">TypeScript</span>
+          </div>
+          <a href="https://cognitionslayer.web.app" target="_blank" class="text-xs font-bold text-cyan hover:underline transition flex items-center gap-1">
+            Live &rarr;
+          </a>
+        </div>
+      </div>
+      <div class="p-6 bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 rounded-xl hover:border-cyan/50 hover:shadow-[0_0_20px_rgba(0,255,255,0.08)] transition flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-bold text-white">LangSlayer</h3>
+            <span class="text-xs font-mono text-cyan">Live</span>
+          </div>
+          <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+            Interactive language application built with modern frontend tooling and custom UI workflows[cite: 1].
+          </p>
+        </div>
+        <div class="flex items-center justify-between pt-4 border-t border-zinc-900">
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-cyan">JavaScript</span>
+            <span class="text-xs px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-cyan">Vite</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="https://github.com/tanzeemrockz/LangSlayer" target="_blank" class="text-xs text-zinc-400 hover:text-white transition">
+              Source
+            </a>
+            <a href="#" target="_blank" class="text-xs font-bold text-cyan hover:underline transition flex items-center gap-1">
+              Live &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 rounded-xl hover:border-cyan/50 hover:shadow-[0_0_20px_rgba(0,255,255,0.08)] transition flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-bold text-white">CyberShell</h3>
+            <span class="text-xs font-mono text-zinc-500">Live</span>
+          </div>
+          <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+            Terminal interface and CLI utility suite built under the CyberSlayerCorpz ecosystem[cite: 2].
+          </p>
+        </div>
+        <div class="flex items-center justify-between pt-4 border-t border-zinc-900">
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-cyan">Web Shell</span>
+            <span class="text-xs px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-cyan">HTML5</span>
+          </div>
+          <a href="https://tanzeemrockz.github.io/cybershell/" target="_blank" class="text-xs font-bold text-cyan hover:underline transition flex items-center gap-1">
+            Launch &rarr;
+          </a>
+        </div>
+      </div>
+      <div class="p-6 bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 rounded-xl hover:border-cyan/50 hover:shadow-[0_0_20px_rgba(0,255,255,0.08)] transition flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-bold text-white">AssetSlayer</h3>
+            <span class="text-xs font-mono text-zinc-500">Live</span>
+          </div>
+          <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+            Resource management and web asset platform for quick access and indie workflows[cite: 2].
+          </p>
+        </div>
+        <div class="flex items-center justify-between pt-4 border-t border-zinc-900">
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-cyan">Utilities</span>
+            <span class="text-xs px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-cyan">JS</span>
+          </div>
+          <a href="https://tanzeemrockz.github.io/assetslayer/" target="_blank" class="text-xs font-bold text-cyan hover:underline transition flex items-center gap-1">
+            Launch &rarr;
+          </a>
+        </div>
+      </div>
+      <div class="p-6 bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 rounded-xl hover:border-cyan/50 hover:shadow-[0_0_20px_rgba(0,255,255,0.08)] transition flex flex-col justify-between md:col-span-2">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-bold text-white">CyberTab</h3>
+            <span class="text-xs font-mono text-zinc-500">Live</span>
+          </div>
+          <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+            Browser dashboard and tab productivity interface engineered for speed and workflow focus[cite: 2].
+          </p>
+        </div>
+        <div class="flex items-center justify-between pt-4 border-t border-zinc-900">
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-cyan">Productivity</span>
+            <span class="text-xs px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-cyan">Web App</span>
+          </div>
+          <a href="https://tanzeemrockz.github.io/cybertab/" target="_blank" class="text-xs font-bold text-cyan hover:underline transition flex items-center gap-1">
+            Launch &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="max-w-5xl mx-auto px-6 py-16 border-t border-zinc-900 w-full">
+    <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4 text-cyan">
+      About
+    </h2>
+    <p class="text-gray-400 text-base max-w-3xl leading-relaxed mb-8">
+      Metropolis Technologies is the digital space where I build software experiments, applications, and web platforms under CyberSlayerCorpz. Focused on high-performance interfaces, clean code, and experimenting with modern tech.
+    </p>
+    <div class="flex flex-wrap gap-2">
+      <span class="px-3 py-1.5 rounded-lg bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 text-xs text-zinc-300 font-mono">React</span>
+      <span class="px-3 py-1.5 rounded-lg bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 text-xs text-zinc-300 font-mono">TypeScript</span>
+      <span class="px-3 py-1.5 rounded-lg bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 text-xs text-zinc-300 font-mono">JavaScript</span>
+      <span class="px-3 py-1.5 rounded-lg bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 text-xs text-zinc-300 font-mono">Tailwind CSS</span>
+      <span class="px-3 py-1.5 rounded-lg bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 text-xs text-zinc-300 font-mono">Vite</span>
+      <span class="px-3 py-1.5 rounded-lg bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 text-xs text-zinc-300 font-mono">Firebase</span>
+    </div>
+  </section>
+  <section id="connect" class="max-w-5xl mx-auto px-6 py-16 border-t border-zinc-900 w-full">
+    <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4 text-cyan">
+      Connect
+    </h2>
+    <p class="text-gray-400 text-sm mb-6">
+      Find me across dev platforms, communities, and networks:
+    </p>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+      <a href="mailto:imohamedtanzeem@gmail.com" class="p-3 bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 rounded-lg hover:border-cyan/50 hover:text-cyan transition flex flex-col">
+        <span class="text-xs text-zinc-500 font-mono">Email</span>
+        <span class="text-sm font-semibold text-white truncate">imohamedtanzeem@gmail.com</span>
+      </a>
+      <a href="https://github.com/tanzeemrockz" target="_blank" class="p-3 bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 rounded-lg hover:border-cyan/50 hover:text-cyan transition flex flex-col">
+        <span class="text-xs text-zinc-500 font-mono">GitHub</span>
+        <span class="text-sm font-semibold text-white">@tanzeemrockz</span>
+      </a>
+      <div class="p-3 bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 rounded-lg flex flex-col">
+        <span class="text-xs text-zinc-500 font-mono">Discord</span>
+        <span class="text-sm font-semibold text-white">tanzeemrockzzz</span>
+      </div>
+      <a href="https://hackclub.slack.com" target="_blank" class="p-3 bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 rounded-lg hover:border-cyan/50 hover:text-cyan transition flex flex-col">
+        <span class="text-xs text-zinc-500 font-mono">Hack Club Slack</span>
+        <span class="text-sm font-semibold text-white">@tanzeemrockz</span>
+      </a>
+      <a href="https://threads.net/@tanzeemrockz" target="_blank" class="p-3 bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 rounded-lg hover:border-cyan/50 hover:text-cyan transition flex flex-col">
+        <span class="text-xs text-zinc-500 font-mono">Threads</span>
+        <span class="text-sm font-semibold text-white">@tanzeemrockz</span>
+      </a>
+      <a href="https://devpost.com/tanzeemrockz" target="_blank" class="p-3 bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 rounded-lg hover:border-cyan/50 hover:text-cyan transition flex flex-col">
+        <span class="text-xs text-zinc-500 font-mono">Devpost</span>
+        <span class="text-sm font-semibold text-white">tanzeemrockz</span>
+      </a>
+      <a href="https://instagram.com/tanzeemrockz" target="_blank" class="p-3 bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 rounded-lg hover:border-cyan/50 hover:text-cyan transition flex flex-col">
+        <span class="text-xs text-zinc-500 font-mono">Instagram</span>
+        <span class="text-sm font-semibold text-white">@tanzeemrockz</span>
+      </a>
+      <a href="https://reddit.com/user/tanzeem738" target="_blank" class="p-3 bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 rounded-lg hover:border-cyan/50 hover:text-cyan transition flex flex-col">
+        <span class="text-xs text-zinc-500 font-mono">Reddit</span>
+        <span class="text-sm font-semibold text-white">u/tanzeem738</span>
+      </a>
+      <div class="p-3 bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 rounded-lg flex flex-col col-span-2 sm:col-span-3 md:col-span-4">
+        <span class="text-xs text-zinc-500 font-mono">Epic &bull; Xbox</span>
+        <span class="text-sm font-semibold text-white">tanzeemrockz</span>
+      </div>
+    </div>
+  </section>
+  <footer class="mt-auto border-t border-gray-900 py-8 text-center text-xs text-zinc-400 bg-black/80 backdrop-blur-md">
+    <p class="flex items-center justify-center gap-1">
+      Made with ❤️ by 
+      <a href="https://tanzeemrockz.github.io" target="_blank" class="text-orange-500 font-bold hover:underline transition">
+        tanzeemrockz
+      </a>
+    </p>
+    <p class="text-zinc-600 mt-2">&copy; Metropolis Technologies &bull; CyberSlayerCorpz</p>
+  </footer>
+</body>
+</html>
