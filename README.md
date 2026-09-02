@@ -1,108 +1,37 @@
-# Metropolis Technologies
+# Metropolis - My Personal Portfolio
 
-Personal software hub by [@tanzeemrockz](https://github.com/tanzeemrockz), part of **CyberSlayerCorpz**.
+I made this project for stardance
 
-A place for my projects, experiments, utilities, and whatever else I'm building.
+## What it has in it
 
-Built for fun. No fluff.
+It includes a lot about me 
+i.e. 
 
-## Stack
+* Hero Banner with name and a short single-sentence summary
+
+* About Me section (pretty much has the same as the hero banner maybe even less lol)
+
+* The tech stack and tools I use (e.g. HTML5, etc...)
+
+* Featured projects (I've only added one project as of right now)
+
+* Hobbies and interests
+
+* Contact info
+
+## Languages and AI used
 
 * HTML5
-* Tailwind CSS via CDN
-* Google Sans
-* Custom `.cur` cursors
-* Dark grid background
-* Static frontend
+* TailwindCSS
+* CSS3
+* Google Gemini (for debugging and fixing indentation once in awhile and creating the favicon)
 
-## Projects
+## Conclusion 
 
-| Project             | Stack                         | Description                                    |
-| ------------------- | ----------------------------- | ---------------------------------------------- |
-| **CognitionSlayer** | React + TypeScript + Firebase | Web app running on Firebase                    |
-| **LangSlayer**      | JavaScript + Vite             | Interactive language tool                      |
-| **CyberShell**      | Web / CLI                     | Web-based terminal interface and CLI ecosystem |
-| **AssetSlayer**     | —                             | Indie utility and asset organizer              |
-| **CyberTab**        | —                             | Productivity-focused new-tab dashboard         |
+I don't know why I added this but let this sit here!
+Btw this page is really cool, but not as cool as you ;) 
 
-## Structure
 
-```text
-.
-├── Neon Dragon/
-│   ├── *.cur
-│   ├── HOW-TO-INSTALL.txt
-│   └── install.inf
-├── favicon.svg
-├── index.html
-└── README.md
-```
 
-The `Neon Dragon/` directory contains the custom Windows cursor set used by the project.
 
-## Local Setup
-
-Clone the repository:
-
-```bash
-git clone https://github.com/tanzeemrockz/<repo-name>.git
-cd <repo-name>
-```
-
-No build step is required.
-
-The site uses Tailwind through the CDN, so `index.html` can be opened directly in a browser.
-
-For a local server:
-
-```bash
-python -m http.server 8000
-```
-
-Then open:
-
-```text
-http://localhost:8000
-```
-
-## Cursor Setup
-
-The custom cursor files are stored directly in:
-
-```text
-Neon Dragon/
-```
-
-The site references the `.cur` files from that directory. If you move or rename the folder, update the cursor paths in `index.html` accordingly.
-
-The directory also contains the original cursor installation files:
-
-```text
-Neon Dragon/HOW-TO-INSTALL.txt
-Neon Dragon/install.inf
-```
-
-## Links
-
-| Platform        | Handle                                           |
-| --------------- | ------------------------------------------------ |
-| GitHub          | [@tanzeemrockz](https://github.com/tanzeemrockz) |
-| Discord         | `tanzeemrockzzz`                                 |
-| Hack Club Slack | `@tanzeemrockz`                                  |
-| Threads         | `@tanzeemrockz`                                  |
-| Devpost         | `tanzeemrockz`                                   |
-| Reddit          | `u/tanzeem738`                                   |
-| Email           | `imohamedtanzeem@gmail.com`                      |
-| Gaming          | `tanzeemrockz` — Epic Games / Xbox               |
-
-## About
-
-**Metropolis Technologies** is part of **CyberSlayerCorpz**.
-
-It's just my personal hub for software I build, projects I'm working on, and random experiments.
-
-No startup pitch. Just stuff I made.
-
-## License
-
-Personal project by **@tanzeemrockz**.
+# :D
