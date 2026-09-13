@@ -6,6 +6,10 @@ body {
     background-position: center;
 }
 
+.bullet-list {
+    list-style-type: disc;
+}
+
 html {
   scroll-behavior: smooth;
 }

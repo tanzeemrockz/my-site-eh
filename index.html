@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="favicon.svg" type="text/xml">
+  <meta name="description" content="Personal portfolio of Metropolis - Frontend Developer">
   <title>Metropolis - My Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="main.js" defer></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -15,14 +16,16 @@
           colors: { 
             customGreen: '#27F5BB', 
             customBlue: '#274DF5',
+            whiteEh: '#AAAAAA',
+            blackEh: '#000000',
             customOrange: '#F56827',
             customYellow: '#F5CF27' 
           },
           fontFamily: {
             google: ['Google Sans', 'sans-serif'],
           }   
-        },
-      },
+        }
+      }
     };
   </script>
 </head>
@@ -34,6 +37,9 @@
         <ul class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
           <li>
             <a href="#about" class="px-3.5 py-1.5 rounded-lg text-sm font-semibold text-white/90 hover:text-black hover:bg-customGreen transition-all duration-200">About Me</a>
+          </li>
+          <li>
+            <a href="#f1" class="px-3.5 py-1.5 rounded-lg text-sm font-semibold text-white/90 hover:text-black hover:bg-customGreen transition-all duration-200">F1 Stat</a>
           </li>
           <li>
             <a href="#tech-stacks" class="px-3.5 py-1.5 rounded-lg text-sm font-semibold text-white/90 hover:text-black hover:bg-customGreen transition-all duration-200">Stack</a>
@@ -92,6 +98,18 @@
       <p class="leading-relaxed font-bold">
         I build technology and I absolutely LOVE Formula 1
       </p>
+    </section>
+
+    <h1 id="f1" class="text-black font-extrabold my-4">eye bending text bro</h1>
+
+    <section class="bg-customYellow text-black p-8 rounded-2xl my-8">
+      <h2 class="text-4xl font-bold mb-3">The G.O.A.T's current position</h2>
+      <div class="leading-relaxed font-bold">
+        <b class="text-2xl">Max Verstappen</b>
+        <div class="font-bold mt-2" id="f1-tracker">
+          <i>Loading data...</i>
+        </div>
+      </div>
     </section>
 
     <section id="tech-stacks" class="bg-customYellow text-black p-8 rounded-2xl my-8">
