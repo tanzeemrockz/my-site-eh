@@ -25,28 +25,50 @@ i.e.
 
 * A very responsive layout
 
-## Languages, frameworks, CDN, and AI used
+## Tech Stack
 
 * HTML5
 * CSS3
 * JavaScript
-* Google Gemini
 * Google Fonts (for Google Sans and Noto Sans Arabic)
 * TailwindCSS CDN
 
-## Project Struucture
+## Project Structure
 
-`index.html`
-`style.css`
-`main.js`
-`uses/`
-`img/`
+### `index.html`
+
+The main landing page of Metropolis.
+
+### `style.css`
+
+The main stylesheet of `index.html`
+
+### `main.js`
+
+The main script file of `index.html`
+
+### `uses/`
+
+The folder containing the `index.html` for the `uses` page.
+
+### `uses/index.html`
+
+The `index.html` for the `uses` page
+
+### `img/`
+
+The images folder.
+
+## Preview
+
+![site preview image](img/preview.png "site preview img")
+
+**You can visit the site at [metropolis.cyberslayercorpz.dev](https://metropolis.cyberslayercorpz.dev)**
 
 ## Conclusion 
 
 I don't know why I added this but let this sit here!
 Btw this page is really cool, but not as cool as you ;) 
-
 
 
 
