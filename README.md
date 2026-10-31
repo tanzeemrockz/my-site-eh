@@ -1,6 +1,6 @@
 # Metropolis - My Personal Portfolio
 
-I made this project for stardance
+I made this project for Stardance
 
 ## What it has in it
 
@@ -9,22 +9,38 @@ i.e.
 
 * Hero Banner with name and a short single-sentence summary
 
+* Quotes (3 to be exact. 1 is an ayah from the Holy Qur'an, the other two are just quotes.)
+
 * About Me section (pretty much has the same as the hero banner maybe even less lol)
 
 * The tech stack and tools I use (e.g. HTML5, etc...)
 
-* Featured projects (I've only added one project as of right now)
+* Featured projects
 
 * Hobbies and interests
 
 * Contact info
 
-## Languages and AI used
+* My hardware and software setup
+
+* A very responsive layout
+
+## Languages, frameworks, CDN, and AI used
 
 * HTML5
-* TailwindCSS
 * CSS3
-* Google Gemini (for debugging and fixing indentation once in awhile and creating the favicon)
+* JavaScript
+* Google Gemini
+* Google Fonts (for Google Sans and Noto Sans Arabic)
+* TailwindCSS CDN
+
+## Project Struucture
+
+`index.html`
+`style.css`
+`main.js`
+`uses/`
+`img/`
 
 ## Conclusion 
 
