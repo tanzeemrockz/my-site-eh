@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Noto+Sans+Arabic:wght@100..900&display=swap');
+
+body {
+    background-image: url(./img/bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#hero {
+  background-image: url(./img/banner.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bullet-list {
+    list-style-type: disc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #60a5fa;
+  color: black;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+* {
+    font-family: 'Google Sans', 'Google Sans Text', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    box-sizing: border-box;
+  }
+
+.noto-sans {
+  font-family: "Noto Sans Arabic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}

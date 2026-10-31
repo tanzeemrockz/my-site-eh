@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Uses - Mohamed Tanzeem I's gear, software toolchain, hardware rigs, and race weekend setup.">
+  <title>Uses — Metropolis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Google+Sans+Text:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            customGreen: '#27F5BB',
+            customBlue: '#274DF5',
+            customOrange: '#F56827',
+            customYellow: '#F5CF27'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    * {
+      font-family: 'Google Sans', 'Google Sans Text', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body class="bg-[#0a0a0c] text-white min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-customGreen selection:text-black">
+  <header class="sticky top-0 z-50 bg-[#0a0a0c]/90 backdrop-blur-md border-b border-white/10 px-4 py-3">
+    <div class="max-w-3xl mx-auto flex items-center justify-between gap-2">
+      <div class="flex items-center gap-1.5 min-w-0">
+        <a href="index.html" class="font-extrabold text-base tracking-tight text-white shrink-0 hover:text-customGreen transition">
+          Metropolis
+        </a>
+        <span class="text-zinc-500 text-xs truncate">/ Uses</span>
+      </div>
+      <nav class="flex items-center gap-2 sm:gap-4 text-xs font-semibold text-zinc-300 shrink-0">
+        <a href="/index.html" class="hover:text-customGreen transition">Home</a>
+        <a href="#hero" class="text-customGreen font-bold transition">Uses</a>
+      </nav>
+    </div>
+  </header>
+  <main class="w-full max-w-3xl mx-auto px-4 py-6 sm:py-8 space-y-8">
+    <section id="hero" class="relative overflow-hidden rounded-3xl border border-white/15 bg-zinc-950 p-6 sm:p-8 space-y-4">
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+        Gear, Software &amp; Hardware Rigs
+      </h1>
+      <p class="text-sm sm:text-base text-zinc-300 leading-relaxed max-w-xl">
+        A catalogue of the machines, development setups, and ancient experimental hardware I use to build systems and have fun.
+      </p>
+      <div class="flex flex-wrap gap-2 pt-2">
+        <span class="text-[11px] font-bold px-3 py-1 rounded-full border border-white/10 text-customOrange border-customOrange border-[2px]">
+          Updated for 2026
+        </span>
+      </div>
+    </section>
+    <section class="p-5 sm:p-6 rounded-2xl bg-customBlue text-white">
+      <h2 class="text-xs tracking-wider font-extrabold text-white/70 mb-1">Philosophy</h2>
+      <p class="text-base sm:text-lg font-bold leading-snug">
+        Living inventory of daily drivers, ancient hardware experiments, and development tools.
+      </p>
+    </section>
+    <section id="workstation" class="p-5 sm:p-6 rounded-2xl bg-zinc-900/80 border border-white/10 space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-base sm:text-lg font-bold text-white">Daily Driver</h2>
+          <p class="text-xs text-zinc-400 mt-0.5">Primary machine for coding, builds, and daily tasks:</p>
+        </div>
+        <span class="text-[10px] font-bold tracking-wider px-2 py-0.5 rounded bg-black text-customGreen border border-customGreen/30">
+          Primary computer
+        </span>
+      </div>
+      <div class="space-y-3">
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xs sm:text-sm font-bold text-white">Main Development Laptop</h3>
+          </div>
+          <p class="text-xs text-zinc-300 leading-relaxed">
+            Lenovo IdeaPad Slim 3i (i7 13620h, 16 gigabytes of DDR4) (mum's rig lol).
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xs sm:text-sm font-bold text-white">Other rig</h3>
+            <span class="text-[10px] font-bold text-zinc-500">meh specs</span>
+          </div>
+          <p class="text-xs text-zinc-300 leading-relaxed">
+            HP Envy 13 ah0029tu (i5 8250u, 8 gigabytes of DDR3) (broken screen and battery lol).
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xs sm:text-sm font-bold text-white">Other other rig</h3>
+            <span class="text-[10px] font-bold text-zinc-500">meh specs in a not-so meh condition </span>
+          </div>
+          <p class="text-xs text-zinc-300 leading-relaxed">
+            Dell Vostro 3491 (i3 1005G1, 8 gigabytes of DDR4) (everything works&trade;).
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="junkbench" class="p-5 sm:p-6 rounded-2xl bg-zinc-900/80 border border-white/10 space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-base sm:text-lg font-bold text-white">The "Junk Bench" &amp; Vintage Testbed</h2>
+          <p class="text-xs text-zinc-400 mt-0.5">Tinkering with ancient silicon and extreme low-resource limits:</p>
+        </div>
+        <span class="text-[10px] font-bold tracking-wider px-2 py-0.5 rounded bg-black text-customOrange border border-customOrange/30">
+          Legacy Lab
+        </span>
+      </div>
+      <div class="p-4 rounded-xl bg-black/40 border border-customOrange/30 space-y-2">
+        <div class="flex items-center justify-between flex-wrap gap-1">
+          <h3 class="text-xs sm:text-sm font-bold text-customOrange">Toshiba Satellite L500 (2009)</h3>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-black/80 text-customYellow border border-white/10">
+            2GB DDR2 RAM
+          </span>
+        </div>
+        <p class="text-xs text-zinc-300 leading-relaxed">
+          The machine where I once attempted installing Fortnite on 2GB DDR2 memory just to see what would happen 😂. While it didn't play Fortnite very impressively, it is now my ultimate real-world testbed: if a web app or DQM brain can run snappily here, it will run blazing fast everywhere.
+        </p>
+        <div class="flex flex-wrap gap-1.5 pt-1 text-[11px] font-semibold text-zinc-400">
+          <span class="px-2 py-0.5 rounded bg-black border border-white/10">intel core2duo</span>
+          <span class="px-2 py-0.5 rounded bg-black border border-white/10">2GB DDR2</span>
+          <span class="px-2 py-0.5 rounded bg-black border border-white/10">windows 7 / tiny 10 / cachyOS</span>
+        </div>
+      </div>
+      <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1">
+        <h3 class="text-xs sm:text-sm font-bold text-white">Hardware Lab</h3>
+        <p class="text-xs text-zinc-300 leading-relaxed">
+          Assorted screwdrivers, microcontrollers, jumper wires, USB cables, USB drives, HDD's, random adaptors, old phones, batteries, thermal paste, what-not.
+        </p>
+      </div>
+    </section>
+    <section id="dev-env" class="p-5 sm:p-6 rounded-2xl bg-zinc-900/80 border border-white/10 space-y-4">
+      <div>
+        <h2 class="text-base sm:text-lg font-bold text-white">Dev Environment &amp; Editors</h2>
+        <p class="text-xs text-zinc-400 mt-0.5">Where the code gets written and deployed:</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1.5">
+          <span class="text-[10px] font-bold tracking-wider text-customGreen block">Code Editor</span>
+          <h3 class="text-xs sm:text-sm font-bold text-white">VS Code</h3>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1.5">
+          <span class="text-[10px] font-bold tracking-wider text-customGreen block">Font &amp; Aesthetics</span>
+          <h3 class="text-xs sm:text-sm font-bold text-white">Google Sans, Phantom Sans, &amp; Zarathustra</h3>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1.5">
+          <span class="text-[10px] font-bold tracking-wider text-customGreen block">Terminal &amp; Shell</span>
+          <h3 class="text-xs sm:text-sm font-bold text-white">Bash, ZSH, &amp; Power Shell</h3>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1.5">
+          <span class="text-[10px] font-bold tracking-wider text-customGreen block">Version Control</span>
+          <h3 class="text-xs sm:text-sm font-bold text-white">Git &amp; GitHub GUI and CLI</h3>
+        </div>
+      </div>
+    </section>
+    <section id="toolchain" class="p-5 sm:p-6 rounded-2xl bg-zinc-900/80 border border-white/10 space-y-3">
+      <h2 class="text-base sm:text-lg font-bold text-white">Toolchain &amp; Core Stack</h2>
+      <p class="text-xs text-zinc-400">The software foundations behind AssetSlayer, DQM, LangSlayer, Metropolis, &amp; many more:</p>
+      <div class="flex flex-wrap gap-2 pt-1">
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">Python 3.12+</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">Vite</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">Tailwind CSS</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">Vanilla JavaScript</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">Pyodide &amp; WebAssembly</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">SQLite</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">JSON Token Routers</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">Supabase</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">JSZip</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">AGY (Antigravity)</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">...</span>
+      </div>
+    </section>
+    <section id="yellowsect" class="p-5 sm:p-6 rounded-2xl bg-customYellow text-black space-y-3">
+      <div class="flex items-center justify-between gap-3">
+        <div>
+          <span class="text-xs tracking-wider font-extrabold text-black/70 block">AI stack</span>
+          <h2 class="text-xl sm:text-2xl font-black mt-0.5">What AI's I use to vibe-code</h2>
+        </div>
+      </div>
+      <p class="text-xs font-bold text-black/80 leading-relaxed">
+        I have Google AI Pro so I get to use Gemini 3.8 Flash, Gemini 4 Argon, Gemini 3.1 Pro, Claude Sonnet 4.6, Claude Opus 4.6, GPT-OSS 120b, and a few others.
+      </p>
+    </section>
+    <section id="daily-apps" class="p-5 sm:p-6 rounded-2xl bg-zinc-900/80 border border-white/10 space-y-4">
+      <div>
+        <h2 class="text-base sm:text-lg font-bold text-white">Daily Apps &amp; Communication</h2>
+        <p class="text-xs text-zinc-400 mt-0.5">My everyday utilities:</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xs sm:text-sm font-bold text-white">Browser</h3>
+          </div>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Google Chrome
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xs sm:text-sm font-bold text-white">WhatsApp</h3>
+          </div>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            WhatsApp (<a href="https://wa.me/917667271516" target="_blank" rel="noopener noreferrer" class="text-white hover:text-customGreen transition">+91 7667271516</a>) for instant messaging.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xs sm:text-sm font-bold text-white">Instagram</h3>
+          </div>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Instagram is one of the many social media I use (<a href="https://instagram.com/tanzeemrockz" target="_blank" rel="noopener noreferrer" class="text-white hover:text-customGreen transition">@tanzeemrockz</a>).
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xs sm:text-sm font-bold text-white">YouTube</h3>
+          </div>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            I use YouTube a LOT for entertainment, learning, infotainment, etcetera (proud YouTube Premium member btw).
+          </p>
+        </div>
+      </div>
+    </section>
+    <div class="flex items-center justify-between p-4 rounded-2xl bg-zinc-900/60 border border-white/10 text-xs">
+      <a href="index.html" class="font-bold text-white hover:text-customGreen inline-flex items-center transition gap-1.5">
+        <span>←</span>
+        <span>Back to Metropolis Home</span>
+      </a>
+      <a href="index.html#contact" class="font-bold text-zinc-400 hover:text-white transition">
+        Get in touch →
+      </a>
+    </div>
+  </main>
+  <footer class="w-full border-t border-white/10 py-6 text-center text-xs text-zinc-500 px-4">
+    <p>© 2026 Metropolis. Made with ❤️ by tanzeemrockz | Operator: <a href="https://cyberslayercorpz.dev/" target="_blank" rel="noopener noreferrer" class="hover:text-customOrange transition">CyberSlayerCorpz</a></p>
+  </footer>
+</body>
+</html>

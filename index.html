@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Metropolis - Personal Portfolio of Mohamed Tanzeem I">
+  <title>Metropolis — Mohamed Tanzeem I</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            customGreen: '#27F5BB',
+            customBlue: '#274DF5',
+            customOrange: '#F56827',
+            customYellow: '#F5CF27'
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#0a0a0c] text-white min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-customGreen selection:text-black">
+  <header class="sticky top-0 z-50 bg-[#0a0a0c]/90 backdrop-blur-md border-b border-white/10 px-4 py-3">
+    <div class="max-w-3xl mx-auto flex items-center justify-between gap-2">
+      <div class="flex items-center gap-1.5 min-w-0">
+        <a href="#hero" class="font-extrabold text-base tracking-tight text-white shrink-0 hover:text-customGreen transition">
+          Metropolis
+        </a>
+        <span class="text-zinc-500 text-xs truncate">/ CyberSlayerCorpz</span>
+      </div>
+      <nav class="flex items-center gap-2 sm:gap-4 text-xs font-semibold text-zinc-300 shrink-0">
+        <a href="#now" class="hover:text-customGreen transition">Now</a>
+        <a href="#experience" class="hover:text-customGreen transition">Experience</a>
+        <a href="#projects" class="hover:text-customGreen transition">Projects</a>
+        <a href="#education" class="hover:text-customGreen transition">Education</a>
+        <a href="#stack" class="hover:text-customGreen transition">Stack</a>
+        <a href="/uses/index.html" class="px-2 py-0.5 rounded-full bg-white/10 text-customGreen border border-customGreen/30 hover:bg-customGreen hover:text-black transition">
+          Uses
+        </a>
+        <a href="#contact" class="hover:text-customGreen transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="w-full max-w-3xl mx-auto px-4 py-6 sm:py-8 space-y-8">
+    <section id="hero" class="relative overflow-hidden rounded-3xl border border-white/15 bg-zinc-950 img-center">
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/80 to-black/60"></div>
+      </div>
+      <div class="relative p-6 sm:p-8 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-bold text-customGreen">
+          <span>@tanzeemrockz</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-customBlue">
+          Mohamed Tanzeem I
+        </h1>
+        <p class="text-sm sm:text-base text-customBlue font-bold leading-relaxed max-w-xl">
+          I love tech (hardware and software), am interested in AI, Cars, Computers, and Formula 1!
+        </p>
+        <div class="p-3.5 rounded-2xl bg-black/60 border border-white/10 text-xs sm:text-sm text-zinc-300 backdrop-blur-sm max-w-xl">
+          <p class="noto-sans font-bold">"إِنَّ مَعَ الْعُسْرِ يُسْرًا"</p>
+          <span class="block mt-1 text-zinc-400 font-semibold">— The Holy Qur'an</span>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-black/60 border border-white/10 text-xs sm:text-sm text-zinc-300 backdrop-blur-sm max-w-xl">
+          <p class="italic">"Code is like humour. When you have to explain it, it's bad."</p>
+          <span class="block mt-1 text-zinc-400 font-semibold">— Cory House</span>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-black/60 border border-white/10 text-xs sm:text-sm text-zinc-300 backdrop-blur-sm max-w-xl">
+          <p class="italic">"A jack of all trades is a master of none, but oftentimes better than a master of one."</p>
+          <span class="block mt-1 text-zinc-400 font-semibold">— Folk Talk from the early 16th century</span>
+        </div>
+        <div class="flex flex-wrap gap-2.5 pt-2">
+          <a href="#projects" class="px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-customGreen text-black hover:bg-customOrange hover:text-white transition">
+            View Projects
+          </a>
+          <a href="uses/index.html" class="px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-white/10 hover:bg-white/20 border border-white/15 transition text-white inline-flex items-center gap-1.5">
+            <span>Uses</span>
+          </a>
+          <a href="https://tanzeemrockz.linklee.in/" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-white/10 hover:bg-white/20 border border-white/15 transition text-white">
+            Meet Me (Linklee)
+          </a>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="p-5 sm:p-6 rounded-2xl bg-customOrange text-black">
+      <h2 class="text-xs tracking-wider font-extrabold text-black/70 mb-1">About Me</h2>
+      <p class="text-base sm:text-lg font-bold leading-snug">
+        I build technology and I absolutely LOVE Formula 1
+      </p>
+    </section>
+    <section id="f1" class="p-5 sm:p-6 rounded-2xl bg-customYellow text-black space-y-3">
+      <div class="flex items-center justify-between gap-3">
+        <div>
+          <span class="text-xs tracking-wider font-extrabold text-black/70 block">Formula 1</span>
+          <h2 class="text-xl sm:text-2xl font-black mt-0.5">Max Verstappen</h2>
+        </div>
+      </div>
+      <p class="text-xs font-bold text-black/80">
+        Driver: Max Verstappen (Red Bull Racing) • Favourite Team: Mercedes-AMG Petronas F1 Team
+      </p>
+    </section>
+    <section id="now" class="p-5 sm:p-6 rounded-2xl bg-zinc-900/80 border border-white/10 space-y-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-2 h-2 rounded-full bg-customGreen animate-pulse"></span>
+          <h2 class="text-base sm:text-lg font-bold text-white">What I'm Doing Now</h2>
+        </div>
+        <span class="text-[10px] tracking-wider font-extrabold text-zinc-500">Active Focus</span>
+      </div>
+      <ul class="text-xs text-zinc-300 space-y-2 leading-relaxed">
+        <li class="flex items-start gap-2">
+          <span class="text-customGreen font-bold shrink-0">→</span>
+          <span><strong>Engineering DQM v1.2:</strong> Determinative Query Model token routing, plug-and-play brains (.tqm, .sqm, .lqm), and zero-hallucination graph architectures in Python.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-customGreen font-bold shrink-0">→</span>
+          <span><strong>In-Browser WASM Tools:</strong> Building offline-capable web utilities utilizing WebAssembly and Pyodide runtimes.</span>
+        </li>
+      </ul>
+    </section>
+    <section id="experience" class="p-5 sm:p-6 rounded-2xl bg-zinc-900/80 border border-white/10 space-y-4">
+      <div>
+        <h2 class="text-base sm:text-lg font-bold text-white">Experience</h2>
+        <p class="text-xs text-zinc-400 mt-0.5">Where I build and collaborate:</p>
+      </div>
+      <div class="space-y-3">
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1.5">
+          <div class="flex items-center justify-between flex-wrap gap-1">
+            <h3 class="text-sm font-bold text-white">CyberSlayerCorpz</h3>
+            <span class="text-[10px] font-bold tracking-wider px-2 py-0.5 rounded bg-black text-customBlue border border-customBlue/30">
+              Founder &amp; Lead Developer • Present
+            </span>
+          </div>
+          <p class="text-xs text-zinc-300 leading-relaxed">
+            Leading independent research and engineering on high-efficiency web apps (AssetSlayer), deterministic computing systems (DQM), and developer tools.
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1.5">
+          <div class="flex items-center justify-between flex-wrap gap-1">
+            <h3 class="text-sm font-bold text-white">Hack Club &amp; Developer Communities</h3>
+            <span class="text-[10px] font-bold tracking-wider px-2 py-0.5 rounded bg-black text-zinc-300 border border-white/20">
+              Learning &amp; Building FOSS software 
+            </span>
+          </div>
+          <p class="text-xs text-zinc-300 leading-relaxed">
+            Collaborating with teen builders globally on open-source software, hackathons, and creative programming challenges.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="space-y-4">
+      <h2 class="text-lg sm:text-xl font-extrabold text-white">Projects I'm Proud Of</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <article class="p-5 rounded-2xl bg-zinc-900/80 border border-white/10 flex flex-col justify-between hover:border-customGreen transition space-y-4">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-base sm:text-lg font-bold text-white">AssetSlayer</h3>
+              <span class="text-[10px] font-bold tracking-wider px-2 py-0.5 rounded bg-black text-customGreen border border-customGreen/30">
+                Web App
+              </span>
+            </div>
+            <p class="text-xs text-zinc-300 leading-relaxed">
+              A fast, in-browser image optimization tool built to compress and resize web assets without losing visual quality.
+            </p>
+          </div>
+          <div class="space-y-3 pt-2">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-semibold text-zinc-400">
+              <span class="px-2 py-0.5 rounded bg-black/40 border border-white/10">HTML5</span>
+              <span class="px-2 py-0.5 rounded bg-black/40 border border-white/10">Tailwind CSS</span>
+              <span class="px-2 py-0.5 rounded bg-black/40 border border-white/10">JavaScript</span>
+            </div>
+            <a href="https://tanzeemrockz.github.io/assetslayer/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-customGreen hover:text-white transition">
+              <span>Launch Tool</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+        <article class="p-5 rounded-2xl bg-zinc-900/80 border border-white/10 flex flex-col justify-between hover:border-customGreen transition space-y-4">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-base sm:text-lg font-bold text-white">LangSlayer</h3>
+              <span class="text-[10px] font-bold tracking-wider px-2 py-0.5 rounded bg-black text-customGreen border border-customGreen/30">
+                Web App
+              </span>
+            </div>
+            <p class="text-xs text-zinc-300 leading-relaxed">
+              A tool built for slaying complex, hyper-technical academic text and jargon into simple, easy to understand words..
+            </p>
+          </div>
+          <div class="space-y-3 pt-2">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-semibold text-zinc-400">
+              <span class="px-2 py-0.5 rounded bg-black/40 border border-white/10">HTML5</span>
+              <span class="px-2 py-0.5 rounded bg-black/40 border border-white/10">Tailwind CSS</span>
+              <span class="px-2 py-0.5 rounded bg-black/40 border border-white/10">JavaScript</span>
+              <span class="px-2 py-0.5 rounded bg-black/40 border border-white/10">High-speed Groq Inference</span>
+            </div>
+            <a href="https://tanzeemrockz.github.io/LangSlayer/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-customGreen hover:text-white transition">
+              <span>Launch Tool</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+        <article class="p-5 rounded-2xl bg-zinc-900/80 border border-white/10 flex flex-col justify-between hover:border-customOrange transition space-y-4">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-base sm:text-lg font-bold text-white">DQM</h3>
+              <span class="text-[10px] font-bold tracking-wider px-2 py-0.5 rounded bg-black text-customOrange border border-customOrange/30">
+                In Development
+              </span>
+            </div>
+            <p class="text-xs text-zinc-300 leading-relaxed">
+              Deterministic Query Model — a deterministic, token-routed Python alternative to generative AI. Uses plug-and-play brains (.tqm, .sqm, .lqm) with zero hallucination.
+            </p>
+          </div>
+          <div class="space-y-3 pt-2">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-semibold text-zinc-400">
+              <span class="px-2 py-0.5 rounded bg-black/40 border border-white/10">Python</span>
+              <span class="px-2 py-0.5 rounded bg-black/40 border border-white/10">JSON</span>
+              <span class="px-2 py-0.5 rounded bg-black/40 border border-white/10">SQLite</span>
+            </div>
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-500">
+              <span>Active Build</span>
+              <span>•</span>
+              <span>CyberSlayerCorpz</span>
+            </span>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section id="education" class="p-5 sm:p-6 rounded-2xl bg-zinc-900/80 border border-white/10 space-y-4">
+      <div>
+        <h2 class="text-base sm:text-lg font-bold text-white">Education</h2>
+        <p class="text-xs text-zinc-400 mt-0.5">Foundational and independent learning:</p>
+      </div>
+      <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1.5">
+        <div class="flex items-center justify-between flex-wrap gap-1">
+          <h3 class="text-sm font-bold text-white">Computer Science &amp; STEM Studies</h3>
+          <span class="text-[10px] font-bold tracking-wider px-2 py-0.5 rounded bg-black text-customYellow border border-customYellow/30">
+            Current
+          </span>
+        </div>
+        <p class="text-xs text-zinc-300 leading-relaxed">
+          Learning to code, program, build software, learn computer architecture, etcetera.
+        </p>
+      </div>
+      <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1.5">
+        <div class="flex items-center justify-between flex-wrap gap-1">
+          <h3 class="text-sm font-bold text-white">Prompt Engineering</h3>
+          <span class="text-[10px] font-bold tracking-wider px-2 py-0.5 rounded bg-black text-customOrange border border-customOrange/30">
+            Completed
+          </span>
+        </div>
+        <p class="text-xs text-zinc-300 leading-relaxed">
+          Prompting LLM's for getting the BEST results out of them.
+        </p>
+      </div>
+      <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1.5">
+        <div class="flex items-center justify-between flex-wrap gap-1">
+          <h3 class="text-sm font-bold text-white">Harvard's CS50x</h3>
+          <span class="text-[10px] font-bold tracking-wider px-2 py-0.5 rounded bg-black text-customOrange border border-customOrange/30">
+            Completed
+          </span>
+        </div>
+        <p class="text-xs text-zinc-300 leading-relaxed">
+           Harvard University’s introduction to the intellectual enterprises of computer science and the art of programming, for concentrators and non-concentrators alike, with or without prior programming experience. 
+        </p>
+      </div>
+    </section>
+    <section id="stack" class="p-5 sm:p-6 rounded-2xl bg-zinc-900/80 border border-white/10 space-y-3">
+      <h2 class="text-base sm:text-lg font-bold text-white">Tech Stacks</h2>
+      <p class="text-xs text-zinc-400">I use the following tools and technologies to build my projects:</p>
+      <div class="flex flex-wrap gap-2 pt-1">
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">HTML5</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">CSS3</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">Vanilla JS</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">TailwindCSS</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">TypeScript</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">React</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">Node.js</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">Python</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">Vite</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">Gemini</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">Anime.js</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">Supabase</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">Jszip</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">Pyodide</span>
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white border border-white/10">Webassembly</span>
+      </div>
+    </section>
+    <section id="hobbies" class="space-y-4">
+      <h2 class="text-base sm:text-lg font-bold text-white">Hobbies &amp; Interests</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div class="p-4 rounded-2xl bg-zinc-900/60 border border-white/10 space-y-1">
+          <span class="text-xl block mb-1">🎮 &amp; ⚙️</span>
+          <h3 class="text-xs font-bold text-white">Gaming / Hardware</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            I like to play and do play Fortnite (rarely) and love tinkering with computers. I once tried installing Fortnite on a laptop from 2009 with 2 gigs of DDR2 lol 😂
+          </p>
+        </div>
+        <div class="p-4 rounded-2xl bg-zinc-900/60 border border-white/10 space-y-1">
+          <span class="text-xl block mb-1">🏎</span>
+          <h3 class="text-xs font-bold text-white">Formula 1</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            My favourite team is Mercedes-AMG Petronas F1 Team (The Silver Arrows) and my favourite driver is MAX VERSTAPPEN!
+          </p>
+        </div>
+        <div class="p-4 rounded-2xl bg-zinc-900/60 border border-white/10 space-y-1">
+          <span class="text-xl block mb-1">⚡</span>
+          <h3 class="text-xs font-bold text-white">Open Source</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Collaborating on community initiatives, hackathons, and creative projects.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="p-5 sm:p-6 rounded-2xl bg-zinc-900/80 border border-white/10 space-y-5">
+      <div>
+        <h2 class="text-base sm:text-lg font-bold text-white">Contact</h2>
+        <p class="text-xs text-zinc-400 mt-0.5">Hit me up at anytime:</p>
+      </div>
+      <div 
+        onclick="copyEmail()" 
+        class="group p-4 rounded-xl border border-customOrange/40 bg-customOrange/10 space-y-1 cursor-pointer transition hover:border-customOrange/80"
+        title="Click to copy email address"
+      >
+        <div class="flex items-center justify-between">
+          <span class="text-[10px] tracking-wider font-extrabold text-customOrange block">Best way to reach me</span>
+          <span id="copy-badge" class="text-[10px] font-bold text-zinc-400 group-hover:text-customOrange transition">Click to copy</span>
+        </div>
+        <div class="text-xs sm:text-sm font-bold text-white break-all block group-hover:underline">
+          tanzeemrockz@cyberslayercorpz.dev
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div class="p-3.5 rounded-xl bg-black/50 border border-white/10 space-y-0.5">
+          <span class="text-[10px] text-zinc-400 tracking-wider font-bold block">Phone Call</span>
+          <a href="tel:+917667271516" class="text-xs font-bold text-zinc-200 hover:text-customGreen transition block">+91 7667271516</a>
+          <span class="text-[10px] text-zinc-500 block">Sundays only, 09:00 – 17:00</span>
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-black/50 border border-white/10 space-y-0.5">
+          <span class="text-[10px] text-zinc-400 tracking-wider font-bold block">WhatsApp</span>
+          <a href="https://wa.me/917667271516" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-white hover:text-customGreen transition block">
+            Chat on WhatsApp →
+          </a>
+          <span class="text-[10px] text-zinc-500 block">Quick messages</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-black/50 border border-white/10 space-y-0.5">
+          <span class="text-[10px] text-zinc-400 tracking-wider font-bold block">Linklee</span>
+          <a href="https://tanzeemrockz.linklee.in/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-zinc-200 hover:text-customGreen transition block">
+            Arrange a meeting (Linklee) →
+          </a>
+          <span class="text-[10px] text-zinc-500 block">Arranged meetings for serious stuff</span>
+        </div>
+      </div>
+      <div class="p-3.5 rounded-xl bg-black/50 border border-white/10 space-y-1 text-xs text-zinc-400">
+        <span class="text-[10px] text-zinc-500 tracking-wider font-bold block">Other Channels</span>
+        <p class="break-all">imohamedtanzeem@gmail.com</p>
+        <p class="break-all">tanzeemrockz@user.hackclub.app</p>
+        <p class="break-all">matrix: @tanzeemrockz:matrix.org</p>
+      </div>
+      <div class="flex flex-wrap gap-2 pt-1 text-xs">
+        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-zinc-300 hover:text-white hover:border-white/30 transition">Instagram</a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-zinc-300 hover:text-white hover:border-white/30 transition">GitHub</a>
+        <a href="https://threads.net/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-zinc-300 hover:text-white hover:border-white/30 transition">Threads</a>
+        <a href="https://cyberslayercorpz.dev/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-zinc-300 hover:text-white hover:border-white/30 transition">CyberSlayerCorpz</a>
+        <a href="https://tanzeemrockz.linklee.in/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-zinc-300 hover:text-white hover:border-white/30 transition">Linklee</a>
+      </div>
+    </section>
+  </main>
+  <footer class="w-full border-t border-white/10 py-6 text-center text-xs text-zinc-500 px-4">
+    <p>© 2026 Metropolis. Made with ❤️ by tanzeemrockz | Operator: <a href="https://cyberslayercorpz.dev/" target="_blank" rel="noopener noreferrer" class="hover:text-customOrange transition">CyberSlayerCorpz</a></p>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
