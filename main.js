@@ -26,10 +26,3 @@ function copyEmail() {
       document.body.removeChild(input);
     }
   }
-
-  const trackerEl = document.getElementById('f1-tracker');
-  if (trackerEl) {
-    setTimeout(() => {
-      trackerEl.textContent = 'P1 (Defending Champion)';
-    }, 500);
-  }
