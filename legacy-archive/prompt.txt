@@ -1,0 +1,142 @@
+# 📐 CyberSlayerCorpz Portfolio Scrollytelling Plan & Master Prompt
+
+---
+
+## 🗺️ Part 1: Comprehensive System Architecture & Scrollytelling Plan
+
+### 1. High-Level Vision & Objectives
+
+* **Brand Identity:** CyberSlayerCorpz (`tanzeemrockz.github.io`)
+* **Core Philosophy:** An indie software studio portfolio featuring a dark matte theme, high-impact scrollytelling (pinning, progress scrubbing, SVG morphing), and responsive performance.
+* **Tech Stack:** Vanilla HTML5, Tailwind CSS, Anime.js v3.2.1, FontAwesome v6+, Google Fonts (`Inter`).
+
+---
+
+### 2. Scroll Budget & Timeline Mapping
+
+We establish a continuous $0\text{vh}$ to $800\text{vh}+$ scroll runway using native CSS sticky containers and JavaScript progress scrubbing.
+
+```
+ [0vh]   --------------------------------------------------------------
+         | HERO SECTION (PINNED)                                      |
+         | - Text scales down (1.0 -> 0.85) & fades to 0             |
+         | - Hexagon SVG rotates 180° & expands to fill background    |
+ [200vh] --------------------------------------------------------------
+         | CAPABILITIES SECTION (PINNED)                             |
+         | - Fixed Left HUD updates active capability badge           |
+         | - 7 Capability Pills scrub vertically through right panel  |
+ [500vh] --------------------------------------------------------------
+         | PROJECT GALLERY (PINNED HORIZONTAL TRACK)                 |
+         | - Vertical scroll mapped to translateX(0% -> -50%)        |
+         | - ShareShed & In The Lab cards slide horizontally          |
+ [800vh] --------------------------------------------------------------
+         | FOOTER & CREDITS (NATIVE SCROLL)                           |
+         | - Unpinned layout: CTAs, social links, signature           |
+         --------------------------------------------------------------
+
+```
+
+| Section | Scroll Range | Pinning Mechanism | Animation Choreography & Scrub Rules |
+| --- | --- | --- | --- |
+| **01. Hero** | $0\text{vh} \rightarrow 200\text{vh}$ | Sticky Wrapper ($100\text{vh}$) | Text elements scale down ($1.0 \rightarrow 0.85$) & fade out. Hexagon SVG scales up ($32\text{px} \rightarrow 1200\text{px}$) & rotates $180^\circ$. |
+| **02. Capabilities** | $200\text{vh} \rightarrow 500\text{vh}$ | Sticky Wrapper ($100\text{vh}$) | Left HUD locked in center. Right 7 capability cards scrub vertically through the viewport; active card highlights Left HUD state. |
+| **03. Projects** | $500\text{vh} \rightarrow 800\text{vh}$ | Sticky Wrapper ($100\text{vh}$) | Vertical scroll converted to horizontal $\text{translateX}$ ($0\% \rightarrow -50\%$). ShareShed orange glow pulses on focus; In The Lab card enters. |
+| **04. Footer** | $800\text{vh}+$ | Unpinned (Native Flow) | Unpinned flow containing CTA callouts, social links, and developer signature. |
+
+---
+
+### 3. Technical Engine Specifications
+
+#### Scroll Progress Engine Formula
+
+For each pinned section wrapper, section progress is calculated dynamically inside a `requestAnimationFrame` loop:
+
+$$\text{Progress} = \text{clamp}\left( \frac{\text{window.scrollY} - \text{Container.offsetTop}}{\text{Container.offsetHeight} - \text{window.innerHeight}},\, 0,\, 1 \right)$$
+
+#### Horizontal Scroll Matrix Formula
+
+For Section 03 (Project Gallery), the vertical scroll percentage is translated into horizontal position:
+
+$$\text{translateX} = -\left( \text{Progress} \times 50\% \right)$$
+
+#### Responsive Fallback Rules ($< 768\text{px}$)
+
+1. On viewports below $768\text{px}$, sticky pinning is automatically disabled via CSS media queries.
+2. The layout converts into a native vertical column.
+3. Anime.js `IntersectionObserver` triggers simple fade-ins upon entering the viewport instead of scrubbed pinning.
+
+---
+
+---
+
+## 📄 Part 2: Master Prompt File
+
+```text
+🤖 MASTER PROMPT: tanzeemrockz.github.io Interactive Scrollytelling Application
+
+Role & Persona:
+Act as an elite Senior Frontend Engineer and Creative Technologist. Generate clean, high-performance, single-file production HTML/JS code for tanzeemrockz.github.io (the official developer portfolio and CyberSlayerCorpz showcase).
+
+---
+
+📐 DESIGN TOKENS & SYSTEM SPECIFICATIONS
+
+1. Brand Identity & Typography:
+   - Page Title: CyberSlayerCorpz | Indie Software Studio
+   - Typography: 'Inter', sans-serif (Google Fonts weights: 300, 400, 500, 600, 700, 800)
+   - Studio Tag: ⚡ INDIE SOFTWARE STUDIO
+   - Headline: "We build modern, high-impact software."
+   - Bio: "From web platforms to next-gen utilities, we create fast, scalable, and accessible digital experiences designed to empower users and communities."
+
+2. Palette Matrix:
+   - Deep Background (body): #121215
+   - Matte Containers (cards/nav): #18181B
+   - Silver Secondary Text: #A1A1AA
+   - Primary Text: #FFFFFF
+   - ShareShed Accent: #E07B39 (Warm Burnt Orange)
+   - Signature Accent: rgb(211,84,0)
+
+3. Embedded Assets:
+   - CyberSlayerCorpz Favicon (Data URI):
+     data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 500 500%22><rect width=%22500%22 height=%22500%22 rx=%22100%22 fill=%22%2318181B%22/><g stroke-width=%2216%22 stroke-linecap=%22square%22><polygon points=%22250,110 360,180 360,320 250,390 140,320 140,180%22 stroke=%22%23FFFFFF%22/><path d=%22M 250 110 V 250 M 360 180 L 250 250 M 140 180 L 250 250%22 stroke=%22%23A1A1AA%22 stroke-width=%2210%22/></g></svg>
+
+   - ShareShed Tool Logo (SVG Inlined in Card):
+     <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" rx="25" fill="#E07B39"/><path d="M30 65l15-15m10-10l15-15m-20 35l15 15m-30-20l15-15" stroke="white" stroke-width="12" stroke-linecap="round"/></svg>
+
+---
+
+🎭 SCROLLEYTELLING & ANIMATION BLUEPRINT (Anime.js + requestAnimationFrame)
+
+CDN Required: https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js
+
+1. Section 1 (Hero - 200vh Track):
+   - Pin sticky viewport at top: 0.
+   - Scrub 0% -> 100%: Scale down headline/bio (1.0 -> 0.85), fade opacity (1 -> 0).
+   - Scrub 0% -> 100%: Scale up CyberSlayerCorpz Hexagon SVG (32px -> 1200px) and rotate 180deg to form background backdrop.
+
+2. Section 2 (Capabilities HUD - 300vh Track):
+   - Fixed Left HUD Panel displays active module name based on scroll threshold.
+   - Right Panel scrubs 7 capability pills vertically.
+   - Cap Pills: Web & Mobile Apps, Framer Motion & Anime.js, Supabase / PostgreSQL, Modern UI / Tailwind CSS, JavaScript (ES6+), Git & Version Control, Cloud Deployment.
+
+3. Section 3 (Projects Horizontal Track - 300vh Track):
+   - Translate horizontal flex track translateX(0% -> -50%).
+   - Card 1: ShareShed (PWA / Web App) with embedded SVG, #E07B39 accent glow, description, stack tags, links to https://shareshed-bice.vercel.app & @shareshedapp.
+   - Card 2: In The Lab (Dashed card, progress state, Instagram link).
+
+4. Section 4 (Unpinned Native Scroll):
+   - Restores native page scroll for footer, socials (@cyberslayercorpz, @shareshedapp, GitHub, cyberslayercorpz@gmail.com).
+   - Signature Line:
+     "Made with ❤️ by tanzeemrockz | Operator: CyberSlayerCorpz"
+     * "tanzeemrockz" in rgb(211,84,0)
+     * "CyberSlayerCorpz" hyperlinked to https://tanzeemrockz.github.io (target="_blank")
+
+---
+
+⚙️ EXECUTION RULES
+- 100% Mobile Responsive (Disable sticky scrubbing on screens < 768px, fallback to IntersectionObserver).
+- Smooth scroll enabled (scroll-smooth).
+- Custom matte scrollbar styling matching #121215 / #18181B.
+- Single self-contained HTML file.
+
+```

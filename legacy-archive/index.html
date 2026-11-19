@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSlayerCorpz | Next-Gen Software Studio & Spatial Engineering</title>
+    <meta name="description" content="CyberSlayerCorpz — Indie Software Studio & Creative Engineering Lab. Building next-generation software, spatial interfaces, and high-impact digital experiences.">
+
+    <!-- Exact Preserved Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 500 500%22><rect width=%22500%22 height=%22500%22 rx=%22100%22 fill=%22%2318181B%22/><g stroke-width=%2216%22 stroke-linecap=%22square%22><polygon points=%22250,110 360,180 360,320 250,390 140,320 140,180%22 stroke=%22%23FFFFFF%22/><path d=%22M 250 110 V 250 M 360 180 L 250 250 M 140 180 L 250 250%22 stroke=%22%2300F0FF%22 stroke-width=%2210%22/></g></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deep: '#040407',
+                        surface: '#0A0A10',
+                        silver: '#A1A1AA',
+                        cyan: '#00F0FF',
+                        pink: '#FF007F',
+                        accent: '#E07B39',
+                        sig: 'rgb(211,84,0)'
+                    },
+                    fontFamily: {
+                        sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'SF Mono', 'Menlo', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ==========================================================================
+           APPLE VISIONOS SPATIAL GLASS ENGINE (NEXT-GEN STUDIO)
+           ========================================================================== */
+
+        :root {
+            --glass-blur: 50px;
+            --glass-saturate: 210%;
+            --glass-brightness: 115%;
+            --sound-enabled: 1;
+        }
+
+        body {
+            background-color: #040407;
+            color: #FFFFFF;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+            letter-spacing: -0.015em;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, .font-black {
+            letter-spacing: -0.035em;
+        }
+
+        /* VisionOS Pill Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { 
+            background: rgba(255, 255, 255, 0.22); 
+            backdrop-filter: blur(20px);
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.12); 
+        }
+        ::-webkit-scrollbar-thumb:hover { background: #00F0FF; }
+
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* ==========================================================================
+           LIQUID GLASS MATERIAL SPECIFICATION
+           ========================================================================== */
+        .liquid-glass-master {
+            background: linear-gradient(
+                135deg, 
+                rgba(255, 255, 255, 0.08) 0%, 
+                rgba(255, 255, 255, 0.02) 40%, 
+                rgba(0, 240, 255, 0.025) 80%,
+                rgba(255, 0, 127, 0.02) 100%
+            );
+            backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) brightness(var(--glass-brightness));
+            -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) brightness(var(--glass-brightness));
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 
+                0 30px 70px -15px rgba(0, 0, 0, 0.85),
+                0 15px 35px -10px rgba(0, 0, 0, 0.7),
+                inset 0 1.8px 1.2px 0 rgba(255, 255, 255, 0.6),
+                inset 0 -1.5px 1.5px 0 rgba(0, 0, 0, 0.75),
+                inset 0 0 35px 0 rgba(255, 255, 255, 0.03);
+            position: relative;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .liquid-glass-master:hover {
+            border-color: rgba(255, 255, 255, 0.38);
+            box-shadow: 
+                0 45px 95px -15px rgba(0, 240, 255, 0.22),
+                0 22px 45px -10px rgba(0, 0, 0, 0.75),
+                inset 0 2.2px 1.5px 0 rgba(255, 255, 255, 0.8),
+                inset 0 -1.8px 1.8px 0 rgba(0, 0, 0, 0.7),
+                inset 0 0 45px 0 rgba(0, 240, 255, 0.06);
+        }
+
+        /* Continuous Rotating Prismatic Light Rim */
+        .prismatic-rim {
+            position: relative;
+        }
+        .prismatic-rim::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            padding: 1.5px;
+            background: linear-gradient(
+                135deg, 
+                rgba(255, 255, 255, 0.85) 0%, 
+                rgba(255, 255, 255, 0.2) 30%, 
+                rgba(0, 240, 255, 0.5) 60%, 
+                rgba(255, 0, 127, 0.4) 85%,
+                rgba(224, 123, 57, 0.35) 100%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0.75;
+            transition: opacity 0.35s ease;
+        }
+        .prismatic-rim:hover::after {
+            opacity: 1;
+        }
+
+        /* Dynamic Specular Lens Glare tracking mouse */
+        .glass-glare {
+            position: relative;
+            overflow: hidden;
+        }
+        .glass-glare::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(
+                700px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(255, 255, 255, 0.22) 0%,
+                rgba(255, 255, 255, 0.05) 35%,
+                transparent 70%
+            );
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+        .glass-glare:hover::before {
+            opacity: 1;
+        }
+
+        /* Interactive Liquid Ripple Shockwave Wave on Click */
+        .liquid-ripple-wave {
+            position: absolute;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(0, 240, 255, 0.3) 30%, rgba(255, 0, 127, 0.15) 60%, transparent 80%);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.7), inset 0 0 15px rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+            animation: liquidRippleSpread 0.7s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+            z-index: 30;
+        }
+        @keyframes liquidRippleSpread {
+            0% { transform: translate(-50%, -50%) scale(0); opacity: 0.95; }
+            100% { transform: translate(-50%, -50%) scale(2.8); opacity: 0; }
+        }
+
+        /* Equalizer Animation Bars */
+        .eq-bar {
+            animation: eqBounce 1.2s ease-in-out infinite alternate;
+        }
+        .eq-bar:nth-child(2) { animation-delay: 0.25s; }
+        .eq-bar:nth-child(3) { animation-delay: 0.5s; }
+        @keyframes eqBounce {
+            0% { height: 3px; }
+            50% { height: 12px; }
+            100% { height: 5px; }
+        }
+
+        /* VisionOS Material Variations */
+        body.mat-prism .liquid-glass-master {
+            background: linear-gradient(
+                135deg, 
+                rgba(255, 255, 255, 0.12) 0%, 
+                rgba(0, 240, 255, 0.07) 35%, 
+                rgba(255, 0, 127, 0.07) 70%, 
+                rgba(224, 123, 57, 0.06) 100%
+            ) !important;
+        }
+        body.mat-prism .prismatic-rim::after {
+            opacity: 1 !important;
+            animation: prismSpin 6s linear infinite;
+        }
+        @keyframes prismSpin {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        body.mat-obsidian .liquid-glass-master {
+            background: rgba(10, 10, 15, 0.82) !important;
+            border-color: rgba(255, 255, 255, 0.12) !important;
+            box-shadow: 0 45px 110px -15px rgba(0, 0, 0, 0.98), inset 0 1.5px 1px rgba(255, 255, 255, 0.35) !important;
+        }
+
+        /* Apple Floating Pill Nav */
+        .apple-nav-capsule {
+            background: rgba(10, 10, 16, 0.72);
+            backdrop-filter: blur(50px) saturate(220%) brightness(115%);
+            -webkit-backdrop-filter: blur(50px) saturate(220%) brightness(115%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 25px 60px -10px rgba(0, 0, 0, 0.75),
+                inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        /* Dynamic Fluid Spatial Mesh Orbs in Background */
+        .spatial-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            pointer-events: none;
+            will-change: transform;
+            animation: spatialPhysics 24s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+        }
+
+        @keyframes spatialPhysics {
+            0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+            33% { transform: translate3d(140px, -90px, 0) scale(1.3) rotate(60deg); }
+            66% { transform: translate3d(-100px, 110px, 0) scale(0.9) rotate(-45deg); }
+            100% { transform: translate3d(90px, -60px, 0) scale(1.2) rotate(25deg); }
+        }
+
+        /* 3D Glass Tilt Card Physics */
+        .tilt-card {
+            transform-style: preserve-3d;
+            will-change: transform;
+            transition: transform 0.15s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* CRT Scanlines */
+        .crt-scanlines {
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%);
+            background-size: 100% 3px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen selection:bg-cyan selection:text-black relative mat-clear">
+
+    <!-- Apple VisionOS Dynamic Chromatic Spatial Background Mesh -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="spatial-orb w-[850px] h-[850px] bg-cyan/16 -top-48 -left-32"></div>
+        <div class="spatial-orb w-[750px] h-[750px] bg-pink/14 top-[25%] -right-32" style="animation-delay: -6s;"></div>
+        <div class="spatial-orb w-[800px] h-[800px] bg-accent/14 -bottom-48 left-[20%]" style="animation-delay: -13s;"></div>
+        <div class="spatial-orb w-[600px] h-[600px] bg-violet-600/14 top-[65%] -left-20" style="animation-delay: -20s;"></div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- FLOATING APPLE GLASS CAPSULE NAVIGATION                   -->
+    <!-- ========================================================= -->
+    <header class="fixed top-4 inset-x-0 z-50 flex justify-center px-4 sm:px-6 pointer-events-none">
+        <nav class="apple-nav-capsule rounded-full px-5 py-3 flex items-center justify-between w-full max-w-6xl pointer-events-auto transition duration-300">
+            
+            <a href="#" onclick="playGlassSound(880)" class="flex items-center gap-3.5 group">
+                <div class="w-9 h-9 rounded-full bg-white/10 border border-white/25 flex items-center justify-center backdrop-blur-2xl shadow-[inset_0_2px_1px_rgba(255,255,255,0.6)] group-hover:border-cyan/70 transition duration-300">
+                    <svg id="nav-logo" class="w-4.5 h-4.5 transition-transform duration-500 group-hover:rotate-90" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke-width="20" stroke-linecap="square">
+                            <polygon points="250,110 360,180 360,320 250,390 140,320 140,180" stroke="#FFFFFF"/>
+                            <path d="M 250 110 V 250 M 360 180 L 250 250 M 140 180 L 250 250" stroke="#00F0FF" stroke-width="14"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-sm sm:text-base tracking-tight text-white leading-none">
+                        CyberSlayer<span class="text-zinc-400">Corpz</span>
+                    </span>
+                    <span class="font-mono text-[8px] sm:text-[9px] text-cyan tracking-widest uppercase mt-0.5">
+                        SPATIAL ENGINEERING STUDIO
+                    </span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-6">
+                <a href="#lab" onclick="playGlassSound(520)" class="text-xs font-semibold text-zinc-300 hover:text-white transition tracking-wide">Spatial Lab</a>
+                <a href="#flagships" onclick="playGlassSound(580)" class="text-xs font-semibold text-zinc-300 hover:text-white transition tracking-wide">R&D Flagships</a>
+                <a href="#disciplines" onclick="playGlassSound(640)" class="text-xs font-semibold text-zinc-300 hover:text-white transition tracking-wide">Disciplines</a>
+                <a href="#contact" onclick="playGlassSound(700)" class="text-xs font-semibold text-zinc-300 hover:text-white transition tracking-wide">Contact</a>
+
+                <!-- Apple VisionOS Material Switcher -->
+                <div class="hidden lg:flex items-center p-0.5 rounded-full bg-white/5 border border-white/15 backdrop-blur-2xl text-[10px] font-mono">
+                    <button onclick="setGlassMaterial('clear')" id="btnMatClear" class="mat-btn px-2.5 py-1 rounded-full text-white bg-white/20 transition font-bold" title="Apple VisionOS Clear Crystal">💎 Clear</button>
+                    <button onclick="setGlassMaterial('prism')" id="btnMatPrism" class="mat-btn px-2.5 py-1 rounded-full text-zinc-400 hover:text-white transition" title="Iridescent Prismatic Glass">🌈 Prism</button>
+                    <button onclick="setGlassMaterial('obsidian')" id="btnMatObsidian" class="mat-btn px-2.5 py-1 rounded-full text-zinc-400 hover:text-white transition" title="Smoked Obsidian Glass">🛸 Obsidian</button>
+                </div>
+
+                <button onclick="toggleCmdPalette(); playGlassSound(940);" class="anim-btn flex items-center gap-2 text-xs font-mono bg-white/10 border border-white/20 text-zinc-200 px-3.5 py-1.5 rounded-full hover:border-cyan hover:bg-white/15 transition backdrop-blur-2xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]">
+                    <i class="fa-solid fa-terminal text-cyan text-xs"></i>
+                    <span>Cmd+K</span>
+                </button>
+
+                <!-- Audio Haptics Toggle with Live Dynamic Equalizer Bars -->
+                <button onclick="toggleSoundHaptics()" id="soundToggleBtn" class="flex items-center gap-1.5 text-zinc-300 hover:text-cyan text-xs py-1.5 px-3 rounded-full border border-white/15 bg-white/5 transition" title="Toggle Glass Audio Haptics">
+                    <div id="eqVisualizer" class="flex items-end gap-[2px] h-3 w-3">
+                        <span class="eq-bar w-[2px] h-1.5 bg-cyan rounded-full transition-all"></span>
+                        <span class="eq-bar w-[2px] h-3 bg-cyan rounded-full transition-all"></span>
+                        <span class="eq-bar w-[2px] h-2 bg-cyan rounded-full transition-all"></span>
+                    </div>
+                    <span class="text-[10px] font-mono font-semibold hidden xl:inline">HAPTICS</span>
+                </button>
+
+                <div class="flex items-center gap-3 pl-3 border-l border-white/15">
+                    <a href="https://github.com/tanzeemrockz" target="_blank" class="text-zinc-400 hover:text-white text-base transition" title="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://instagram.com/cyberslayercorpz" target="_blank" onclick="playGlassSound(780)" class="anim-btn flex items-center gap-1.5 text-xs font-bold bg-white text-black px-3.5 py-1.5 rounded-full hover:bg-zinc-200 transition shadow-[0_4px_25px_rgba(255,255,255,0.35)]">
+                        <i class="fa-brands fa-instagram text-xs"></i> Instagram
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Hamburger Toggle -->
+            <div class="md:hidden flex items-center gap-2">
+                <button onclick="toggleCmdPalette(); playGlassSound(880);" class="text-zinc-300 hover:text-white text-sm p-1.5"><i class="fa-solid fa-terminal"></i></button>
+                <button onclick="toggleMobileNav(); playGlassSound(660);" class="text-zinc-300 hover:text-white text-lg p-1.5 focus:outline-none"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </nav>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden md:hidden fixed top-20 inset-x-4 p-6 liquid-glass-master prismatic-rim bg-deep/95 backdrop-blur-3xl border border-white/20 flex flex-col gap-4 font-mono text-sm z-50 pointer-events-auto">
+            <a href="#lab" onclick="toggleMobileNav()" class="text-zinc-300 hover:text-white py-1.5">Spatial Lab</a>
+            <a href="#flagships" onclick="toggleMobileNav()" class="text-zinc-300 hover:text-white py-1.5">R&D Flagships</a>
+            <a href="#disciplines" onclick="toggleMobileNav()" class="text-zinc-300 hover:text-white py-1.5">Disciplines</a>
+            <a href="#contact" onclick="toggleMobileNav()" class="text-zinc-300 hover:text-white py-1.5">Contact</a>
+            <div class="flex items-center justify-between pt-2 border-t border-white/15">
+                <span class="text-xs text-zinc-400">Theme:</span>
+                <div class="flex items-center gap-1">
+                    <button onclick="setGlassMaterial('clear'); toggleMobileNav();" class="text-xs px-2 py-1 bg-white/10 rounded-lg">💎 Clear</button>
+                    <button onclick="setGlassMaterial('prism'); toggleMobileNav();" class="text-xs px-2 py-1 bg-white/10 rounded-lg">🌈 Prism</button>
+                    <button onclick="setGlassMaterial('obsidian'); toggleMobileNav();" class="text-xs px-2 py-1 bg-white/10 rounded-lg">🛸 Obsidian</button>
+                </div>
+            </div>
+            <a href="https://github.com/tanzeemrockz" target="_blank" class="text-cyan py-1.5 flex items-center gap-2"><i class="fa-brands fa-github"></i> GitHub Profile</a>
+        </div>
+    </header>
+
+    <!-- ========================================================= -->
+    <!-- HERO SECTION: THE SPATIAL GENESIS                         -->
+    <!-- ========================================================= -->
+    <section id="hero" class="relative w-full pt-36 pb-20 md:pt-48 md:pb-24 z-10 overflow-hidden">
+        <canvas id="hero-canvas" class="absolute inset-0 z-0 pointer-events-none w-full h-full opacity-45"></canvas>
+
+        <div class="relative z-10 w-full max-w-6xl mx-auto px-6 flex flex-col items-start">
+            
+            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-3xl text-xs font-mono text-zinc-200 mb-8 shadow-lg">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-80"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                </span>
+                <span class="font-bold tracking-wider text-white">STUDIO ONLINE</span>
+                <span class="text-zinc-500">|</span>
+                <span class="text-cyan font-mono">NEXT-GEN SOFTWARE & SPATIAL SYSTEMS</span>
+            </div>
+
+            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[1.05] mb-8 max-w-5xl">
+                We engineer software that <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan via-pink to-accent drop-shadow-[0_0_50px_rgba(0,240,255,0.35)]">defies gravity.</span>
+            </h1>
+
+            <p class="text-lg md:text-2xl text-zinc-300 max-w-3xl font-normal leading-relaxed mb-12">
+                CyberSlayerCorpz is an independent spatial engineering studio. We build tactile web applications, procedural audio synthesizers, zero-server architectures, and ambient intelligence interfaces.
+            </p>
+
+            <div class="flex flex-wrap gap-4 w-full sm:w-auto font-mono text-sm mb-16">
+                <a href="#lab" onclick="playGlassSound(550)" class="anim-btn inline-flex justify-center items-center gap-2.5 bg-white text-black font-bold px-8 py-4 rounded-2xl hover:bg-zinc-200 transition shadow-[0_14px_40px_rgba(255,255,255,0.3)]">
+                    <i class="fa-solid fa-flask-vial text-xs"></i>
+                    <span>Enter Spatial Lab</span>
+                </a>
+                <a href="#flagships" onclick="playGlassSound(680)" class="anim-btn inline-flex justify-center items-center gap-2.5 border border-white/20 bg-white/10 backdrop-blur-3xl text-white font-semibold px-8 py-4 rounded-2xl hover:border-cyan hover:bg-white/15 transition shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.4)]">
+                    <span>Explore R&D Builds</span>
+                    <i class="fa-solid fa-arrow-down text-xs"></i>
+                </a>
+                <button onclick="copyDirectEmail(); playGlassSound(920);" id="copyEmailBtn" class="anim-btn inline-flex justify-center items-center gap-2 border border-white/15 bg-white/5 backdrop-blur-3xl text-zinc-300 hover:text-white px-6 py-4 rounded-2xl hover:border-white/30 transition">
+                    <i class="fa-solid fa-copy text-xs text-cyan"></i>
+                    <span id="copyEmailText">Copy Contact Email</span>
+                </button>
+            </div>
+
+            <!-- Live Studio Diagnostics Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full font-mono text-xs">
+                <div class="p-5 rounded-2xl liquid-glass-master prismatic-rim">
+                    <span class="text-[10px] text-zinc-400 uppercase tracking-widest block mb-1">EXECUTION ENGINE</span>
+                    <span class="text-white font-bold text-base flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-cyan"></span> Pure Client-Side
+                    </span>
+                </div>
+                <div class="p-5 rounded-2xl liquid-glass-master prismatic-rim">
+                    <span class="text-[10px] text-zinc-400 uppercase tracking-widest block mb-1">AUDIO DSP NODE</span>
+                    <span class="text-pink font-bold text-base flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-pink"></span> 44.1kHz Crystal Synth
+                    </span>
+                </div>
+                <div class="p-5 rounded-2xl liquid-glass-master prismatic-rim">
+                    <span class="text-[10px] text-zinc-400 uppercase tracking-widest block mb-1">FRAME PIPELINE</span>
+                    <span class="text-emerald-400 font-bold text-base flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400"></span> 60 FPS Composited
+                    </span>
+                </div>
+                <div class="p-5 rounded-2xl liquid-glass-master prismatic-rim">
+                    <span class="text-[10px] text-zinc-400 uppercase tracking-widest block mb-1">OPERATOR DIRECT</span>
+                    <a href="https://github.com/tanzeemrockz" target="_blank" class="text-white hover:text-cyan font-bold text-base flex items-center gap-2 transition">
+                        <i class="fa-brands fa-github text-sm"></i> @tanzeemrockz
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- INTERACTIVE SPATIAL LAB (PHYSICS & SYNTH WIDGET)          -->
+    <!-- ========================================================= -->
+    <section id="lab" class="relative w-full max-w-6xl mx-auto px-6 py-20 z-10">
+        <div class="liquid-glass-master prismatic-rim glass-glare p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <div class="absolute -top-32 -right-32 w-96 h-96 bg-cyan/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 relative z-10">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan/35 bg-cyan/10 text-cyan text-[11px] font-mono uppercase tracking-wider mb-3">
+                        <i class="fa-solid fa-atom text-[11px] animate-spin"></i> Interactive Lab Module
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-black text-white">Spatial Physics Engine</h2>
+                    <p class="text-zinc-300 text-sm md:text-base mt-2 max-w-xl">
+                        Interact directly with the quantum particle field below. Drag your cursor across the canvas, alter resonance frequencies, or trigger synthesized sound drops.
+                    </p>
+                </div>
+
+                <!-- Live Particle Count HUD -->
+                <div class="flex items-center gap-4 font-mono text-xs">
+                    <div class="px-4 py-2 rounded-xl bg-white/10 border border-white/20 backdrop-blur-2xl">
+                        <span class="text-zinc-400 text-[10px] uppercase block">PARTICLES</span>
+                        <span id="particleCountLabel" class="text-white font-bold text-sm">60 NODES</span>
+                    </div>
+                    <div class="px-4 py-2 rounded-xl bg-white/10 border border-white/20 backdrop-blur-2xl">
+                        <span class="text-zinc-400 text-[10px] uppercase block">LATENCY</span>
+                        <span class="text-cyan font-bold text-sm">&lt;0.4ms</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Interactive Canvas Sandbox -->
+            <div class="relative w-full h-80 sm:h-96 rounded-2xl bg-black/60 border border-white/20 overflow-hidden shadow-[inset_0_4px_10px_rgba(0,0,0,0.8)] mb-8">
+                <canvas id="lab-canvas" class="w-full h-full cursor-crosshair"></canvas>
+                
+                <div class="absolute top-4 left-4 pointer-events-none flex items-center gap-2 font-mono text-[11px] text-zinc-400">
+                    <span class="w-2 h-2 rounded-full bg-cyan animate-pulse"></span>
+                    <span>DRAG OR CLICK TO GENERATE HARMONIC GRAVITY WELLS</span>
+                </div>
+
+                <div class="absolute bottom-4 right-4 flex items-center gap-2">
+                    <button onclick="resetLabParticles(); playGlassSound(1100, 'droplet');" class="anim-btn text-xs font-mono bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-lg border border-white/20 backdrop-blur-xl transition">
+                        <i class="fa-solid fa-rotate-left mr-1"></i> Reset Field
+                    </button>
+                </div>
+            </div>
+
+            <!-- Synth Frequency Trigger Bar -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-white/15 font-mono text-xs">
+                <span class="text-zinc-400 text-xs flex items-center gap-2">
+                    <i class="fa-solid fa-music text-cyan"></i> Synthesize Crystal Harmonics:
+                </span>
+                <div class="flex flex-wrap items-center gap-2">
+                    <button onclick="playGlassSound(523.25); spawnLabShockwave(200);" class="anim-btn px-4 py-2 rounded-xl border border-white/15 bg-white/5 hover:bg-cyan hover:text-black transition font-semibold">C5 (523Hz)</button>
+                    <button onclick="playGlassSound(587.33); spawnLabShockwave(300);" class="anim-btn px-4 py-2 rounded-xl border border-white/15 bg-white/5 hover:bg-cyan hover:text-black transition font-semibold">D5 (587Hz)</button>
+                    <button onclick="playGlassSound(659.25); spawnLabShockwave(400);" class="anim-btn px-4 py-2 rounded-xl border border-white/15 bg-white/5 hover:bg-pink hover:text-black transition font-semibold">E5 (659Hz)</button>
+                    <button onclick="playGlassSound(783.99); spawnLabShockwave(500);" class="anim-btn px-4 py-2 rounded-xl border border-white/15 bg-white/5 hover:bg-pink hover:text-black transition font-semibold">G5 (784Hz)</button>
+                    <button onclick="playGlassSound(880.00); spawnLabShockwave(600);" class="anim-btn px-4 py-2 rounded-xl border border-white/15 bg-white/5 hover:bg-accent hover:text-black transition font-semibold">A5 (880Hz)</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- R&D FLAGSHIPS (THE NEW CYBERSLAYER SPECS)                  -->
+    <!-- ========================================================= -->
+    <section id="flagships" class="relative w-full max-w-6xl mx-auto px-6 py-20 z-10">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-pink/35 bg-pink/10 text-pink text-[11px] font-mono uppercase tracking-wider mb-3">
+                    <i class="fa-solid fa-code-branch text-[11px]"></i> Active R&D Pipeline
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black text-white">Next-Gen Flagships</h2>
+                <p class="text-zinc-300 text-sm md:text-base mt-2 max-w-xl">
+                    Autonomous systems, spatial UI compositors, and edge infrastructure currently being engineered in the studio.
+                </p>
+            </div>
+
+            <div class="font-mono text-xs text-zinc-400">
+                STATUS: <span class="text-emerald-400 font-bold">● ACTIVE PRODUCTION</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Flagship 01: NeuroGlass -->
+            <div class="tilt-card liquid-glass-master prismatic-rim glass-glare p-8 lg:p-10 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-14 h-14 bg-white/10 border border-white/25 rounded-2xl flex items-center justify-center backdrop-blur-3xl shadow-[inset_0_2px_1px_rgba(255,255,255,0.6)]">
+                            <i class="fa-solid fa-cubes text-2xl text-cyan"></i>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan bg-cyan/10 px-3.5 py-1.5 rounded-full border border-cyan/35 backdrop-blur-2xl">
+                            SPATIAL COMPOSITOR
+                        </span>
+                    </div>
+
+                    <h3 class="text-2xl sm:text-3xl font-black mb-3 text-white">01 // NeuroGlass</h3>
+                    <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+                        An experimental spatial UI compositor engineered for ambient agentic interfaces. Renders multi-layer refractive glass planes with hardware-accelerated GPU blur and realtime gaze tracking.
+                    </p>
+
+                    <div class="bg-black/50 border border-white/15 rounded-2xl p-4 font-mono text-xs text-zinc-300 mb-6 flex items-center justify-between backdrop-blur-2xl">
+                        <div>
+                            <span class="text-[10px] text-zinc-400 uppercase block mb-0.5">COMPOSITING KERNEL</span>
+                            <span class="text-white font-bold">Zero-VRAM WebGL Shaders</span>
+                        </div>
+                        <span class="text-cyan font-bold bg-cyan/10 border border-cyan/30 px-3 py-1 rounded-lg">120 FPS</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3 pt-6 border-t border-white/15 font-mono text-xs">
+                    <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/15 text-zinc-300">WebGL 2.0</span>
+                    <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/15 text-zinc-300">Spatial Audio</span>
+                    <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/15 text-zinc-300">GLSL</span>
+                </div>
+            </div>
+
+            <!-- Flagship 02: QuantumDrive -->
+            <div class="tilt-card liquid-glass-master prismatic-rim glass-glare p-8 lg:p-10 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-14 h-14 bg-white/10 border border-white/25 rounded-2xl flex items-center justify-center backdrop-blur-3xl shadow-[inset_0_2px_1px_rgba(255,255,255,0.6)]">
+                            <i class="fa-solid fa-bolt text-2xl text-pink"></i>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-pink bg-pink/10 px-3.5 py-1.5 rounded-full border border-pink/35 backdrop-blur-2xl">
+                            EDGE STREAM PROTOCOL
+                        </span>
+                    </div>
+
+                    <h3 class="text-2xl sm:text-3xl font-black mb-3 text-white">02 // QuantumDrive</h3>
+                    <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+                        A peer-to-peer data transport protocol featuring end-to-end client quantization, zero cloud server persistence, and ultra-high bandwidth stream compression over WebRTC datachannels.
+                    </p>
+
+                    <div class="bg-black/50 border border-white/15 rounded-2xl p-4 font-mono text-xs text-zinc-300 mb-6 flex items-center justify-between backdrop-blur-2xl">
+                        <div>
+                            <span class="text-[10px] text-zinc-400 uppercase block mb-0.5">BANDWIDTH COMPRESSION</span>
+                            <span class="text-white font-bold">84.2% Footprint Reduction</span>
+                        </div>
+                        <span class="text-pink font-bold bg-pink/10 border border-pink/30 px-3 py-1 rounded-lg">P2P MESH</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3 pt-6 border-t border-white/15 font-mono text-xs">
+                    <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/15 text-zinc-300">WebRTC</span>
+                    <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/15 text-zinc-300">Wasm Engine</span>
+                    <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/15 text-zinc-300">Rust</span>
+                </div>
+            </div>
+
+            <!-- Flagship 03: VaporSynth -->
+            <div class="tilt-card liquid-glass-master prismatic-rim glass-glare p-8 lg:p-10 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-14 h-14 bg-white/10 border border-white/25 rounded-2xl flex items-center justify-center backdrop-blur-3xl shadow-[inset_0_2px_1px_rgba(255,255,255,0.6)]">
+                            <i class="fa-solid fa-wave-square text-2xl text-accent"></i>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-accent bg-accent/10 px-3.5 py-1.5 rounded-full border border-accent/35 backdrop-blur-2xl">
+                            PROCEDURAL AUDIO
+                        </span>
+                    </div>
+
+                    <h3 class="text-2xl sm:text-3xl font-black mb-3 text-white">03 // VaporSynth</h3>
+                    <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+                        Pure Web Audio API digital signal processor with custom wavetable oscillators, harmonic overtones, dynamic biquad filtering, and spatial reverberation for tactile web haptics.
+                    </p>
+
+                    <div class="bg-black/50 border border-white/15 rounded-2xl p-4 font-mono text-xs text-zinc-300 mb-6 flex items-center justify-between backdrop-blur-2xl">
+                        <div>
+                            <span class="text-[10px] text-zinc-400 uppercase block mb-0.5">AUDIO LATENCY</span>
+                            <span class="text-white font-bold">&lt;1.8ms Native Buffer</span>
+                        </div>
+                        <span class="text-accent font-bold bg-accent/10 border border-accent/30 px-3 py-1 rounded-lg">WAVETABLE</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3 pt-6 border-t border-white/15 font-mono text-xs">
+                    <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/15 text-zinc-300">AudioContext</span>
+                    <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/15 text-zinc-300">Biquad Filter</span>
+                    <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/15 text-zinc-300">Convolver</span>
+                </div>
+            </div>
+
+            <!-- Flagship 04: HyperCore -->
+            <div class="tilt-card liquid-glass-master prismatic-rim glass-glare p-8 lg:p-10 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-14 h-14 bg-white/10 border border-white/25 rounded-2xl flex items-center justify-center backdrop-blur-3xl shadow-[inset_0_2px_1px_rgba(255,255,255,0.6)]">
+                            <i class="fa-solid fa-microchip text-2xl text-emerald-400"></i>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-400 bg-emerald-400/10 px-3.5 py-1.5 rounded-full border border-emerald-400/35 backdrop-blur-2xl">
+                            RUNTIME ARCHITECTURE
+                        </span>
+                    </div>
+
+                    <h3 class="text-2xl sm:text-3xl font-black mb-3 text-white">04 // HyperCore</h3>
+                    <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+                        Ultra-lightweight state synchronization framework built for progressive offline web apps. Features optimistic offline transactions, encrypted local storage, and zero framework overhead.
+                    </p>
+
+                    <div class="bg-black/50 border border-white/15 rounded-2xl p-4 font-mono text-xs text-zinc-300 mb-6 flex items-center justify-between backdrop-blur-2xl">
+                        <div>
+                            <span class="text-[10px] text-zinc-400 uppercase block mb-0.5">BUNDLE FOOTPRINT</span>
+                            <span class="text-white font-bold">3.2 KB Gzipped</span>
+                        </div>
+                        <span class="text-emerald-400 font-bold bg-emerald-400/10 border border-emerald-400/30 px-3 py-1 rounded-lg">ZERO DEP</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3 pt-6 border-t border-white/15 font-mono text-xs">
+                    <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/15 text-zinc-300">ServiceWorker</span>
+                    <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/15 text-zinc-300">IndexedDB</span>
+                    <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/15 text-zinc-300">PWA 3.0</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- ENGINEERING DISCIPLINES BENTO HUD                         -->
+    <!-- ========================================================= -->
+    <section id="disciplines" class="relative w-full max-w-6xl mx-auto px-6 py-20 z-10">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan/35 bg-cyan/10 text-cyan text-[11px] font-mono uppercase tracking-wider mb-3">
+                    <i class="fa-solid fa-layer-group text-[10px]"></i> Core Stack
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black text-white">Engineering Disciplines</h2>
+                <p class="text-zinc-300 text-sm md:text-base mt-2 max-w-xl">
+                    Disciplines we master to create digital experiences that set new standards in tactile performance.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <div class="tilt-card liquid-glass-master prismatic-rim glass-glare p-7 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-cyan mb-5">
+                        <i class="fa-solid fa-shapes text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Spatial Glass Interfaces</h4>
+                    <p class="text-zinc-300 text-sm leading-relaxed">Multi-layer dynamic refractive materials, continuous chromatic edge rims, and responsive specular glares.</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/10 text-xs font-mono text-cyan">VisionOS Specs</div>
+            </div>
+
+            <div class="tilt-card liquid-glass-master prismatic-rim glass-glare p-7 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-pink mb-5">
+                        <i class="fa-solid fa-network-wired text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Zero-Server Architectures</h4>
+                    <p class="text-zinc-300 text-sm leading-relaxed">Client-side quantization, in-browser compilation, and local-first data processing that guarantees privacy.</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/10 text-xs font-mono text-pink">100% Privacy</div>
+            </div>
+
+            <div class="tilt-card liquid-glass-master prismatic-rim glass-glare p-7 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-accent mb-5">
+                        <i class="fa-solid fa-sliders text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Synthesized Web Haptics</h4>
+                    <p class="text-zinc-300 text-sm leading-relaxed">Micro-frequency audio oscillators that give physical weight, resonance, and tactile snap to glass elements.</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/10 text-xs font-mono text-accent">Web Audio DSP</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- DIRECT STUDIO INQUIRIES & TRANSMISSION                    -->
+    <!-- ========================================================= -->
+    <section id="contact" class="relative w-full max-w-6xl mx-auto px-6 py-20 z-10">
+        <div class="liquid-glass-master prismatic-rim glass-glare p-8 lg:p-14 shadow-2xl relative overflow-hidden">
+            <div class="absolute -top-32 -right-32 w-96 h-96 bg-cyan/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-white/10 border border-white/25 rounded-2xl flex items-center justify-center mb-6 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.6)] backdrop-blur-3xl">
+                            <i class="fa-solid fa-paper-plane text-2xl text-cyan"></i>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan bg-cyan/10 px-4 py-1.5 rounded-full border border-cyan/35 inline-block mb-4 backdrop-blur-md">
+                            Direct Studio Inquiries
+                        </span>
+                        <h2 class="text-3xl md:text-5xl font-black text-white mb-4">
+                            Let's build something <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan via-pink to-accent">unforgettable.</span>
+                        </h2>
+                        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed max-w-md mb-8 font-normal">
+                            Got a high-impact software vision, custom utility, or studio collaboration? Send a message directly to get started.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col gap-3 font-mono text-xs text-zinc-300">
+                        <a href="mailto:contact@cyberslayercorpz.dev" onclick="playGlassSound(600)" class="flex items-center gap-3 hover:text-white transition">
+                            <div class="w-10 h-10 bg-white/10 border border-white/20 rounded-xl flex items-center justify-center text-cyan backdrop-blur-3xl shadow-sm">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <span>contact@cyberslayercorpz.dev</span>
+                        </a>
+                        <a href="https://instagram.com/cyberslayercorpz" target="_blank" onclick="playGlassSound(640)" class="flex items-center gap-3 hover:text-white transition">
+                            <div class="w-10 h-10 bg-white/10 border border-white/20 rounded-xl flex items-center justify-center text-pink backdrop-blur-3xl shadow-sm">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <span>@cyberslayercorpz</span>
+                        </a>
+                    </div>
+                </div>
+
+                <form id="contactForm" onsubmit="handleContactSubmit(event)" class="flex flex-col gap-4 bg-black/50 border border-white/20 p-6 sm:p-8 rounded-3xl backdrop-blur-3xl shadow-[inset_0_3px_6px_rgba(0,0,0,0.6)]">
+                    <input type="hidden" name="access_key" value="865e56af-935b-4a9e-a6e5-ae7bad6ce9c1">
+                    <input type="hidden" name="subject" value="New Inquiry | CyberSlayerCorpz Studio Lead">
+                    <input type="hidden" name="from_name" value="CyberSlayerCorpz Studio">
+
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[11px] font-bold uppercase tracking-wider text-zinc-400 font-mono">Your Name / Organization</label>
+                        <input type="text" name="name" required placeholder="Name or Team" class="bg-white/5 border border-white/20 text-white font-mono text-sm px-4 py-3 rounded-xl outline-none focus:border-cyan transition backdrop-blur-3xl shadow-inner">
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[11px] font-bold uppercase tracking-wider text-zinc-400 font-mono">Email Address</label>
+                        <input type="email" name="email" required placeholder="you@company.com" class="bg-white/5 border border-white/20 text-white font-mono text-sm px-4 py-3 rounded-xl outline-none focus:border-cyan transition backdrop-blur-3xl shadow-inner">
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[11px] font-bold uppercase tracking-wider text-zinc-400 font-mono">Project Vision</label>
+                        <textarea name="message" required rows="4" placeholder="Describe the software build, interface concept, or studio collaboration..." class="bg-white/5 border border-white/20 text-white font-mono text-sm p-4 rounded-xl outline-none focus:border-cyan transition backdrop-blur-3xl resize-none shadow-inner"></textarea>
+                    </div>
+                    <button type="submit" id="contactSubmitBtn" onclick="playGlassSound(980)" class="anim-btn bg-cyan text-black font-bold text-xs font-mono uppercase tracking-wider px-6 py-3.5 rounded-xl hover:bg-white transition shadow-[0_0_35px_rgba(0,240,255,0.45)] mt-1">
+                        Transmit Transmission <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- FOOTER                                                    -->
+    <!-- ========================================================= -->
+    <footer class="mt-auto py-16 px-6 border-t border-white/15 relative z-20 bg-deep/85 backdrop-blur-3xl">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-8 h-8 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-3xl shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.5)]">
+                        <svg class="w-4 h-4" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g stroke-width="20" stroke-linecap="square">
+                                <polygon points="250,110 360,180 360,320 250,390 140,320 140,180" stroke="#FFFFFF"/>
+                                <path d="M 250 110 V 250 M 360 180 L 250 250 M 140 180 L 250 250" stroke="#00F0FF" stroke-width="12"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="font-bold text-lg tracking-tight text-white">CyberSlayer<span class="text-zinc-400">Corpz</span></span>
+                </div>
+                <p class="text-xs text-zinc-400 mb-1.5">© 2026 CyberSlayerCorpz. All rights reserved.</p>
+                <p class="text-xs text-zinc-400">
+                    Made with ❤️ by <span class="text-sig font-bold">tanzeemrockz</span> | 
+                    Operator: <a href="https://tanzeemrockz.github.io" target="_blank" class="text-white hover:text-cyan underline underline-offset-2 transition">CyberSlayerCorpz</a>
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3 text-xs font-semibold text-zinc-300">
+                <a href="https://instagram.com/cyberslayercorpz" target="_blank" class="hover:text-white transition flex items-center gap-1.5"><i class="fa-brands fa-instagram"></i> @cyberslayercorpz</a>
+                <a href="https://github.com/tanzeemrockz" target="_blank" class="hover:text-white transition flex items-center gap-1.5"><i class="fa-brands fa-github"></i> GitHub Profile</a>
+                <a href="mailto:contact@cyberslayercorpz.dev" class="hover:text-white transition flex items-center gap-1.5"><i class="fa-solid fa-envelope"></i> Contact Support</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ========================================================= -->
+    <!-- COMMAND PALETTE (CMD+K)                                   -->
+    <!-- ========================================================= -->
+    <div id="cmdPalette" class="fixed inset-0 bg-black/85 backdrop-blur-3xl z-50 hidden items-center justify-center p-6" onclick="closeCmdPaletteOnBackdrop(event)">
+        <div class="liquid-glass-master prismatic-rim w-full max-w-xl p-6 sm:p-8 shadow-2xl flex flex-col gap-5 relative" onclick="event.stopPropagation()">
+            <div class="flex items-center justify-between border-b border-white/15 pb-4">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-terminal text-cyan text-lg"></i>
+                    <span class="font-mono font-bold text-white text-sm">Studio Quick Navigator</span>
+                </div>
+                <button onclick="toggleCmdPalette(); playGlassSound(500);" class="text-zinc-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <input type="text" id="cmdInput" placeholder="Search R&D builds, lab tools, or studio links..." class="bg-white/10 border border-white/20 text-white font-mono text-sm px-4 py-3 rounded-xl outline-none focus:border-cyan backdrop-blur-3xl shadow-inner">
+
+            <div class="flex flex-col gap-2 font-mono text-xs max-h-60 overflow-y-auto hide-scrollbar" id="cmdResults">
+                <a href="#lab" onclick="toggleCmdPalette(); playGlassSound(800);" class="p-3 bg-white/5 hover:bg-white/10 rounded-xl flex items-center justify-between transition text-zinc-200 hover:text-white border border-white/5">
+                    <span>🔬 Open Interactive Spatial Lab</span>
+                    <span class="text-zinc-400">#lab</span>
+                </a>
+                <a href="#flagships" onclick="toggleCmdPalette(); playGlassSound(800);" class="p-3 bg-white/5 hover:bg-white/10 rounded-xl flex items-center justify-between transition text-zinc-200 hover:text-white border border-white/5">
+                    <span>⚡ Explore 4 Active R&D Flagships</span>
+                    <span class="text-zinc-400">#flagships</span>
+                </a>
+                <a href="#disciplines" onclick="toggleCmdPalette(); playGlassSound(800);" class="p-3 bg-white/5 hover:bg-white/10 rounded-xl flex items-center justify-between transition text-zinc-200 hover:text-white border border-white/5">
+                    <span>📐 Core Engineering Disciplines</span>
+                    <span class="text-zinc-400">#disciplines</span>
+                </a>
+                <a href="#contact" onclick="toggleCmdPalette(); playGlassSound(800);" class="p-3 bg-white/5 hover:bg-white/10 rounded-xl flex items-center justify-between transition text-zinc-200 hover:text-white border border-white/5">
+                    <span>✉️ Direct Studio Dispatch</span>
+                    <span class="text-zinc-400">#contact</span>
+                </a>
+                <a href="https://github.com/tanzeemrockz" target="_blank" onclick="playGlassSound(800)" class="p-3 bg-white/5 hover:bg-white/10 rounded-xl flex items-center justify-between transition text-zinc-200 hover:text-white border border-white/5">
+                    <span>🐙 GitHub Profile</span>
+                    <span class="text-zinc-400">@tanzeemrockz</span>
+                </a>
+            </div>
+            <div class="text-[10px] font-mono text-zinc-500 text-center">Press ESC or click outside to close</div>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- JAVASCRIPT: SPATIAL CANVAS, AUDIO & INTERACTIVE ENGINES   -->
+    <!-- ========================================================= -->
+    <script>
+        // 1. Synthesized Spatial Glass Audio Haptics (Web Audio API 2.0)
+        let audioCtx = null;
+        let isSoundMuted = false;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function bounceEqualizer() {
+            const bars = document.querySelectorAll('.eq-bar');
+            bars.forEach(b => {
+                const randH = Math.floor(Math.random() * 10) + 4;
+                b.style.height = `${randH}px`;
+                setTimeout(() => b.style.height = '', 250);
+            });
+        }
+
+        function playGlassSound(freq = 800, type = 'chime') {
+            if (isSoundMuted) return;
+            try {
+                initAudio();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+                const now = audioCtx.currentTime;
+                bounceEqualizer();
+
+                if (type === 'droplet') {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, now);
+                    osc.frequency.exponentialRampToValueAtTime(freq * 1.6, now + 0.07);
+
+                    gain.gain.setValueAtTime(0.06, now);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.08);
+
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start(now);
+                    osc.stop(now + 0.085);
+                    return;
+                }
+
+                // Crystalline fundamental + harmonic overtone
+                const osc1 = audioCtx.createOscillator();
+                const osc2 = audioCtx.createOscillator();
+                const gain1 = audioCtx.createGain();
+                const gain2 = audioCtx.createGain();
+
+                osc1.type = 'sine';
+                osc1.frequency.setValueAtTime(freq, now);
+                osc1.frequency.exponentialRampToValueAtTime(freq * 1.06, now + 0.04);
+
+                osc2.type = 'triangle';
+                osc2.frequency.setValueAtTime(freq * 2.76, now);
+
+                gain1.gain.setValueAtTime(0.04, now);
+                gain1.gain.exponentialRampToValueAtTime(0.0001, now + 0.09);
+
+                gain2.gain.setValueAtTime(0.015, now);
+                gain2.gain.exponentialRampToValueAtTime(0.0001, now + 0.06);
+
+                osc1.connect(gain1);
+                osc2.connect(gain2);
+                gain1.connect(audioCtx.destination);
+                gain2.connect(audioCtx.destination);
+
+                osc1.start(now);
+                osc2.start(now);
+                osc1.stop(now + 0.095);
+                osc2.stop(now + 0.065);
+            } catch (err) {}
+        }
+
+        function toggleSoundHaptics() {
+            isSoundMuted = !isSoundMuted;
+            const btn = document.getElementById('soundToggleBtn');
+            const eq = document.getElementById('eqVisualizer');
+            if (btn) {
+                if (isSoundMuted) {
+                    btn.classList.add('opacity-40');
+                    if (eq) eq.classList.add('grayscale');
+                } else {
+                    btn.classList.remove('opacity-40');
+                    if (eq) eq.classList.remove('grayscale');
+                    playGlassSound(1200, 'chime');
+                }
+            }
+        }
+
+        // Apple VisionOS Material Switcher
+        function setGlassMaterial(mode) {
+            document.querySelectorAll('.mat-btn').forEach(b => {
+                b.classList.remove('bg-white/20', 'text-white', 'font-bold');
+                b.classList.add('text-zinc-400');
+            });
+            const root = document.documentElement;
+            const body = document.body;
+            body.classList.remove('mat-clear', 'mat-prism', 'mat-obsidian');
+
+            if (mode === 'clear') {
+                const btn = document.getElementById('btnMatClear');
+                if (btn) btn.classList.add('bg-white/20', 'text-white', 'font-bold');
+                body.classList.add('mat-clear');
+                root.style.setProperty('--glass-blur', '50px');
+                root.style.setProperty('--glass-saturate', '210%');
+                root.style.setProperty('--glass-brightness', '115%');
+                playGlassSound(920, 'chime');
+            } else if (mode === 'prism') {
+                const btn = document.getElementById('btnMatPrism');
+                if (btn) btn.classList.add('bg-white/20', 'text-white', 'font-bold');
+                body.classList.add('mat-prism');
+                root.style.setProperty('--glass-blur', '60px');
+                root.style.setProperty('--glass-saturate', '270%');
+                root.style.setProperty('--glass-brightness', '125%');
+                playGlassSound(1150, 'chime');
+            } else if (mode === 'obsidian') {
+                const btn = document.getElementById('btnMatObsidian');
+                if (btn) btn.classList.add('bg-white/20', 'text-white', 'font-bold');
+                body.classList.add('mat-obsidian');
+                root.style.setProperty('--glass-blur', '40px');
+                root.style.setProperty('--glass-saturate', '160%');
+                root.style.setProperty('--glass-brightness', '95%');
+                playGlassSound(680, 'chime');
+            }
+        }
+
+        // Global Liquid Ripple on Click
+        document.addEventListener('click', (e) => {
+            const targetGlass = e.target.closest('.liquid-glass-master, .tilt-card, .apple-nav-capsule, .anim-btn');
+            if (!targetGlass) return;
+
+            const rect = targetGlass.getBoundingClientRect();
+            const ripple = document.createElement('span');
+            ripple.className = 'liquid-ripple-wave';
+            ripple.style.left = `${e.clientX - rect.left}px`;
+            ripple.style.top = `${e.clientY - rect.top}px`;
+            targetGlass.appendChild(ripple);
+
+            playGlassSound(1100, 'droplet');
+
+            setTimeout(() => {
+                ripple.remove();
+            }, 700);
+        });
+
+        // 2. Glare Tracking across glass cards
+        window.addEventListener('mousemove', (e) => {
+            document.querySelectorAll('.glass-glare').forEach(card => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+            });
+        });
+
+        // 3. 3D Tilt Card Physics with Perspective Depth
+        document.querySelectorAll('.tilt-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                const rotateX = (-y / rect.height) * 8;
+                const rotateY = (x / rect.width) * 8;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.012, 1.012, 1.012)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            });
+        });
+
+        // 4. Hero Particle Canvas
+        const canvas = document.getElementById('hero-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            const count = Math.min(45, Math.floor((canvas.width * canvas.height) / 24000));
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.35,
+                    vy: (Math.random() - 0.5) * 0.35,
+                    size: Math.random() * 1.6 + 1
+                });
+            }
+        }
+
+        window.addEventListener('resize', initCanvas);
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = '#A1A1AA';
+                ctx.fill();
+
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                    if (dist < 85) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = `rgba(0, 240, 255, ${0.12 * (1 - dist / 85)})`;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateCanvas);
+        }
+        initCanvas();
+        animateCanvas();
+
+        // 5. Interactive Spatial Lab Canvas
+        const labCanvas = document.getElementById('lab-canvas');
+        const labCtx = labCanvas.getContext('2d');
+        let labNodes = [];
+        let labMouse = { x: -1000, y: -1000, isDown: false };
+
+        function initLab() {
+            const rect = labCanvas.parentElement.getBoundingClientRect();
+            labCanvas.width = rect.width;
+            labCanvas.height = rect.height;
+            labNodes = [];
+            for (let i = 0; i < 60; i++) {
+                labNodes.push({
+                    x: Math.random() * labCanvas.width,
+                    y: Math.random() * labCanvas.height,
+                    vx: (Math.random() - 0.5) * 1.2,
+                    vy: (Math.random() - 0.5) * 1.2,
+                    baseSize: Math.random() * 2 + 1.5,
+                    hue: Math.random() > 0.5 ? 185 : 325
+                });
+            }
+        }
+
+        labCanvas.addEventListener('mousemove', (e) => {
+            const rect = labCanvas.getBoundingClientRect();
+            labMouse.x = e.clientX - rect.left;
+            labMouse.y = e.clientY - rect.top;
+        });
+
+        labCanvas.addEventListener('mouseleave', () => {
+            labMouse.x = -1000;
+            labMouse.y = -1000;
+        });
+
+        labCanvas.addEventListener('mousedown', (e) => {
+            labMouse.isDown = true;
+            playGlassSound(950, 'droplet');
+            spawnLabShockwave(e.clientX);
+        });
+
+        labCanvas.addEventListener('mouseup', () => {
+            labMouse.isDown = false;
+        });
+
+        function resetLabParticles() {
+            initLab();
+        }
+
+        function spawnLabShockwave(xPos) {
+            labNodes.forEach(n => {
+                n.vx += (Math.random() - 0.5) * 4;
+                n.vy += (Math.random() - 0.5) * 4;
+            });
+        }
+
+        function animateLab() {
+            labCtx.clearRect(0, 0, labCanvas.width, labCanvas.height);
+
+            for (let i = 0; i < labNodes.length; i++) {
+                const n = labNodes[i];
+
+                // Mouse gravity attraction / repulsion
+                const dx = labMouse.x - n.x;
+                const dy = labMouse.y - n.y;
+                const dist = Math.hypot(dx, dy);
+
+                if (dist < 140) {
+                    const force = (140 - dist) / 140;
+                    if (labMouse.isDown) {
+                        n.vx += (dx / dist) * force * 1.5;
+                        n.vy += (dy / dist) * force * 1.5;
+                    } else {
+                        n.vx -= (dx / dist) * force * 0.8;
+                        n.vy -= (dy / dist) * force * 0.8;
+                    }
+                }
+
+                n.x += n.vx;
+                n.y += n.vy;
+                n.vx *= 0.98;
+                n.vy *= 0.98;
+
+                if (n.x < 0) { n.x = 0; n.vx *= -1; }
+                if (n.x > labCanvas.width) { n.x = labCanvas.width; n.vx *= -1; }
+                if (n.y < 0) { n.y = 0; n.vy *= -1; }
+                if (n.y > labCanvas.height) { n.y = labCanvas.height; n.vy *= -1; }
+
+                labCtx.beginPath();
+                labCtx.arc(n.x, n.y, n.baseSize, 0, Math.PI * 2);
+                labCtx.fillStyle = n.hue === 185 ? '#00F0FF' : '#FF007F';
+                labCtx.shadowColor = n.hue === 185 ? 'rgba(0,240,255,0.6)' : 'rgba(255,0,127,0.6)';
+                labCtx.shadowBlur = 8;
+                labCtx.fill();
+                labCtx.shadowBlur = 0;
+
+                for (let j = i + 1; j < labNodes.length; j++) {
+                    const n2 = labNodes[j];
+                    const d = Math.hypot(n.x - n2.x, n.y - n2.y);
+                    if (d < 75) {
+                        labCtx.beginPath();
+                        labCtx.moveTo(n.x, n.y);
+                        labCtx.lineTo(n2.x, n2.y);
+                        labCtx.strokeStyle = `rgba(255, 255, 255, ${0.15 * (1 - d / 75)})`;
+                        labCtx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animateLab);
+        }
+
+        window.addEventListener('resize', initLab);
+        initLab();
+        animateLab();
+
+        // 6. Copy Direct Email
+        function copyDirectEmail() {
+            navigator.clipboard.writeText('contact@cyberslayercorpz.dev').then(() => {
+                const btn = document.getElementById('copyEmailBtn');
+                const label = document.getElementById('copyEmailText');
+                label.innerText = 'Copied to Clipboard!';
+                btn.classList.add('border-cyan', 'text-cyan');
+                setTimeout(() => {
+                    label.innerText = 'Copy Contact Email';
+                    btn.classList.remove('border-cyan', 'text-cyan');
+                }, 2500);
+            });
+        }
+
+        // 7. Mobile Navigation & Cmd+K Quick Palette
+        function toggleMobileNav() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function toggleCmdPalette() {
+            const palette = document.getElementById('cmdPalette');
+            const isHidden = palette.classList.contains('hidden');
+            if (isHidden) {
+                palette.classList.remove('hidden');
+                palette.classList.add('flex');
+                document.getElementById('cmdInput').focus();
+            } else {
+                palette.classList.add('hidden');
+                palette.classList.remove('flex');
+            }
+        }
+
+        function closeCmdPaletteOnBackdrop(e) {
+            if (e.target.id === 'cmdPalette') toggleCmdPalette();
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+                e.preventDefault();
+                toggleCmdPalette();
+            }
+            if (e.key === 'Escape') {
+                document.getElementById('cmdPalette').classList.add('hidden');
+                document.getElementById('cmdPalette').classList.remove('flex');
+            }
+        });
+
+        document.getElementById('cmdInput').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            document.querySelectorAll('#cmdResults a').forEach(link => {
+                const text = link.textContent.toLowerCase();
+                link.style.display = text.includes(query) ? 'flex' : 'none';
+            });
+        });
+
+        // 8. Contact Dispatch (Web3Forms)
+        async function handleContactSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('contactSubmitBtn');
+            const form = document.getElementById('contactForm');
+
+            btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin mr-2"></i> Transmitting...';
+            btn.disabled = true;
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.json();
+
+                if (data.success) {
+                    btn.innerHTML = '<i class="fa-solid fa-check mr-2"></i> Transmission Received!';
+                    btn.classList.remove('bg-cyan');
+                    btn.classList.add('bg-emerald-400');
+                    form.reset();
+                    playGlassSound(1200);
+                } else {
+                    btn.innerHTML = 'Transmission Failed';
+                }
+            } catch (err) {
+                btn.innerHTML = 'Network Error';
+            }
+
+            setTimeout(() => {
+                btn.innerHTML = 'Transmit Transmission <i class="fa-solid fa-arrow-right ml-2"></i>';
+                btn.classList.remove('bg-emerald-400');
+                btn.classList.add('bg-cyan');
+                btn.disabled = false;
+            }, 3500);
+        }
+    </script>
+</body>
+</html>

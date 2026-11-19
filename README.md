@@ -1,44 +1,36 @@
-# Metropolis — tanzeem.xyz
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Personal portfolio, systems engineering lab, and hardware showcase of **Mohamed Tanzeem I** ([@tanzeemrockz](https://github.com/tanzeemrockz)), Founder of **CyberSlayerCorpz**.
+## Getting Started
 
-![Metropolis Preview](img/preview.png)
-
-## Tech Stack & Architecture
-
-- **Core**: Semantic HTML5, CSS3, Vanilla JavaScript (ESNext).
-- **Styling**: Tailwind CSS CDN with custom dark palette tokens:
-  - `--color-green`: `#27F5BB` (Neon Mint)
-  - `--color-blue`: `#274DF5` (Electric Blue)
-  - `--color-orange`: `#F56827` (Kinetic Orange)
-  - `--color-yellow`: `#F5CF27` (Telemetry Speed Yellow)
-- **Typography**: Google Sans, Google Sans Text, Noto Sans Arabic, and JetBrains Mono.
-- **Deployment**: Optimized for Vercel with zero-configuration static serving (`vercel.json`).
-
-## Structure
-
-```
-tanzeem.xyz/
-├── index.html       # Flagship portfolio page
-├── style.css        # Custom styles, glassmorphism, glowing telemetry, and fonts
-├── main.js          # Interactive quote switcher, tech filter, toast & F1 DRS trigger
-├── favicon.svg      # Geometric CyberSlayer shield badge
-├── vercel.json      # Security headers & clean URLs configuration
-├── img/             # Photography, banner backgrounds, and preview artwork
-└── uses/
-    └── index.html   # Living setup inventory: laptops, vintage testbench, and AI stack
-```
-
-## Local Development
-
-Open `index.html` directly in any web browser, or run a local static server:
+First, run the development server:
 
 ```bash
-npx serve .
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Operator
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- **Founder**: Mohamed Tanzeem I ([@tanzeemrockz](https://github.com/tanzeemrockz))
-- **Organization**: [CyberSlayerCorpz](https://cyberslayercorpz.dev)
-- **Direct Email**: `tanzeemrockz@cyberslayercorpz.dev`
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
