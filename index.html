@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="description" content="Mohamed Tanzeem I (@tanzeemrockz) — CyberSlayerCorpz founder, systems builder, F1 fanatic, and vintage silicon hacker.">
-  <meta name="theme-color" content="#07080c">
-  <title>Mohamed Tanzeem I — Metropolis Paddock &amp; Hardware Lab</title>
+  <meta name="description" content="Mohamed Tanzeem I — Founder at CyberSlayerCorpz. Systems builder, deterministic AI engineer, and Formula 1 enthusiast.">
+  <meta name="theme-color" content="#070708">
+  <title>Mohamed Tanzeem I — CyberSlayerCorpz | tanzeem.xyz</title>
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
@@ -18,687 +18,545 @@
       theme: {
         extend: {
           colors: {
-            customGreen: '#27F5BB',
-            customBlue: '#274DF5',
-            customOrange: '#F56827',
-            customYellow: '#F5CF27',
-            customRed: '#FF3366'
+            brandOrange: '#ff8739',
+            brandBlue: '#8ecbff',
+            brandGreen: '#27F5BB',
+            brandYellow: '#F5CF27',
+            bgDark: '#070708'
           }
         }
       }
     };
   </script>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-customGreen selection:text-black crt-overlay">
+<body class="bg-[#070708] text-[#f5f5f5] min-h-screen flex flex-col justify-between selection:bg-[#91caff] selection:text-[#08080a]">
 
-  <!-- Top Telemetry Paddock Header -->
-  <header class="sticky top-0 z-50 bg-[#07080c]/90 backdrop-blur-xl border-b border-white/10 px-4 py-2.5">
-    <div class="max-w-6xl mx-auto flex items-center justify-between gap-3">
-      
-      <!-- Brand & Telemetry Ident -->
-      <div class="flex items-center gap-3">
-        <a href="#driver" class="flex items-center gap-2 group">
-          <span class="w-8 h-8 rounded bg-customGreen/15 border border-customGreen text-customGreen flex items-center justify-center font-black text-sm font-mono group-hover:scale-105 transition-transform">
-            #33
-          </span>
-          <div>
-            <div class="flex items-center gap-1.5">
-              <span class="font-bold text-sm tracking-wide text-white group-hover:text-customGreen transition">
-                tanzeem.xyz
-              </span>
-              <span class="text-[10px] px-1.5 py-0.2 rounded bg-customGreen/20 text-customGreen font-mono font-bold">
-                PIT WALL
-              </span>
-            </div>
-            <span class="text-[10px] text-zinc-500 font-mono hidden sm:block">CYBERSLAYER CORPS • PADDOCK CONTROL</span>
-          </div>
-        </a>
+  <!-- Floating Pill Header (CyberSlayerCorpz Studio Signature) -->
+  <header class="studio-header">
+    <a href="#hero" class="flex items-center gap-2.5">
+      <div class="w-6 h-6 rounded-md bg-gradient-to-br from-brandOrange to-orange-600 flex items-center justify-center text-black font-black text-xs">
+        ⚡
       </div>
-
-      <!-- Live Clock & Audio SFX Toggle -->
-      <div class="flex items-center gap-2.5 sm:gap-4">
-        <div class="hidden md:flex items-center gap-2 font-mono text-xs text-zinc-400 bg-black/60 px-3 py-1 rounded border border-white/10">
-          <span class="w-2 h-2 rounded-full bg-customGreen pulse-badge"></span>
-          <span id="live-ist-clock">21:15:00 IST</span>
-        </div>
-
-        <button id="audio-toggle-btn" class="cyber-btn px-2.5 py-1 rounded bg-zinc-800 text-zinc-400 font-mono text-xs font-bold border border-white/10 flex items-center gap-1">
-          🔇 SFX MUTED
-        </button>
-
-        <a href="#terminal" class="cyber-btn px-3 py-1 rounded bg-customGreen/15 text-customGreen border border-customGreen/40 font-mono text-xs font-bold hover:bg-customGreen hover:text-black transition">
-          CLI [ _ ]
-        </a>
+      <div class="flex items-center gap-1.5">
+        <span class="text-sm font-semibold tracking-tight text-white">tanzeem.xyz</span>
+        <span class="text-white/30 text-xs">/</span>
+        <span class="text-xs text-white/60 font-normal">CyberSlayerCorpz</span>
       </div>
+    </a>
+
+    <!-- Center Nav Pills -->
+    <nav class="studio-nav hidden md:flex">
+      <a href="#about">About</a>
+      <a href="#projects">Work</a>
+      <a href="#interactive-lab">Lab &amp; TV</a>
+      <a href="#uses">Uses</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="flex items-center gap-2">
+      <button id="studio-audio-btn" class="hidden sm:inline-flex px-2.5 py-1 text-xs text-white/60 hover:text-white rounded-full border border-white/10 hover:border-white/20 transition">
+        🔇 Muted
+      </button>
+      <button data-copy-email class="pill-btn-primary text-xs py-1.5 px-3.5">
+        <span>Connect</span>
+        <span class="text-xs">↗</span>
+      </button>
     </div>
   </header>
 
-  <!-- Main Grid Content -->
-  <main class="w-full max-w-6xl mx-auto px-4 py-6 sm:py-10 space-y-8">
+  <!-- Main Experience -->
+  <main class="w-full max-w-5xl mx-auto px-5 pt-28 pb-16 space-y-20">
 
-    <!-- Hero Driver & Founder Card (F1 Broadcast Overlay Style) -->
-    <section id="driver" class="cyber-panel rounded-xl p-6 sm:p-8 space-y-6">
+    <!-- Hero Section -->
+    <section id="hero" class="relative flex flex-col items-center justify-center text-center pt-8 pb-10 space-y-6">
       
-      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
-        <div class="flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-customGreen animate-ping"></span>
-          <span class="font-mono text-xs font-bold uppercase tracking-wider text-customGreen">
-            DRIVER PROFILE • FIA SUPER LICENSE: ACTIVE
-          </span>
-        </div>
-        <div class="flex items-center gap-2 font-mono text-xs text-zinc-400">
-          <span>TEAM: <strong class="text-white">CyberSlayerCorpz</strong></span>
-          <span>•</span>
-          <span>LOCATION: <strong class="text-customGreen">Chennai, IN</strong></span>
-        </div>
+      <!-- Ambient Glow Behind Copy -->
+      <div class="absolute inset-0 -z-10 pointer-events-none flex items-center justify-center">
+        <div class="w-[500px] h-[300px] bg-brandOrange/10 rounded-full blur-[100px]"></div>
+        <div class="w-[400px] h-[250px] bg-brandBlue/10 rounded-full blur-[90px] translate-x-24"></div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
-        <!-- Avatar / Racing Ident -->
-        <div class="space-y-4">
-          <div class="relative rounded-xl overflow-hidden border-2 border-customGreen/40 bg-zinc-950 p-2 text-center group">
-            <img src="./img/banner.jpg" alt="Metropolis Banner" class="w-full h-44 object-cover rounded-lg brightness-90 group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute bottom-3 left-4 right-4 bg-black/85 backdrop-blur-md p-2.5 rounded border border-white/15 text-left flex items-center justify-between">
-              <div>
-                <span class="text-[10px] font-mono text-customGreen uppercase font-bold block">Lead Engineer &amp; Founder</span>
-                <span class="text-sm font-black text-white">@tanzeemrockz</span>
-              </div>
-              <span class="text-xl font-black font-mono text-customYellow">#33</span>
-            </div>
-          </div>
+      <!-- Founder Eyebrow Badge -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 text-xs text-white/70 backdrop-blur-md">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        <span>Mohamed Tanzeem I</span>
+        <span class="text-white/30">•</span>
+        <span class="text-brandOrange font-medium">Founder @ CyberSlayerCorpz</span>
+      </div>
 
-          <div class="flex gap-2">
-            <button data-copy-email class="cyber-btn flex-1 py-2 rounded bg-customOrange text-white font-mono font-bold text-xs hover:bg-orange-600 transition flex items-center justify-center gap-1.5">
-              <span>📋 COPY EMAIL</span>
-            </button>
-            <a href="https://tanzeemrockz.linklee.in/" target="_blank" rel="noopener noreferrer" class="cyber-btn flex-1 py-2 rounded bg-white/10 text-white font-mono font-bold text-xs hover:bg-white/20 transition text-center">
-              BOOK LINKLEE ↗
-            </a>
-          </div>
-        </div>
-
-        <!-- Headline & Bio -->
-        <div class="lg:col-span-2 space-y-4">
-          <div>
-            <span class="text-xs font-mono text-customYellow uppercase font-bold tracking-widest block mb-1">
-              Mohamed Tanzeem I
+      <!-- Signature Headline with Figma Selection Frame -->
+      <h1 class="text-3xl sm:text-5xl lg:text-[4rem] font-semibold tracking-[-0.04em] text-white leading-[1.15] max-w-4xl">
+        I engineer software &amp; systems that{" "}
+        <span class="hero-selection-box">
+          <span class="text-white font-bold">slay</span>
+          <span class="hero-selection-frame">
+            <span class="handle handle-tl"></span>
+            <span class="handle handle-tr"></span>
+            <span class="handle handle-bl"></span>
+            <span class="handle handle-br"></span>
+            <span class="selection-label">FOUNDER</span>
+            <span class="selection-cursor">
+              <svg class="cursor-arrow" viewBox="0 0 16 18" fill="none">
+                <path d="M0 0L16 6.5L8.5 9.5L5.5 17L0 0Z" fill="#ff8739"/>
+              </svg>
+              <span class="cursor-name">tanzeemrockz</span>
             </span>
-            <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
-              Pushing Silicon &amp; Deterministic Systems to the Redline.
-            </h1>
-          </div>
-
-          <p class="text-sm sm:text-base text-zinc-300 leading-relaxed font-medium">
-            Founder of <strong class="text-customGreen underline decoration-customGreen/40 underline-offset-4">CyberSlayerCorpz</strong>. When I'm not writing zero-hallucination cognitive token architectures (<strong class="text-white">DQM</strong>) or offline in-browser WASM tools (<strong class="text-white">AssetSlayer</strong>), I'm studying Formula 1 race telemetry and hacking ancient hardware from 2009.
-          </p>
-
-          <!-- Pit Radio Comms Box -->
-          <div class="p-3.5 rounded-lg bg-black/60 border border-white/10 font-mono text-xs space-y-1">
-            <div class="flex items-center justify-between text-[11px] text-zinc-400">
-              <span class="text-customGreen font-bold">📻 TEAM RADIO COMM</span>
-              <span>PIT WALL → CAR 33</span>
-            </div>
-            <p class="text-zinc-200 italic">
-              "Tanzeem, execute Plan DQM. You have DRS available on the main straight. Push, push now!"
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Formula 1 Telemetry HUD & Interactive DRS Wing -->
-    <section id="f1-telemetry" class="cyber-panel rounded-xl p-6 space-y-5 f1-hazard-stripes">
-      <div class="flex flex-wrap items-center justify-between gap-3 bg-black/70 p-3 rounded-lg border border-customYellow/30">
-        <div class="flex items-center gap-3">
-          <span class="text-2xl">🏎</span>
-          <div>
-            <h2 class="text-lg font-black text-white tracking-wide">Paddock Live Telemetry</h2>
-            <p class="text-[11px] font-mono text-zinc-400">Max Verstappen (#1, Red Bull) • Mercedes-AMG Petronas F1 Team</p>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <span id="drs-status-badge" class="px-2 py-0.5 rounded bg-customGreen/20 text-customGreen font-mono font-bold text-xs border border-customGreen/40">
-            DRS AVAILABLE
           </span>
-          <button id="drs-trigger" class="cyber-btn px-4 py-2 rounded bg-customYellow text-black font-black font-mono text-xs uppercase tracking-wider hover:bg-yellow-400 shadow-lg shadow-customYellow/20">
-            ⚡ Push To Pass / Open DRS
-          </button>
-        </div>
+        </span>{" "}
+        the others.
+      </h1>
+
+      <p class="max-w-2xl text-base sm:text-lg text-white/70 leading-relaxed font-normal">
+        Founder of <strong class="text-white">CyberSlayerCorpz</strong>. Crafting zero-hallucination deterministic AI models (DQM), client-side WASM utilities (AssetSlayer), and stress-testing software against vintage 2009 hardware. Passionate about Formula 1.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3.5 pt-2">
+        <a href="#projects" class="pill-btn-primary">
+          <span>Explore Featured Builds</span>
+          <span>↓</span>
+        </a>
+        <a href="/uses/index.html" class="pill-btn-secondary">
+          <span>Inspect Gear &amp; Uses</span>
+          <span>↗</span>
+        </a>
+        <button data-copy-email class="pill-btn-secondary">
+          <span>Copy Direct Email</span>
+          <span class="text-xs">📋</span>
+        </button>
       </div>
 
-      <!-- Telemetry Dashboard Numbers -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-        <div class="p-4 rounded-lg bg-black/80 border border-white/10">
-          <span class="text-[10px] font-mono text-zinc-400 uppercase font-bold block">Top Speed</span>
-          <span id="telemetry-speed" class="text-2xl sm:text-3xl font-black text-customGreen font-mono glow-text-green">
-            338 KM/H
-          </span>
-        </div>
-
-        <div class="p-4 rounded-lg bg-black/80 border border-white/10">
-          <span class="text-[10px] font-mono text-zinc-400 uppercase font-bold block">Transmission</span>
-          <span class="text-2xl sm:text-3xl font-black text-customYellow font-mono">
-            GEAR <span id="telemetry-gear">7</span>
-          </span>
-        </div>
-
-        <div class="p-4 rounded-lg bg-black/80 border border-white/10">
-          <span class="text-[10px] font-mono text-zinc-400 uppercase font-bold block">Tyre Compound</span>
-          <span class="text-2xl sm:text-3xl font-black text-red-500 font-mono">
-            SOFT [C5]
-          </span>
-        </div>
-
-        <div class="p-4 rounded-lg bg-black/80 border border-white/10">
-          <span class="text-[10px] font-mono text-zinc-400 uppercase font-bold block">Driver Allegiance</span>
-          <span class="text-xl sm:text-2xl font-black text-white font-mono truncate">
-            VERSTAPPEN
-          </span>
-        </div>
-      </div>
-
-      <!-- LED Rev Meter -->
-      <div class="p-3 rounded-lg bg-black/90 border border-white/10 space-y-1.5">
-        <div class="flex justify-between text-[10px] font-mono text-zinc-400">
-          <span>RPM 11,500</span>
-          <span>REV LIMIT 15,000 RPM</span>
-        </div>
-        <div class="flex gap-1.5 h-3">
-          <div class="rpm-led rpm-led-green flex-1 rounded-sm"></div>
-          <div class="rpm-led rpm-led-green flex-1 rounded-sm"></div>
-          <div class="rpm-led rpm-led-green flex-1 rounded-sm"></div>
-          <div class="rpm-led rpm-led-yellow flex-1 rounded-sm"></div>
-          <div class="rpm-led rpm-led-yellow flex-1 rounded-sm"></div>
-          <div class="rpm-led rpm-led-yellow flex-1 rounded-sm"></div>
-          <div class="rpm-led rpm-led-red flex-1 rounded-sm"></div>
-          <div class="rpm-led rpm-led-red flex-1 rounded-sm"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- The 2009 Toshiba Fortnite Simulator (Interactive Joke & Low-Spec Lab) -->
-    <section id="junk-bench" class="cyber-panel rounded-xl p-6 space-y-5 border border-customOrange/40">
-      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3">
-        <div class="flex items-center gap-3">
-          <span class="text-2xl">💻</span>
-          <div>
-            <h2 class="text-lg font-black text-white">The "Junk Bench" 2009 Hardware Stress Lab</h2>
-            <p class="text-xs text-zinc-400 font-mono">Toshiba Satellite L500 • Intel Core 2 Duo • 2GB DDR2 RAM</p>
-          </div>
-        </div>
-        <span class="px-2.5 py-1 rounded bg-customOrange/20 text-customOrange font-mono font-bold text-xs border border-customOrange/40">
-          EXTREME LOW-SPEC BENCHMARK
+      <!-- Trust & Credibility Strip -->
+      <div class="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs text-white/60">
+        <span class="inline-flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-brandBlue"></span>
+          Founder, CyberSlayerCorpz
+        </span>
+        <span class="inline-flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-brandOrange"></span>
+          Harvard CS50x Certified
+        </span>
+        <span class="inline-flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-brandYellow"></span>
+          F1 Fanatic (Verstappen &amp; Silver Arrows)
         </span>
       </div>
+    </section>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        <!-- Story -->
-        <div class="space-y-3 lg:col-span-1 text-xs text-zinc-300 leading-relaxed font-sans">
-          <p>
-            I once tried installing <strong>Fortnite on a 2009 laptop with 2 gigs of DDR2 RAM</strong> just to see what would happen 😂.
-          </p>
-          <p>
-            While Unreal Engine cried, this ancient machine remains my ultimate stress-test: <em>if software can execute with snappy responsiveness here, it will fly at lightspeed on modern hardware.</em>
-          </p>
-          <button id="run-fortnite-sim" class="cyber-btn w-full py-2.5 rounded bg-customOrange text-white font-mono font-bold text-xs uppercase tracking-wider hover:bg-orange-600 shadow-md flex items-center justify-center gap-2">
-            <span>▶ Try Installing Fortnite.exe</span>
-          </button>
+    <!-- Services / Ticker Strip -->
+    <div class="services-strip rounded-2xl py-3.5 px-6 overflow-hidden">
+      <div class="flex items-center justify-between gap-6 overflow-x-auto text-xs sm:text-[13px] text-white/70 [scrollbar-width:none]">
+        <span class="text-white/30 select-none">•</span>
+        <span class="shrink-0 hover:text-white transition">Deterministic AI (DQM)</span>
+        <span class="text-white/30 select-none">•</span>
+        <span class="shrink-0 hover:text-white transition">In-Browser WASM Tools</span>
+        <span class="text-white/30 select-none">•</span>
+        <span class="shrink-0 hover:text-white transition">Image Optimization (AssetSlayer)</span>
+        <span class="text-white/30 select-none">•</span>
+        <span class="shrink-0 hover:text-white transition">Groq Inference (LangSlayer)</span>
+        <span class="text-white/30 select-none">•</span>
+        <span class="shrink-0 hover:text-white transition">2009 Low-Spec Silicon Benchmarks</span>
+        <span class="text-white/30 select-none">•</span>
+        <span class="shrink-0 hover:text-white transition">CyberSlayerCorpz Engineering</span>
+        <span class="text-white/30 select-none">•</span>
+      </div>
+    </div>
+
+    <!-- Impact Stats Row -->
+    <section class="bento-card p-6 sm:p-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+        <div class="space-y-1">
+          <div class="impact-number">0%</div>
+          <div class="text-xs font-semibold text-white">Hallucination Rate</div>
+          <div class="text-[11px] text-white/50">DQM deterministic query token graph in Python</div>
         </div>
 
-        <!-- Simulated CRT Terminal Screen -->
-        <div class="lg:col-span-2 rounded-lg bg-black border-2 border-zinc-800 p-4 font-mono text-xs space-y-3 relative overflow-hidden">
-          <div class="flex items-center justify-between border-b border-zinc-800 pb-2 text-[11px] text-zinc-500">
-            <span>TOSHIBA_PHOENIX_BIOS_1999_REV4.EXE</span>
-            <span>MEM: 2048 MB DDR2</span>
-          </div>
+        <div class="space-y-1 border-l border-white/10 pl-6">
+          <div class="impact-number">&lt; 1s</div>
+          <div class="text-xs font-semibold text-white">In-Browser Compression</div>
+          <div class="text-[11px] text-white/50">AssetSlayer client-side zero server upload</div>
+        </div>
 
-          <!-- Progress Bar -->
-          <div class="w-full bg-zinc-900 rounded-full h-2 overflow-hidden border border-zinc-700">
-            <div id="toshiba-progress" class="bg-customOrange h-2 rounded-full w-0 transition-all duration-300"></div>
-          </div>
+        <div class="space-y-1 border-l border-white/10 pl-6">
+          <div class="impact-number">2009</div>
+          <div class="text-xs font-semibold text-white">Vintage Testbed</div>
+          <div class="text-[11px] text-white/50">Toshiba Satellite with 2GB DDR2 RAM validation</div>
+        </div>
 
-          <!-- Output stream -->
-          <pre id="toshiba-console" class="text-customGreen whitespace-pre-wrap font-mono text-[11px] leading-relaxed h-28 overflow-y-auto">
-Ready. Click "Try Installing Fortnite.exe" above to simulate running modern gaming engines on 2009 DDR2 silicon...
-          </pre>
-
-          <!-- Crash Alert Box -->
-          <div id="toshiba-crash-box" class="hidden p-3 rounded bg-red-950/80 border border-red-500 text-red-200 text-xs space-y-2">
-            <div class="flex items-center gap-2 font-bold text-red-400">
-              <span>⚠️ BSOD: OUT_OF_MEMORY_ERROR</span>
-            </div>
-            <p class="text-[11px]">
-              Fortnite requested 16 GB RAM. The Toshiba Satellite laughed with its 2 GB DDR2 stick. Fan peaked at 9800 RPM.
-            </p>
-            <button id="toshiba-reset" class="cyber-btn px-3 py-1 rounded bg-customGreen text-black font-mono font-bold text-[11px] hover:bg-emerald-400">
-              Run DQM &amp; AssetSlayer Instead (240 FPS) 🚀
-            </button>
-          </div>
+        <div class="space-y-1 border-l border-white/10 pl-6">
+          <div class="impact-number">338+</div>
+          <div class="text-xs font-semibold text-white">KM/H F1 Precision</div>
+          <div class="text-[11px] text-white/50">Max Verstappen &amp; Mercedes-AMG Silver Arrows fan</div>
         </div>
       </div>
     </section>
 
-    <!-- Quotes & Philosophy Jukebox -->
-    <section class="cyber-panel rounded-xl p-6 space-y-4">
-      <div class="flex items-center justify-between border-b border-white/10 pb-3">
-        <div class="flex items-center gap-2">
-          <span class="text-customGreen text-lg">✦</span>
-          <h2 class="text-lg font-black text-white">Wisdom &amp; Guiding Philosophy</h2>
-        </div>
-
-        <!-- Jukebox Channels -->
-        <div class="flex items-center gap-2 font-mono text-xs">
-          <button data-quote-btn="1" class="cyber-btn px-2.5 py-1 rounded bg-customGreen text-black font-bold border border-customGreen">
-            CH 1: Ash-Sharh
-          </button>
-          <button data-quote-btn="2" class="cyber-btn px-2.5 py-1 rounded bg-black/50 text-zinc-400 font-bold border border-white/10 hover:text-white">
-            CH 2: Cory House
-          </button>
-          <button data-quote-btn="3" class="cyber-btn px-2.5 py-1 rounded bg-black/50 text-zinc-400 font-bold border border-white/10 hover:text-white">
-            CH 3: 16th Century
-          </button>
-        </div>
-      </div>
-
-      <!-- Channel 1 -->
-      <div data-quote-pane="1" class="p-6 rounded-lg bg-black/60 border border-white/10 space-y-2 text-center">
-        <p class="noto-arabic text-2xl sm:text-3xl font-bold text-customGreen tracking-wider">
-          "إِنَّ مَعَ الْعُسْرِ يُسْرًا"
-        </p>
-        <p class="text-sm sm:text-base text-zinc-200 font-semibold italic">
-          "Indeed, with hardship, comes ease."
-        </p>
-        <span class="text-xs text-zinc-500 font-mono block">— The Holy Qur'an (Surah Ash-Sharh 94:6)</span>
-      </div>
-
-      <!-- Channel 2 -->
-      <div data-quote-pane="2" class="p-6 rounded-lg bg-black/60 border border-white/10 space-y-2 text-center hidden">
-        <p class="text-lg sm:text-xl font-bold text-white italic">
-          "Code is like humour. When you have to explain it, it's bad."
-        </p>
-        <span class="text-xs text-zinc-400 font-mono block">— Cory House</span>
-      </div>
-
-      <!-- Channel 3 -->
-      <div data-quote-pane="3" class="p-6 rounded-lg bg-black/60 border border-white/10 space-y-2 text-center hidden">
-        <p class="text-lg sm:text-xl font-bold text-white italic">
-          "A jack of all trades is a master of none, but oftentimes better than a master of one."
-        </p>
-        <span class="text-xs text-zinc-400 font-mono block">— Folk talk from the early 16th century</span>
-      </div>
-    </section>
-
-    <!-- Projects Pit Lane (With Live Interactive Testbenches) -->
-    <section id="projects-pit" class="space-y-5">
+    <!-- Interactive CRT TV & Vintage Testbed (Inspired by Siddharthan & Reshiiiram) -->
+    <section id="interactive-lab" class="space-y-4">
       <div class="flex items-center justify-between">
         <div>
-          <span class="text-xs font-mono font-bold uppercase text-customGreen block mb-1">
-            BUILDS &amp; SYSTEMS
+          <span class="text-xs font-medium text-brandOrange uppercase tracking-wider block mb-1">
+            Interactive Showcase
           </span>
-          <h2 class="text-2xl font-black text-white">Projects Pit Lane</h2>
+          <h2 class="text-2xl font-semibold text-white">The Interactive Lab Monitor</h2>
         </div>
-        <span class="text-xs font-mono text-zinc-500">LIVE TESTING BENCHES</span>
+        <div class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span id="crt-channel-name" class="text-xs font-mono text-white/60">
+            CH 01 • F1 PADDOCK &amp; TELEMETRY
+          </span>
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- TV Bezel -->
+      <div class="crt-tv-frame p-4 sm:p-6 space-y-4">
+        
+        <!-- Top Channel Switcher Bar -->
+        <div class="flex items-center justify-between flex-wrap gap-2 border-b border-white/10 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-mono text-white/50 uppercase">Tuner:</span>
+            <button data-tv-channel="1" class="px-3 py-1 rounded-full text-xs font-medium bg-white/20 text-white border border-white/30 transition">
+              01 • Formula 1
+            </button>
+            <button data-tv-channel="2" class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-white/60 border border-white/10 hover:text-white transition">
+              02 • 2009 Toshiba
+            </button>
+            <button data-tv-channel="3" class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-white/60 border border-white/10 hover:text-white transition">
+              03 • DQM Brain
+            </button>
+            <button data-tv-channel="4" class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-white/60 border border-white/10 hover:text-white transition">
+              04 • AssetSlayer
+            </button>
+          </div>
 
-        <!-- Project 1: AssetSlayer -->
-        <article class="cyber-panel rounded-xl p-5 flex flex-col justify-between space-y-4 hover:border-customGreen transition group">
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-customGreen/15 text-customGreen border border-customGreen/30">
-                WASM WEB TOOL
-              </span>
-              <a href="https://tanzeemrockz.github.io/assetslayer/" target="_blank" rel="noopener noreferrer" class="text-xs text-customGreen hover:underline font-mono font-bold">
-                LAUNCH ↗
-              </a>
+          <span class="text-[11px] font-mono text-white/40">1080p CRT VIRTUAL RENDER</span>
+        </div>
+
+        <!-- TV Screen Output Window -->
+        <div class="crt-tv-screen crt-scanlines p-6 min-h-[220px] flex items-center justify-center text-center">
+
+          <!-- Channel 1: Formula 1 -->
+          <div data-tv-screen="1" class="space-y-4 max-w-lg">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brandYellow/10 border border-brandYellow/30 text-xs font-bold text-brandYellow">
+              <span>🏎 RACING PADDOCK TELEMETRY</span>
             </div>
-
-            <h3 class="text-xl font-black text-white group-hover:text-customGreen transition">
-              AssetSlayer
-            </h3>
-
-            <p class="text-xs text-zinc-300 leading-relaxed">
-              In-browser image optimization tool. Shrinks multi-megabyte raw images down to lightweight web assets without visual artifacts. Zero server uploads.
+            <h3 class="text-2xl font-bold text-white">Max Verstappen (#1) &amp; The Silver Arrows</h3>
+            <p class="text-xs sm:text-sm text-white/70 leading-relaxed font-normal">
+              Favorite Driver: Max Verstappen (Red Bull Racing) • Favorite Team: Mercedes-AMG Petronas F1 Team. High downforce, zero margin for error, and telemetry that never lies.
             </p>
-
-            <!-- Interactive Compression Simulator -->
-            <div class="p-3 rounded-lg bg-black/70 border border-white/10 space-y-2 text-xs font-mono">
-              <div class="flex justify-between text-zinc-400 text-[11px]">
-                <span>Original: <strong id="asset-original-size" class="text-white">4.2 MB</strong></span>
-                <span>Optimized: <strong id="asset-reduced-size" class="text-customGreen">336 KB</strong></span>
-              </div>
-              <input id="asset-slider" type="range" min="10" max="95" value="92" class="w-full accent-customGreen cursor-pointer">
-              <div class="text-center text-[10px] text-customGreen font-bold">
-                Bandwidth Saved: <span id="asset-savings">-92%</span>
-              </div>
+            <div class="flex items-center justify-center gap-4 text-xs font-mono text-white/60 pt-1">
+              <span>SPEED: <strong class="text-emerald-400">338 KM/H</strong></span>
+              <span>•</span>
+              <span>DRS: <strong class="text-brandYellow">ACTIVE</strong></span>
+              <span>•</span>
+              <span>TYRES: <strong class="text-red-400">SOFT C5</strong></span>
             </div>
           </div>
 
-          <div class="pt-2 border-t border-white/10 flex flex-wrap gap-1 text-[10px] font-mono text-zinc-400">
-            <span class="px-2 py-0.5 rounded bg-black/60 border border-white/10">HTML5</span>
-            <span class="px-2 py-0.5 rounded bg-black/60 border border-white/10">Tailwind</span>
-            <span class="px-2 py-0.5 rounded bg-black/60 border border-white/10">Canvas API</span>
-          </div>
-        </article>
-
-        <!-- Project 2: LangSlayer -->
-        <article class="cyber-panel rounded-xl p-5 flex flex-col justify-between space-y-4 hover:border-customGreen transition group">
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-customGreen/15 text-customGreen border border-customGreen/30">
-                GROQ AI INFERENCE
-              </span>
-              <a href="https://tanzeemrockz.github.io/LangSlayer/" target="_blank" rel="noopener noreferrer" class="text-xs text-customGreen hover:underline font-mono font-bold">
-                LAUNCH ↗
-              </a>
+          <!-- Channel 2: 2009 Toshiba Satellite Fortnite Simulator -->
+          <div data-tv-screen="2" class="space-y-4 max-w-lg hidden">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brandOrange/10 border border-brandOrange/30 text-xs font-bold text-brandOrange">
+              <span>💻 THE 2009 JUNK BENCH STRESS TEST</span>
             </div>
-
-            <h3 class="text-xl font-black text-white group-hover:text-customGreen transition">
-              LangSlayer
-            </h3>
-
-            <p class="text-xs text-zinc-300 leading-relaxed">
-              An AI-powered academic jargon slayer. Demolishes complex, impenetrable research terminology into clean, digestible human explanations in under 200ms.
+            <h3 class="text-xl font-bold text-white">Toshiba Satellite L500 (2GB DDR2 RAM)</h3>
+            <p class="text-xs text-white/70 leading-relaxed font-normal">
+              I once tried installing Fortnite on a 2009 laptop with 2GB DDR2 RAM just to see what would happen 😂. While Unreal Engine wept, this became my ultimate speed benchmark: if it's snappy here, it's blazing fast everywhere.
             </p>
-
-            <!-- Interactive Jargon Demolisher Toggle -->
-            <div class="p-3 rounded-lg bg-black/70 border border-white/10 space-y-2 text-xs font-mono">
-              <div id="lang-before" class="text-zinc-400 text-[11px] italic">
-                "The deterministic token router leverages heuristic acyclic hypergraphs to mitigate probabilistic stochastic hallucinations..."
-              </div>
-              <div id="lang-after" class="text-customGreen text-[11px] font-bold hidden">
-                "It uses fixed logic rules instead of guessing words so the AI never makes up facts!"
-              </div>
-              <button id="lang-toggle-btn" class="cyber-btn w-full py-1.5 rounded bg-white/10 text-zinc-200 text-[10px] font-bold hover:bg-white/20 transition">
-                Slay Jargon with Groq ⚡
+            <div class="space-y-2">
+              <button id="tv-sim-fortnite" class="pill-btn-primary text-xs py-1.5 px-4 bg-brandOrange text-white hover:bg-orange-600">
+                Run Fortnite.exe Simulator
               </button>
+              <pre id="tv-sim-log" class="text-[11px] font-mono text-emerald-400 bg-black/60 p-3 rounded-lg border border-white/10 text-left whitespace-pre-wrap">
+Ready. Click button above to stress test 2048 MB DDR2 memory.
+              </pre>
             </div>
           </div>
 
-          <div class="pt-2 border-t border-white/10 flex flex-wrap gap-1 text-[10px] font-mono text-zinc-400">
-            <span class="px-2 py-0.5 rounded bg-black/60 border border-white/10">Groq API</span>
-            <span class="px-2 py-0.5 rounded bg-black/60 border border-white/10">LPU Speed</span>
-            <span class="px-2 py-0.5 rounded bg-black/60 border border-white/10">JavaScript</span>
+          <!-- Channel 3: DQM Deterministic Brain -->
+          <div data-tv-screen="3" class="space-y-4 max-w-lg hidden">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brandBlue/10 border border-brandBlue/30 text-xs font-bold text-brandBlue">
+              <span>🧠 DETERMINISTIC COGNITIVE ARCHITECTURE</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">DQM (Deterministic Query Model) v1.2</h3>
+            <p class="text-xs text-white/70 leading-relaxed font-normal">
+              Token-routed Python alternative to generative hallucination. Modular swappable cognitive brains (.tqm, .sqm, .lqm) executing against an offline DAG query graph in under 0.4ms.
+            </p>
+            <div class="p-3 rounded-lg bg-black/60 border border-white/10 text-xs font-mono text-brandBlue text-left">
+              &gt; DQM.brain[tqm]: Graph node resolved with 100% exactitude.<br>
+              &gt; Hallucination variance: 0.000000% (Guaranteed).
+            </div>
+          </div>
+
+          <!-- Channel 4: AssetSlayer -->
+          <div data-tv-screen="4" class="space-y-4 max-w-lg hidden">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-400/10 border border-emerald-400/30 text-xs font-bold text-emerald-400">
+              <span>⚡ IN-BROWSER ASSET OPTIMIZER</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">AssetSlayer Web Application</h3>
+            <p class="text-xs text-white/70 leading-relaxed font-normal">
+              High-speed image compression built with pure HTML5, modern Tailwind CSS, and client-side canvas APIs. Reduces 4MB assets down to ~300KB with zero visual artifacts.
+            </p>
+            <a href="https://tanzeemrockz.github.io/assetslayer/" target="_blank" rel="noopener noreferrer" class="pill-btn-primary text-xs py-1.5 px-4">
+              Launch Live Tool ↗
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Bento Grid -->
+    <section id="projects" class="space-y-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="text-xs font-medium text-brandOrange uppercase tracking-wider block mb-1">
+            Selected Work
+          </span>
+          <h2 class="text-2xl font-semibold text-white">Projects I'm Proud Of</h2>
+        </div>
+        <span class="text-xs text-white/50 font-mono">CyberSlayerCorpz Production</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        <!-- Card 1: AssetSlayer -->
+        <article class="bento-card p-6 flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between text-xs">
+              <span class="px-2 py-0.5 rounded-full bg-brandBlue/10 text-brandBlue border border-brandBlue/20 font-medium">
+                Web App
+              </span>
+              <span class="text-white/40">In-Browser WASM</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">AssetSlayer</h3>
+            <p class="text-xs text-white/70 leading-relaxed font-normal">
+              A fast, in-browser image optimization tool engineered to compress and resize web assets without visual degradation or external uploads.
+            </p>
+          </div>
+
+          <div class="space-y-3 pt-3 border-t border-white/10">
+            <div class="flex flex-wrap gap-1.5 text-[11px] text-white/50">
+              <span class="px-2 py-0.5 rounded-md bg-white/5 border border-white/10">HTML5</span>
+              <span class="px-2 py-0.5 rounded-md bg-white/5 border border-white/10">Tailwind</span>
+              <span class="px-2 py-0.5 rounded-md bg-white/5 border border-white/10">JavaScript</span>
+            </div>
+            <a href="https://tanzeemrockz.github.io/assetslayer/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-brandBlue hover:text-white transition">
+              <span>Launch AssetSlayer</span>
+              <span>↗</span>
+            </a>
           </div>
         </article>
 
-        <!-- Project 3: DQM -->
-        <article class="cyber-panel rounded-xl p-5 flex flex-col justify-between space-y-4 hover:border-customOrange transition group border border-customOrange/30">
+        <!-- Card 2: LangSlayer -->
+        <article class="bento-card p-6 flex flex-col justify-between space-y-6">
           <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-customOrange/20 text-customOrange border border-customOrange/40">
-                PYTHON CORE v1.2
+            <div class="flex items-center justify-between text-xs">
+              <span class="px-2 py-0.5 rounded-full bg-brandOrange/10 text-brandOrange border border-brandOrange/20 font-medium">
+                AI Inference
               </span>
-              <span class="text-xs text-zinc-500 font-mono">CORE LAB</span>
+              <span class="text-white/40">Groq High-Speed</span>
             </div>
-
-            <h3 class="text-xl font-black text-white group-hover:text-customOrange transition">
-              DQM (Deterministic Query Model)
-            </h3>
-
-            <p class="text-xs text-zinc-300 leading-relaxed">
-              A deterministic alternative to probabilistic generative models. Uses token routing, graph-based DAGs, and plug-and-play modular brains (<code class="text-customOrange">.tqm</code>, <code class="text-customOrange">.sqm</code>, <code class="text-customOrange">.lqm</code>) with 0% hallucination.
+            <h3 class="text-lg font-bold text-white">LangSlayer</h3>
+            <p class="text-xs text-white/70 leading-relaxed font-normal">
+              A tool built for slaying complex, hyper-technical academic text and dense research jargon into clear, plain language with sub-second latency.
             </p>
-
-            <!-- Modular Brain Selector -->
-            <div class="p-3 rounded-lg bg-black/70 border border-white/10 space-y-2 text-xs font-mono">
-              <div class="flex gap-1">
-                <button data-brain="tqm" class="cyber-btn flex-1 py-1 rounded bg-customOrange text-black font-bold text-[10px]">
-                  .tqm
-                </button>
-                <button data-brain="sqm" class="cyber-btn flex-1 py-1 rounded bg-black text-zinc-400 border border-white/10 font-bold text-[10px]">
-                  .sqm
-                </button>
-                <button data-brain="lqm" class="cyber-btn flex-1 py-1 rounded bg-black text-zinc-400 border border-white/10 font-bold text-[10px]">
-                  .lqm
-                </button>
-              </div>
-              <div id="dqm-brain-output" class="text-customOrange text-[10px] h-12 overflow-y-auto">
-                DQM [tqm.brain]: Token graph parsed. Zero hallucinatory variance. Latency: 0.42ms. Output: Deterministic match found at node #8979.
-              </div>
-            </div>
           </div>
 
-          <div class="pt-2 border-t border-white/10 flex flex-wrap gap-1 text-[10px] font-mono text-zinc-400">
-            <span class="px-2 py-0.5 rounded bg-black/60 border border-white/10">Python 3.12</span>
-            <span class="px-2 py-0.5 rounded bg-black/60 border border-white/10">SQLite DAG</span>
-            <span class="px-2 py-0.5 rounded bg-black/60 border border-white/10">Deterministic</span>
+          <div class="space-y-3 pt-3 border-t border-white/10">
+            <div class="flex flex-wrap gap-1.5 text-[11px] text-white/50">
+              <span class="px-2 py-0.5 rounded-md bg-white/5 border border-white/10">Groq API</span>
+              <span class="px-2 py-0.5 rounded-md bg-white/5 border border-white/10">Tailwind</span>
+              <span class="px-2 py-0.5 rounded-md bg-white/5 border border-white/10">JavaScript</span>
+            </div>
+            <a href="https://tanzeemrockz.github.io/LangSlayer/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-brandOrange hover:text-white transition">
+              <span>Launch LangSlayer</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 3: DQM -->
+        <article class="bento-card p-6 flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between text-xs">
+              <span class="px-2 py-0.5 rounded-full bg-brandYellow/10 text-brandYellow border border-brandYellow/20 font-medium">
+                In Development
+              </span>
+              <span class="text-white/40">Python v1.2</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">DQM (Deterministic Query Model)</h3>
+            <p class="text-xs text-white/70 leading-relaxed font-normal">
+              Deterministic Query Model — a deterministic, token-routed Python alternative to generative models. Features plug-and-play cognitive brains with zero hallucination.
+            </p>
+          </div>
+
+          <div class="space-y-3 pt-3 border-t border-white/10">
+            <div class="flex flex-wrap gap-1.5 text-[11px] text-white/50">
+              <span class="px-2 py-0.5 rounded-md bg-white/5 border border-white/10">Python 3.12</span>
+              <span class="px-2 py-0.5 rounded-md bg-white/5 border border-white/10">SQLite DAG</span>
+              <span class="px-2 py-0.5 rounded-md bg-white/5 border border-white/10">JSON Brains</span>
+            </div>
+            <span class="inline-flex items-center gap-1.5 text-xs font-medium text-white/60">
+              <span>CyberSlayerCorpz Core Engine</span>
+            </span>
           </div>
         </article>
 
       </div>
     </section>
 
-    <!-- Physical Hardware Rack (Interactive "Uses" Rack) -->
-    <section id="rack" class="cyber-panel rounded-xl p-6 space-y-5">
-      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3">
-        <div class="flex items-center gap-3">
-          <span class="text-2xl">🖲</span>
-          <div>
-            <h2 class="text-lg font-black text-white">Hardware Server Rack &amp; Rigs (Uses)</h2>
-            <p class="text-xs text-zinc-400 font-mono">Click any 19" rack module to inspect silicon specs and origin story</p>
-          </div>
+    <!-- Wisdom & Quotes Section -->
+    <section class="bento-card p-6 sm:p-8 space-y-6">
+      <div class="flex items-center justify-between flex-wrap gap-3 border-b border-white/10 pb-4">
+        <div>
+          <span class="text-xs font-medium text-brandOrange uppercase tracking-wider block mb-0.5">Philosophy</span>
+          <h2 class="text-xl font-bold text-white">Words That Ground My Work</h2>
         </div>
-        <a href="/uses/index.html" class="px-3 py-1 rounded bg-white/10 text-customGreen border border-customGreen/40 font-mono text-xs font-bold hover:bg-customGreen hover:text-black transition">
-          View Full Uses Catalog ↗
+
+        <div class="flex items-center gap-2">
+          <button data-quote-trigger="1" class="px-3 py-1 rounded-full text-xs font-medium bg-white/15 text-white transition">
+            01 • Qur'an
+          </button>
+          <button data-quote-trigger="2" class="px-3 py-1 rounded-full text-xs font-medium bg-transparent text-white/60 hover:text-white transition">
+            02 • Code
+          </button>
+          <button data-quote-trigger="3" class="px-3 py-1 rounded-full text-xs font-medium bg-transparent text-white/60 hover:text-white transition">
+            03 • Craft
+          </button>
+        </div>
+      </div>
+
+      <!-- Quote 1 -->
+      <div data-quote-box="1" class="space-y-3 text-center py-4">
+        <p class="noto-arabic text-2xl sm:text-3xl font-bold text-brandBlue tracking-wide">
+          "إِنَّ مَعَ الْعُسْرِ يُسْرًا"
+        </p>
+        <p class="text-base sm:text-lg text-white font-medium italic">
+          "Indeed, with hardship, comes ease."
+        </p>
+        <span class="text-xs text-white/40 block">— The Holy Qur'an (Surah Ash-Sharh 94:6)</span>
+      </div>
+
+      <!-- Quote 2 -->
+      <div data-quote-box="2" class="space-y-3 text-center py-4 hidden">
+        <p class="text-lg sm:text-xl text-white font-medium italic">
+          "Code is like humour. When you have to explain it, it's bad."
+        </p>
+        <span class="text-xs text-white/40 block">— Cory House</span>
+      </div>
+
+      <!-- Quote 3 -->
+      <div data-quote-box="3" class="space-y-3 text-center py-4 hidden">
+        <p class="text-lg sm:text-xl text-white font-medium italic">
+          "A jack of all trades is a master of none, but oftentimes better than a master of one."
+        </p>
+        <span class="text-xs text-white/40 block">— 16th Century Folk Wisdom</span>
+      </div>
+    </section>
+
+    <!-- Silicon Fleet & Uses (Preview & Deep Link) -->
+    <section id="uses" class="bento-card p-6 sm:p-8 space-y-6">
+      <div class="flex items-center justify-between border-b border-white/10 pb-4">
+        <div>
+          <span class="text-xs font-medium text-brandOrange uppercase tracking-wider block mb-0.5">Hardware &amp; Toolchain</span>
+          <h2 class="text-xl font-bold text-white">The Silicon Fleet (Uses)</h2>
+        </div>
+        <a href="/uses/index.html" class="pill-btn-secondary text-xs py-1.5 px-3.5">
+          <span>View Full Inventory</span>
+          <span>↗</span>
         </a>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <!-- Rack Units Chassis -->
-        <div class="lg:col-span-2 space-y-3 font-mono">
-          
-          <!-- Unit 1 -->
-          <div data-rack-unit="lenovo" class="p-3.5 rounded-lg bg-black/80 border-2 border-customGreen bg-customGreen/10 flex items-center justify-between cursor-pointer hover:border-customGreen transition">
-            <div class="flex items-center gap-3">
-              <span class="w-3 h-3 rounded-full bg-customGreen pulse-badge"></span>
-              <div>
-                <span class="text-xs font-bold text-white block">SLOT 01: Lenovo IdeaPad Slim 3i</span>
-                <span class="text-[10px] text-zinc-400">Intel i7 13620H • 16GB DDR4 • NVMe</span>
-              </div>
-            </div>
-            <span class="text-[10px] font-bold text-customGreen bg-black/80 px-2 py-1 rounded border border-customGreen/40">
-              ACTIVE WORKHORSE
-            </span>
-          </div>
-
-          <!-- Unit 2 -->
-          <div data-rack-unit="hp" class="p-3.5 rounded-lg bg-black/80 border border-white/15 flex items-center justify-between cursor-pointer hover:border-customGreen transition">
-            <div class="flex items-center gap-3">
-              <span class="w-3 h-3 rounded-full bg-customOrange pulse-badge"></span>
-              <div>
-                <span class="text-xs font-bold text-white block">SLOT 02: HP Envy 13 ah0029tu</span>
-                <span class="text-[10px] text-zinc-400">Intel i5 8250U • 8GB DDR3 • Broken Display</span>
-              </div>
-            </div>
-            <span class="text-[10px] font-bold text-customOrange bg-black/80 px-2 py-1 rounded border border-customOrange/40">
-              HEADLESS NODE
-            </span>
-          </div>
-
-          <!-- Unit 3 -->
-          <div data-rack-unit="dell" class="p-3.5 rounded-lg bg-black/80 border border-white/15 flex items-center justify-between cursor-pointer hover:border-customGreen transition">
-            <div class="flex items-center gap-3">
-              <span class="w-3 h-3 rounded-full bg-customBlue"></span>
-              <div>
-                <span class="text-xs font-bold text-white block">SLOT 03: Dell Vostro 3491</span>
-                <span class="text-[10px] text-zinc-400">Intel i3 1005G1 • 8GB DDR4</span>
-              </div>
-            </div>
-            <span class="text-[10px] font-bold text-customBlue bg-black/80 px-2 py-1 rounded border border-customBlue/40">
-              STANDBY RIG
-            </span>
-          </div>
-
-          <!-- Unit 4 -->
-          <div data-rack-unit="toshiba" class="p-3.5 rounded-lg bg-black/80 border border-white/15 flex items-center justify-between cursor-pointer hover:border-customGreen transition">
-            <div class="flex items-center gap-3">
-              <span class="w-3 h-3 rounded-full bg-customYellow"></span>
-              <div>
-                <span class="text-xs font-bold text-white block">SLOT 04: Toshiba Satellite L500 (2009)</span>
-                <span class="text-[10px] text-zinc-400">Core 2 Duo • 2GB DDR2 • Fortnite Testbed</span>
-              </div>
-            </div>
-            <span class="text-[10px] font-bold text-customYellow bg-black/80 px-2 py-1 rounded border border-customYellow/40">
-              JUNK BENCH
-            </span>
-          </div>
-
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-left">
+        <div class="p-4 rounded-xl bg-white/[0.03] border border-white/10 space-y-1.5">
+          <span class="text-[10px] font-mono font-bold text-emerald-400 block uppercase">Daily Workhorse</span>
+          <h4 class="text-sm font-bold text-white">Lenovo IdeaPad Slim 3i</h4>
+          <p class="text-xs text-white/60">i7 13620H • 16GB DDR4 (mum's rig lol, my main driver)</p>
         </div>
 
-        <!-- Rack Inspector Readout -->
-        <div class="p-5 rounded-lg bg-black/90 border border-white/15 font-mono space-y-3">
-          <div class="flex items-center justify-between border-b border-white/10 pb-2">
-            <span class="text-[11px] font-bold text-customGreen">HARDWARE INSPECTOR</span>
-            <span class="text-[10px] text-zinc-500">DIAGNOSTICS OK</span>
-          </div>
-
-          <h3 id="rack-inspect-title" class="text-sm font-bold text-white">
-            Lenovo IdeaPad Slim 3i [Daily Workhorse]
-          </h3>
-
-          <div class="space-y-1">
-            <span class="text-[10px] text-zinc-400 uppercase block">Specifications:</span>
-            <p id="rack-inspect-specs" class="text-xs text-customGreen font-bold">
-              Intel Core i7 13620H (10 Cores, 16 Threads) • 16GB DDR4 • NVMe SSD
-            </p>
-          </div>
-
-          <div class="space-y-1 pt-2 border-t border-white/10">
-            <span class="text-[10px] text-zinc-400 uppercase block">Field Notes:</span>
-            <p id="rack-inspect-story" class="text-xs text-zinc-300 leading-relaxed font-sans">
-              Mum's laptop officially, my main engineering command center in reality. Used for DQM compilation, AI prompt benchmarking, and web architecture builds.
-            </p>
-          </div>
+        <div class="p-4 rounded-xl bg-white/[0.03] border border-white/10 space-y-1.5">
+          <span class="text-[10px] font-mono font-bold text-brandOrange block uppercase">Headless Rig</span>
+          <h4 class="text-sm font-bold text-white">HP Envy 13 ah0029tu</h4>
+          <p class="text-xs text-white/60">i5 8250U • 8GB DDR3 (broken display &amp; battery, runs SSH)</p>
         </div>
 
+        <div class="p-4 rounded-xl bg-white/[0.03] border border-white/10 space-y-1.5">
+          <span class="text-[10px] font-mono font-bold text-brandBlue block uppercase">Standby Rig</span>
+          <h4 class="text-sm font-bold text-white">Dell Vostro 3491</h4>
+          <p class="text-xs text-white/60">i3 1005G1 • 8GB DDR4 (everything works&trade; standby)</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-white/[0.03] border border-white/10 space-y-1.5">
+          <span class="text-[10px] font-mono font-bold text-brandYellow block uppercase">Vintage Testbed</span>
+          <h4 class="text-sm font-bold text-white">Toshiba Satellite (2009)</h4>
+          <p class="text-xs text-white/60">Core 2 Duo • 2GB DDR2 RAM (extreme low-spec validation)</p>
+        </div>
       </div>
     </section>
 
-    <!-- Interactive Command Line Terminal -->
-    <section id="terminal" class="cyber-panel rounded-xl p-6 space-y-4">
-      <div class="flex items-center justify-between border-b border-white/10 pb-2">
-        <div class="flex items-center gap-2 font-mono text-xs font-bold text-customGreen">
-          <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
-          <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
-          <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
-          <span class="ml-2">tanzeem@paddock: ~ / bash v5.2</span>
-        </div>
-        <span class="font-mono text-[10px] text-zinc-500">TYPE 'help' FOR COMMANDS</span>
-      </div>
-
-      <!-- Scrollable output area -->
-      <div id="terminal-output" class="bg-black/90 rounded-lg p-4 font-mono text-xs space-y-2 h-44 overflow-y-auto border border-zinc-800">
-        <div class="text-zinc-400">
-          Welcome to <span class="text-customGreen font-bold">tanzeem.xyz</span> interactive terminal.
-          Type <span class="text-customGreen font-bold">help</span> to list available commands (e.g. <span class="text-customYellow font-bold">f1</span>, <span class="text-customOrange font-bold">fortnite</span>, <span class="text-customGreen font-bold">drs</span>, <span class="text-white font-bold">projects</span>, <span class="text-white font-bold">contact</span>).
-        </div>
-      </div>
-
-      <!-- Input line -->
-      <div class="flex items-center gap-2 bg-black/90 rounded-lg p-2.5 border border-customGreen/40 font-mono text-xs">
-        <span class="text-customGreen font-bold">tanzeem@paddock:~$</span>
-        <input id="terminal-input" type="text" placeholder="type a command and press Enter..." class="flex-1 bg-transparent text-white focus:outline-none font-mono text-xs" autocomplete="off" spellcheck="false">
-        <span class="blinking-cursor text-customGreen font-black">█</span>
-      </div>
-    </section>
-
-    <!-- Contact & Comms Hub -->
-    <section id="contact" class="cyber-panel rounded-xl p-6 sm:p-8 space-y-6 border border-customOrange/40">
-      <div class="border-b border-white/10 pb-4">
-        <span class="text-xs font-mono font-bold uppercase text-customOrange block mb-1">
-          COMMUNICATIONS
-        </span>
-        <h2 class="text-2xl font-black text-white">Let's Connect &amp; Build</h2>
-        <p class="text-xs sm:text-sm text-zinc-400 mt-1">
-          Always open to interesting tech conversations, FOSS collabs, and high-performance engineering.
+    <!-- Contact & Connect Section -->
+    <section id="contact" class="bento-card p-6 sm:p-10 space-y-8 text-center">
+      <div class="max-w-xl mx-auto space-y-3">
+        <span class="text-xs font-semibold text-brandOrange uppercase tracking-wider block">Get In Touch</span>
+        <h2 class="text-3xl font-bold text-white">Ready to build something that slays?</h2>
+        <p class="text-sm text-white/70 leading-relaxed font-normal">
+          Available for software engineering collaborations, deterministic AI architectures, and open-source challenges.
         </p>
       </div>
 
-      <!-- Quick Copy Primary Email -->
+      <!-- Quick Copy Email Box -->
       <div 
         data-copy-email 
         data-email="tanzeemrockz@cyberslayercorpz.dev"
-        class="cyber-btn p-5 rounded-xl border border-customOrange/50 bg-customOrange/10 hover:bg-customOrange/20 cursor-pointer flex items-center justify-between flex-wrap gap-3"
+        class="max-w-md mx-auto p-4 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] hover:border-brandOrange/40 cursor-pointer transition flex items-center justify-between gap-3 group"
       >
-        <div class="space-y-1">
-          <span class="text-[10px] font-mono font-bold uppercase text-customOrange tracking-widest block">
-            Direct Email Channel (Click to copy)
-          </span>
-          <span class="text-base sm:text-lg font-bold text-white font-mono">
+        <div class="text-left space-y-0.5">
+          <span class="text-[10px] text-white/40 uppercase tracking-wider block">Direct Email</span>
+          <span class="text-sm font-medium text-white group-hover:text-brandOrange transition">
             tanzeemrockz@cyberslayercorpz.dev
           </span>
         </div>
-        <span class="px-3.5 py-1.5 rounded bg-customOrange text-white font-mono font-bold text-xs">
-          COPY 📋
+        <span class="px-3 py-1 rounded-full bg-brandOrange text-black text-xs font-bold group-hover:scale-105 transition-transform">
+          Copy
         </span>
       </div>
 
-      <!-- Contact Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <a href="https://wa.me/917667271516" target="_blank" rel="noopener noreferrer" class="cyber-panel p-4 rounded-lg hover:border-customGreen transition space-y-1 block">
-          <span class="text-[10px] font-mono text-zinc-400 block">WHATSAPP CHAT</span>
-          <h3 class="text-sm font-bold text-white flex items-center justify-between">
-            <span>+91 7667271516</span>
-            <span>↗</span>
-          </h3>
-          <p class="text-[11px] text-zinc-500 font-mono">Quick messaging</p>
+      <!-- Channels Row -->
+      <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+        <a href="https://wa.me/917667271516" target="_blank" rel="noopener noreferrer" class="pill-btn-secondary text-xs">
+          WhatsApp: +91 7667271516 ↗
         </a>
-
-        <a href="https://tanzeemrockz.linklee.in/" target="_blank" rel="noopener noreferrer" class="cyber-panel p-4 rounded-lg hover:border-customGreen transition space-y-1 block">
-          <span class="text-[10px] font-mono text-zinc-400 block">LINKLEE CALENDAR</span>
-          <h3 class="text-sm font-bold text-white flex items-center justify-between">
-            <span>Book Meeting</span>
-            <span>↗</span>
-          </h3>
-          <p class="text-[11px] text-zinc-500 font-mono">For serious deep dives</p>
+        <a href="https://tanzeemrockz.linklee.in/" target="_blank" rel="noopener noreferrer" class="pill-btn-secondary text-xs">
+          Schedule Meeting (Linklee) ↗
         </a>
-
-        <div class="cyber-panel p-4 rounded-lg space-y-1">
-          <span class="text-[10px] font-mono text-zinc-400 block">VOICE CALL</span>
-          <a href="tel:+917667271516" class="text-sm font-bold text-white hover:text-customGreen block font-mono">
-            +91 7667271516
-          </a>
-          <p class="text-[10px] text-zinc-500 font-mono">Sundays 09:00–17:00 IST</p>
-        </div>
-      </div>
-
-      <!-- Additional Channels -->
-      <div class="p-4 rounded-lg bg-black/60 border border-white/10 space-y-3 font-mono text-xs">
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-zinc-400 text-[11px]">
-          <div>📧 imohamedtanzeem@gmail.com</div>
-          <div>⚡ tanzeemrockz@user.hackclub.app</div>
-          <div>💬 @tanzeemrockz:matrix.org</div>
-        </div>
-
-        <div class="flex flex-wrap gap-2 pt-2 border-t border-white/10">
-          <a href="https://github.com/tanzeemrockz" target="_blank" rel="noopener noreferrer" class="cyber-btn px-3 py-1 rounded bg-white/5 border border-white/10 hover:border-white/30 text-white transition text-xs">
-            GitHub ↗
-          </a>
-          <a href="https://instagram.com/tanzeemrockz" target="_blank" rel="noopener noreferrer" class="cyber-btn px-3 py-1 rounded bg-white/5 border border-white/10 hover:border-white/30 text-white transition text-xs">
-            Instagram ↗
-          </a>
-          <a href="https://threads.net/@tanzeemrockz" target="_blank" rel="noopener noreferrer" class="cyber-btn px-3 py-1 rounded bg-white/5 border border-white/10 hover:border-white/30 text-white transition text-xs">
-            Threads ↗
-          </a>
-          <a href="https://cyberslayercorpz.dev/" target="_blank" rel="noopener noreferrer" class="cyber-btn px-3 py-1 rounded bg-customGreen/15 border border-customGreen text-customGreen transition text-xs">
-            CyberSlayerCorpz ↗
-          </a>
-        </div>
+        <a href="https://github.com/tanzeemrockz" target="_blank" rel="noopener noreferrer" class="pill-btn-secondary text-xs">
+          GitHub ↗
+        </a>
+        <a href="https://instagram.com/tanzeemrockz" target="_blank" rel="noopener noreferrer" class="pill-btn-secondary text-xs">
+          Instagram ↗
+        </a>
+        <a href="https://cyberslayercorpz.dev" target="_blank" rel="noopener noreferrer" class="pill-btn-secondary text-xs text-brandOrange border-brandOrange/30">
+          CyberSlayerCorpz ↗
+        </a>
       </div>
     </section>
 
   </main>
 
   <!-- Footer -->
-  <footer class="w-full border-t border-white/10 py-6 text-center text-xs text-zinc-500 font-mono px-4 space-y-1.5">
-    <p>
-      © 2026 Metropolis • Engineered by Mohamed Tanzeem I • Operator: <a href="https://cyberslayercorpz.dev/" target="_blank" rel="noopener noreferrer" class="text-customOrange hover:underline">CyberSlayerCorpz</a>
-    </p>
-    <p class="text-[10px] text-zinc-600">
-      Zero bloat. Built with HTML5, CSS3 &amp; Web Audio API. Press DRS on the straight.
+  <footer class="w-full border-t border-white/10 py-8 text-center text-xs text-white/50 space-y-2 px-4">
+    <div class="flex items-center justify-center gap-2">
+      <span>© 2026 Metropolis</span>
+      <span>•</span>
+      <a href="https://cyberslayercorpz.dev" target="_blank" rel="noopener noreferrer" class="text-brandOrange hover:underline font-semibold">
+        CyberSlayerCorpz
+      </a>
+      <span>•</span>
+      <span>Mohamed Tanzeem I</span>
+    </div>
+    <p class="text-[11px] text-white/30">
+      Engineered with semantic HTML5, modern Tailwind CSS, and zero bloated frameworks.
     </p>
   </footer>
 
