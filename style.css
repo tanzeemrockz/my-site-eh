@@ -1,116 +1,147 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Google+Sans+Text:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Noto+Sans+Arabic:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=Google+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600;800&family=Noto+Sans+Arabic:wght@600;800&display=swap');
 
 :root {
-  --color-green: #27F5BB;
-  --color-blue: #274DF5;
-  --color-orange: #F56827;
-  --color-yellow: #F5CF27;
-  --bg-deep: #08090c;
+  --neon-green: #27F5BB;
+  --neon-blue: #274DF5;
+  --neon-orange: #F56827;
+  --neon-yellow: #F5CF27;
+  --neon-red: #FF3366;
+  --bg-dark: #07080c;
+  --surface-panel: rgba(13, 16, 24, 0.88);
 }
 
 * {
   box-sizing: border-box;
-  font-family: 'Google Sans', 'Google Sans Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  font-family: 'Chakra Petch', 'Google Sans', sans-serif;
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(39, 245, 187, 0.08) 0%, transparent 35%),
+    radial-gradient(circle at 90% 80%, rgba(39, 77, 245, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(245, 104, 39, 0.04) 0%, transparent 50%),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+  background-attachment: fixed;
+  color: #f1f5f9;
 }
 
 .mono {
   font-family: 'JetBrains Mono', monospace;
 }
 
-.noto-sans-arabic {
+.noto-arabic {
   font-family: 'Noto Sans Arabic', sans-serif;
   direction: rtl;
 }
 
-body {
-  background-color: var(--bg-deep);
-  background-image: 
-    radial-gradient(circle at 15% 15%, rgba(39, 245, 187, 0.04) 0%, transparent 40%),
-    radial-gradient(circle at 85% 65%, rgba(39, 77, 245, 0.05) 0%, transparent 45%),
-    radial-gradient(circle at 50% 90%, rgba(245, 104, 39, 0.03) 0%, transparent 50%),
-    url('./img/bg.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+/* CRT Scanline & Screen effect */
+.crt-overlay::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  z-index: 20;
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+  opacity: 0.7;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 7px;
-}
-::-webkit-scrollbar-track {
-  background: #090a0f;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 9999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-green);
+/* Cyber Paneling */
+.cyber-panel {
+  background: var(--surface-panel);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  position: relative;
 }
 
-::selection {
-  background: var(--color-green);
-  color: #000;
+.cyber-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid var(--neon-green);
+  border-left: 2px solid var(--neon-green);
 }
 
-/* Noise & Grid overlay utilities */
-.bg-grid-pattern {
-  background-size: 32px 32px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+.cyber-panel::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  border-bottom: 2px solid var(--neon-orange);
+  border-right: 2px solid var(--neon-orange);
 }
 
-.glass-card {
-  background: rgba(14, 16, 22, 0.72);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
-
-.glass-card:hover {
-  border-color: rgba(39, 245, 187, 0.25);
-}
-
-/* Hero banner overlay */
-.hero-bg {
-  background-image: linear-gradient(180deg, rgba(8, 9, 12, 0.45) 0%, rgba(8, 9, 12, 0.94) 100%), url('./img/banner.jpg');
-  background-position: center;
-  background-size: cover;
-}
-
-/* Glow effects */
-.glow-mint {
-  box-shadow: 0 0 24px -4px rgba(39, 245, 187, 0.35);
-}
-
-.glow-orange {
-  box-shadow: 0 0 24px -4px rgba(245, 104, 39, 0.35);
-}
-
-.glow-blue {
-  box-shadow: 0 0 24px -4px rgba(39, 77, 245, 0.35);
-}
-
-/* F1 Telemetry accents */
-.racing-stripe {
+/* Glowing race telemetry stripes */
+.f1-hazard-stripes {
   background: repeating-linear-gradient(
     -45deg,
-    transparent,
-    transparent 8px,
-    rgba(245, 207, 39, 0.15) 8px,
-    rgba(245, 207, 39, 0.15) 16px
+    rgba(245, 207, 39, 0.2),
+    rgba(245, 207, 39, 0.2) 10px,
+    transparent 10px,
+    transparent 20px
   );
 }
 
-/* Smooth transition animations */
-@keyframes pulseSubtle {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.65; transform: scale(0.96); }
+.glow-text-green {
+  text-shadow: 0 0 12px rgba(39, 245, 187, 0.6);
 }
 
-.pulse-badge {
-  animation: pulseSubtle 2.5s infinite ease-in-out;
+.glow-text-yellow {
+  text-shadow: 0 0 12px rgba(245, 207, 39, 0.6);
+}
+
+.glow-text-orange {
+  text-shadow: 0 0 12px rgba(245, 104, 39, 0.6);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #06070a;
+}
+::-webkit-scrollbar-thumb {
+  background: #27F5BB;
+  border-radius: 2px;
+}
+
+/* Flashing cursor */
+.blinking-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* RPM Bar Animation */
+.rpm-led-green { background-color: #27F5BB; }
+.rpm-led-yellow { background-color: #F5CF27; }
+.rpm-led-red { background-color: #FF3366; }
+
+/* Interactive button press */
+.cyber-btn {
+  transition: all 0.15s ease;
+  position: relative;
+  overflow: hidden;
+}
+.cyber-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+}
+.cyber-btn:active {
+  transform: translateY(1px);
 }
