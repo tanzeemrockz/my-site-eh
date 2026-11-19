@@ -5,11 +5,11 @@ import { Footer } from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "CyberSlayerCorpz – Indie Software Studio",
-    template: "%s | CyberSlayerCorpz",
+    default: "Mohamed Tanzeem I – CyberSlayerCorpz | tanzeem.xyz",
+    template: "%s | Mohamed Tanzeem I – CyberSlayerCorpz",
   },
   description:
-    "CyberSlayerCorpz builds, launches and grows digital products: websites, applications, custom software, digital systems and AI integration.",
+    "Personal website and indie engineering studio of Mohamed Tanzeem I (CyberSlayerCorpz). High performance software, AI systems, interactive 3D, and low-spec optimization.",
   icons: {
     icon: "/icon.svg",
     shortcut: "/icon.svg",
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" className="h-full antialiased" data-scroll-behavior="smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
