@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Metropolis — The personal portfolio & engineering lab of Mohamed Tanzeem I (@tanzeemrockz). Founder at CyberSlayerCorpz, systems builder, FOSS hacker, and Formula 1 enthusiast.">
+  <meta name="theme-color" content="#08090c">
+  <title>Mohamed Tanzeem I — Metropolis | tanzeem.xyz</title>
+  
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            customGreen: '#27F5BB',
+            customBlue: '#274DF5',
+            customOrange: '#F56827',
+            customYellow: '#F5CF27',
+            surface: {
+              DEFAULT: '#0d0e14',
+              card: 'rgba(15, 17, 24, 0.75)',
+              border: 'rgba(255, 255, 255, 0.08)'
+            }
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#08090c] text-zinc-100 min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-customGreen selection:text-black bg-grid-pattern">
+
+  <!-- Header & Sticky Navigation -->
+  <header class="sticky top-0 z-50 bg-[#08090c]/85 backdrop-blur-xl border-b border-white/10 px-4 py-3 transition-all">
+    <div class="max-w-4xl mx-auto flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <a href="#hero" class="flex items-center gap-2 group">
+          <span class="w-7 h-7 rounded-lg bg-customGreen/15 border border-customGreen/40 flex items-center justify-center text-customGreen font-black text-sm group-hover:scale-105 transition-transform">
+            M
+          </span>
+          <span class="font-bold text-sm tracking-tight text-white group-hover:text-customGreen transition">
+            tanzeem.xyz
+          </span>
+        </a>
+        <span class="text-zinc-600 hidden sm:inline">/</span>
+        <span class="text-zinc-400 text-xs truncate hidden sm:inline">CyberSlayerCorpz</span>
+      </div>
+
+      <nav class="flex items-center gap-2 sm:gap-3.5 text-xs font-semibold text-zinc-300 shrink-0">
+        <a href="#now" class="hover:text-customGreen transition px-1 py-1">Now</a>
+        <a href="#projects" class="hover:text-customGreen transition px-1 py-1">Projects</a>
+        <a href="#f1" class="hover:text-customYellow transition px-1 py-1 flex items-center gap-1">
+          <span>🏎</span>
+          <span class="hidden md:inline">F1</span>
+        </a>
+        <a href="#stack" class="hover:text-customGreen transition px-1 py-1 hidden sm:inline">Stack</a>
+        <a href="/uses/index.html" class="px-2.5 py-1 rounded-full bg-white/10 text-customGreen border border-customGreen/40 hover:bg-customGreen hover:text-black transition flex items-center gap-1">
+          <span>Uses</span>
+          <span class="text-[10px] opacity-70">↗</span>
+        </a>
+        <a href="#contact" class="px-2.5 py-1 rounded-full bg-customOrange/20 text-customOrange border border-customOrange/40 hover:bg-customOrange hover:text-white transition">
+          Contact
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Body Content -->
+  <main class="w-full max-w-4xl mx-auto px-4 py-8 sm:py-12 space-y-10">
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative overflow-hidden rounded-3xl border border-white/15 hero-bg p-6 sm:p-10 space-y-6 glow-mint/10">
+      
+      <!-- Top Status Banner -->
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 border border-white/15 text-xs font-medium backdrop-blur-md">
+          <span class="w-2 h-2 rounded-full bg-customGreen pulse-badge"></span>
+          <span class="text-customGreen font-bold">@tanzeemrockz</span>
+          <span class="text-zinc-500">•</span>
+          <span class="text-zinc-300">Active Builder</span>
+        </div>
+
+        <div class="inline-flex items-center gap-2 text-xs text-zinc-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full backdrop-blur-sm">
+          <span>📍 Chennai, India</span>
+          <span class="text-zinc-600">|</span>
+          <span class="text-customGreen font-mono">IST (UTC+5:30)</span>
+        </div>
+      </div>
+
+      <!-- Main Headline -->
+      <div class="space-y-3">
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+          Mohamed <span class="text-transparent bg-clip-text bg-gradient-to-r from-customGreen via-teal-300 to-emerald-400">Tanzeem I</span>
+        </h1>
+        <p class="text-base sm:text-lg text-zinc-200 max-w-2xl leading-relaxed font-medium">
+          Founder at <strong class="text-white hover:text-customGreen transition underline underline-offset-4 decoration-customGreen/40">CyberSlayerCorpz</strong>. I love hardware and software, engineering zero-hallucination deterministic systems, building lightning-fast web tools, and pushing ancient silicon to its absolute limit.
+        </p>
+      </div>
+
+      <!-- Quotes Widget / Carousel -->
+      <div class="p-5 rounded-2xl bg-black/75 border border-white/10 backdrop-blur-md space-y-3">
+        <div class="flex items-center justify-between border-b border-white/10 pb-2.5">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-zinc-400">Guiding Philosophy &amp; Quotes</span>
+          <div class="flex items-center gap-1.5">
+            <button data-quote-tab="1" class="px-2.5 py-0.5 text-xs font-bold rounded-md bg-customGreen text-black border border-customGreen transition">
+              01 • Qur'an
+            </button>
+            <button data-quote-tab="2" class="px-2.5 py-0.5 text-xs font-bold rounded-md bg-white/5 text-zinc-400 border border-white/10 hover:text-white transition">
+              02 • Code
+            </button>
+            <button data-quote-tab="3" class="px-2.5 py-0.5 text-xs font-bold rounded-md bg-white/5 text-zinc-400 border border-white/10 hover:text-white transition">
+              03 • Craft
+            </button>
+          </div>
+        </div>
+
+        <!-- Quote 1 -->
+        <div data-quote-content="1" class="space-y-1.5 py-1">
+          <p class="noto-sans-arabic text-xl sm:text-2xl font-bold text-customGreen tracking-wide">
+            "إِنَّ مَعَ الْعُسْرِ يُسْرًا"
+          </p>
+          <p class="text-sm text-zinc-200 font-semibold italic">
+            "Indeed, with hardship, comes ease."
+          </p>
+          <span class="text-xs text-zinc-500 font-medium">— The Holy Qur'an (Ash-Sharh 94:6)</span>
+        </div>
+
+        <!-- Quote 2 -->
+        <div data-quote-content="2" class="space-y-1.5 py-1 hidden">
+          <p class="text-base sm:text-lg font-bold text-white italic">
+            "Code is like humour. When you have to explain it, it's bad."
+          </p>
+          <span class="text-xs text-zinc-400 font-medium">— Cory House</span>
+        </div>
+
+        <!-- Quote 3 -->
+        <div data-quote-content="3" class="space-y-1.5 py-1 hidden">
+          <p class="text-base sm:text-lg font-bold text-white italic">
+            "A jack of all trades is a master of none, but oftentimes better than a master of one."
+          </p>
+          <span class="text-xs text-zinc-400 font-medium">— 16th Century Folk Wisdom</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center gap-3 pt-2">
+        <a href="#projects" class="px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-customGreen text-black hover:bg-emerald-400 transition-all shadow-lg shadow-customGreen/20 flex items-center gap-2">
+          <span>Explore Projects</span>
+          <span>↓</span>
+        </a>
+
+        <a href="/uses/index.html" class="px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-white/10 hover:bg-white/15 border border-white/15 transition text-white flex items-center gap-2">
+          <span>Inspect Gear &amp; Rigs (Uses)</span>
+          <span>↗</span>
+        </a>
+
+        <button data-copy-email class="px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-customOrange/20 hover:bg-customOrange hover:text-white border border-customOrange/40 text-customOrange transition flex items-center gap-2">
+          <span>Copy Email</span>
+          <span class="text-xs">📋</span>
+        </button>
+
+        <a href="https://tanzeemrockz.linklee.in/" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-zinc-300 hover:text-white border border-white/10 hover:border-white/25 transition">
+          Book Meeting (Linklee) ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- Formula 1 Telemetry Paddock Card -->
+    <section id="f1" class="relative overflow-hidden rounded-2xl glass-card border border-customYellow/30 p-6 space-y-4 racing-stripe">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <span class="px-3 py-1 rounded-md bg-customYellow text-black font-black text-xs tracking-wider uppercase">
+            Formula 1 Telemetry
+          </span>
+          <span class="text-xs text-zinc-400 font-mono">PADDOCK CONTROL</span>
+        </div>
+
+        <!-- Interactive Telemetry Throttle Trigger -->
+        <button id="f1-throttle-btn" class="px-3 py-1 rounded-lg bg-black/60 border border-customYellow/50 text-customYellow text-xs font-bold hover:bg-customYellow hover:text-black transition flex items-center gap-1.5">
+          <span>⚡ Enable DRS</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
+        <!-- Driver -->
+        <div class="p-4 rounded-xl bg-black/60 border border-white/10 space-y-1">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-customYellow block">No. 1 Driver</span>
+          <h3 class="text-lg font-black text-white flex items-center gap-2">
+            <span>Max Verstappen</span>
+            <span class="text-xs px-1.5 py-0.5 rounded bg-customYellow text-black font-black">#1</span>
+          </h3>
+          <p class="text-xs text-zinc-400">Oracle Red Bull Racing</p>
+        </div>
+
+        <!-- Team -->
+        <div class="p-4 rounded-xl bg-black/60 border border-white/10 space-y-1">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-customGreen block">Favourite Constructor</span>
+          <h3 class="text-lg font-black text-white flex items-center gap-2">
+            <span>The Silver Arrows</span>
+          </h3>
+          <p class="text-xs text-zinc-400">Mercedes-AMG Petronas F1 Team</p>
+        </div>
+
+        <!-- Live Telemetry Display -->
+        <div class="p-4 rounded-xl bg-black/60 border border-white/10 space-y-2">
+          <div class="flex items-center justify-between text-xs">
+            <span class="text-zinc-400 font-mono">GEAR: <strong id="f1-gear-display" class="text-customYellow font-bold">7</strong></span>
+            <span id="f1-speed-display" class="text-customGreen font-mono font-bold">338 KM/H</span>
+          </div>
+          <div class="w-full bg-zinc-800 rounded-full h-2 overflow-hidden">
+            <div id="f1-rpm-meter" class="bg-gradient-to-r from-customGreen via-customYellow to-customOrange h-2 rounded-full w-[85%] transition-all duration-300"></div>
+          </div>
+          <p class="text-[10px] text-zinc-500 font-mono">Telemetry synced • Race weekends are sacred</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What I'm Doing Now (Live Focus) -->
+    <section id="now" class="rounded-2xl glass-card p-6 space-y-4 border border-customGreen/20">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <div class="flex items-center gap-2.5">
+          <span class="w-2.5 h-2.5 rounded-full bg-customGreen pulse-badge"></span>
+          <h2 class="text-base sm:text-lg font-bold text-white tracking-tight">What I'm Doing Now</h2>
+        </div>
+        <span class="text-[11px] font-mono uppercase tracking-wider text-zinc-400 px-2 py-0.5 rounded bg-white/5 border border-white/10">
+          Q1 2026 Focus
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-2 hover:border-customGreen/40 transition">
+          <div class="flex items-center gap-2 text-customGreen font-bold text-xs">
+            <span>01</span>
+            <span>Deterministic AI Architecture</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">Engineering DQM v1.2</h3>
+          <p class="text-xs text-zinc-300 leading-relaxed">
+            Developing the <strong>Deterministic Query Model</strong> in Python: token routing, zero-hallucination graph queries, and modular plug-and-play cognitive brains (<code class="text-customGreen bg-black/60 px-1 py-0.5 rounded">.tqm</code>, <code class="text-customGreen bg-black/60 px-1 py-0.5 rounded">.sqm</code>, <code class="text-customGreen bg-black/60 px-1 py-0.5 rounded">.lqm</code>).
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-2 hover:border-customGreen/40 transition">
+          <div class="flex items-center gap-2 text-customGreen font-bold text-xs">
+            <span>02</span>
+            <span>Client-Side Systems</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">Offline In-Browser WASM Utilities</h3>
+          <p class="text-xs text-zinc-300 leading-relaxed">
+            Constructing zero-server, offline-first utilities leveraging <strong>WebAssembly</strong>, <strong>Pyodide</strong>, and web workers to execute computation locally on edge devices.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section id="projects" class="space-y-5">
+      <div class="flex items-end justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-customGreen block mb-1">Portfolio</span>
+          <h2 class="text-2xl font-black text-white">Projects I'm Proud Of</h2>
+        </div>
+        <span class="text-xs text-zinc-500 font-mono">3 FEATURED BUILDS</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        <!-- Project 1: AssetSlayer -->
+        <article class="p-6 rounded-2xl glass-card border border-white/10 flex flex-col justify-between hover:border-customGreen hover:shadow-lg hover:shadow-customGreen/10 transition-all group space-y-5">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-customGreen/15 text-customGreen border border-customGreen/30">
+                Web Tool
+              </span>
+              <span class="text-xs text-zinc-500">Live</span>
+            </div>
+            <h3 class="text-lg font-bold text-white group-hover:text-customGreen transition">
+              AssetSlayer
+            </h3>
+            <p class="text-xs text-zinc-300 leading-relaxed">
+              High-speed, browser-based image compression and format converter. Shrinks web assets instantly with zero quality degradation and zero server uploads.
+            </p>
+          </div>
+
+          <div class="space-y-4 pt-2 border-t border-white/10">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
+              <span class="px-2 py-0.5 rounded bg-black/50 border border-white/10">HTML5</span>
+              <span class="px-2 py-0.5 rounded bg-black/50 border border-white/10">Tailwind</span>
+              <span class="px-2 py-0.5 rounded bg-black/50 border border-white/10">Vanilla JS</span>
+            </div>
+            <a href="https://tanzeemrockz.github.io/assetslayer/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-customGreen group-hover:translate-x-1 transition-transform">
+              <span>Launch AssetSlayer</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: LangSlayer -->
+        <article class="p-6 rounded-2xl glass-card border border-white/10 flex flex-col justify-between hover:border-customGreen hover:shadow-lg hover:shadow-customGreen/10 transition-all group space-y-5">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-customGreen/15 text-customGreen border border-customGreen/30">
+                AI Inference
+              </span>
+              <span class="text-xs text-zinc-500">Live</span>
+            </div>
+            <h3 class="text-lg font-bold text-white group-hover:text-customGreen transition">
+              LangSlayer
+            </h3>
+            <p class="text-xs text-zinc-300 leading-relaxed">
+              Demystifies hyper-technical academic jargon and dense papers into crystal-clear, accessible explanations powered by high-speed Groq LPU inference.
+            </p>
+          </div>
+
+          <div class="space-y-4 pt-2 border-t border-white/10">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
+              <span class="px-2 py-0.5 rounded bg-black/50 border border-white/10">Groq API</span>
+              <span class="px-2 py-0.5 rounded bg-black/50 border border-white/10">JavaScript</span>
+              <span class="px-2 py-0.5 rounded bg-black/50 border border-white/10">Tailwind</span>
+            </div>
+            <a href="https://tanzeemrockz.github.io/LangSlayer/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-customGreen group-hover:translate-x-1 transition-transform">
+              <span>Launch LangSlayer</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: DQM -->
+        <article class="p-6 rounded-2xl glass-card border border-customOrange/30 flex flex-col justify-between hover:border-customOrange hover:shadow-lg hover:shadow-customOrange/10 transition-all group space-y-5">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-customOrange/20 text-customOrange border border-customOrange/40">
+                Active Build
+              </span>
+              <span class="text-xs text-zinc-500">v1.2</span>
+            </div>
+            <h3 class="text-lg font-bold text-white group-hover:text-customOrange transition">
+              DQM (Deterministic Query Model)
+            </h3>
+            <p class="text-xs text-zinc-300 leading-relaxed">
+              A deterministic alternative to probabilistic LLMs. Employs token-routed graph resolution and swappable modular brain formats (<code class="text-customOrange">.tqm</code>, <code class="text-customOrange">.sqm</code>) guaranteeing zero hallucination.
+            </p>
+          </div>
+
+          <div class="space-y-4 pt-2 border-t border-white/10">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
+              <span class="px-2 py-0.5 rounded bg-black/50 border border-white/10">Python 3.12</span>
+              <span class="px-2 py-0.5 rounded bg-black/50 border border-white/10">SQLite</span>
+              <span class="px-2 py-0.5 rounded bg-black/50 border border-white/10">Graph Theory</span>
+            </div>
+            <div class="inline-flex items-center gap-2 text-xs font-bold text-customOrange">
+              <span>CyberSlayerCorpz Engine</span>
+              <span>•</span>
+              <span class="text-zinc-400">Private Core</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Experience & Organizations -->
+    <section id="experience" class="rounded-2xl glass-card p-6 sm:p-8 space-y-6">
+      <div class="border-b border-white/10 pb-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-customGreen block mb-1">Leadership &amp; Collaboration</span>
+        <h2 class="text-xl font-bold text-white">Experience</h2>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Role 1 -->
+        <div class="p-5 rounded-xl bg-black/40 border border-white/10 space-y-2 hover:border-white/20 transition">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <div>
+              <h3 class="text-base font-bold text-white">CyberSlayerCorpz</h3>
+              <p class="text-xs text-customGreen font-medium">Founder &amp; Lead Systems Engineer</p>
+            </div>
+            <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-300">
+              2023 — Present
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+            Leading independent research and software engineering across high-efficiency web apps (AssetSlayer), deterministic computing systems (DQM), and developer productivity tools.
+          </p>
+        </div>
+
+        <!-- Role 2 -->
+        <div class="p-5 rounded-xl bg-black/40 border border-white/10 space-y-2 hover:border-white/20 transition">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <div>
+              <h3 class="text-base font-bold text-white">Hack Club &amp; Global Developer Communities</h3>
+              <p class="text-xs text-customBlue font-medium">Open Source Collaborator &amp; Hacker</p>
+            </div>
+            <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-300">
+              Active Member
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+            Collaborating with high-energy teen hackers globally on open-source software, hackathons, and creative hardware/software engineering challenges.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The "Junk Bench" & Vintage Silicon (Iconic Story) -->
+    <section class="rounded-2xl glass-card p-6 sm:p-8 space-y-4 border border-customOrange/30">
+      <div class="flex items-center justify-between flex-wrap gap-2 border-b border-white/10 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">⚙️</span>
+          <div>
+            <h2 class="text-lg font-bold text-white">The "Junk Bench" &amp; Vintage Testbed</h2>
+            <p class="text-xs text-zinc-400">Extreme low-resource benchmarking &amp; hardware experiments</p>
+          </div>
+        </div>
+        <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-customOrange/20 text-customOrange border border-customOrange/40">
+          2GB DDR2 RAM Benchmark
+        </span>
+      </div>
+
+      <div class="p-5 rounded-xl bg-black/50 border border-white/10 space-y-3">
+        <div class="flex items-center justify-between flex-wrap gap-2">
+          <h3 class="text-sm sm:text-base font-bold text-customOrange">Toshiba Satellite L500 (Vintage 2009)</h3>
+          <span class="text-xs font-mono text-zinc-400">Intel Core 2 Duo • 2GB RAM</span>
+        </div>
+        <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+          The legendary machine where I once attempted installing <strong>Fortnite on 2GB of DDR2 RAM</strong> just to see what would happen 😂. While it didn't play Fortnite very well, it serves as the ultimate real-world stress testbed: <em>if a web tool or DQM algorithm runs snappily here, it will run blisteringly fast everywhere on earth.</em>
+        </p>
+        <div class="flex flex-wrap gap-2 pt-1 text-xs font-mono text-zinc-400">
+          <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10">Windows 7 / Tiny10</span>
+          <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10">CachyOS Linux</span>
+          <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10">Assorted Screwdrivers &amp; Thermal Paste</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Tech Stack Matrix -->
+    <section id="stack" class="rounded-2xl glass-card p-6 sm:p-8 space-y-5">
+      <div class="flex items-center justify-between flex-wrap gap-3 border-b border-white/10 pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-customGreen block mb-1">Capabilities</span>
+          <h2 class="text-xl font-bold text-white">Tech Stack &amp; Tools</h2>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="flex flex-wrap items-center gap-1.5">
+          <button data-stack-filter="all" class="px-3 py-1 rounded-lg text-xs font-bold bg-white/20 text-customGreen border border-customGreen/40 transition">
+            All
+          </button>
+          <button data-stack-filter="core" class="px-3 py-1 rounded-lg text-xs font-bold bg-white/5 text-zinc-400 border border-white/10 hover:text-white transition">
+            Core &amp; Web
+          </button>
+          <button data-stack-filter="runtime" class="px-3 py-1 rounded-lg text-xs font-bold bg-white/5 text-zinc-400 border border-white/10 hover:text-white transition">
+            Runtimes &amp; AI
+          </button>
+          <button data-stack-filter="tool" class="px-3 py-1 rounded-lg text-xs font-bold bg-white/5 text-zinc-400 border border-white/10 hover:text-white transition">
+            Tools
+          </button>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-2.5 pt-2">
+        <span data-stack-category="core web" class="px-3.5 py-1.5 rounded-xl bg-black/60 border border-white/15 text-xs font-bold text-white hover:border-customGreen transition flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-orange-500"></span> HTML5 / Semantic Web
+        </span>
+        <span data-stack-category="core web" class="px-3.5 py-1.5 rounded-xl bg-black/60 border border-white/15 text-xs font-bold text-white hover:border-customGreen transition flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-blue-500"></span> CSS3 &amp; Animations
+        </span>
+        <span data-stack-category="core web" class="px-3.5 py-1.5 rounded-xl bg-black/60 border border-white/15 text-xs font-bold text-white hover:border-customGreen transition flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-yellow-400"></span> Vanilla JavaScript (ESNext)
+        </span>
+        <span data-stack-category="core web" class="px-3.5 py-1.5 rounded-xl bg-black/60 border border-white/15 text-xs font-bold text-white hover:border-customGreen transition flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Tailwind CSS
+        </span>
+        <span data-stack-category="core web" class="px-3.5 py-1.5 rounded-xl bg-black/60 border border-white/15 text-xs font-bold text-white hover:border-customGreen transition flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-blue-400"></span> TypeScript
+        </span>
+        <span data-stack-category="core web" class="px-3.5 py-1.5 rounded-xl bg-black/60 border border-white/15 text-xs font-bold text-white hover:border-customGreen transition flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-cyan-300"></span> React
+        </span>
+        <span data-stack-category="runtime" class="px-3.5 py-1.5 rounded-xl bg-black/60 border border-white/15 text-xs font-bold text-white hover:border-customGreen transition flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-green-500"></span> Node.js
+        </span>
+        <span data-stack-category="runtime core" class="px-3.5 py-1.5 rounded-xl bg-black/60 border border-white/15 text-xs font-bold text-white hover:border-customGreen transition flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-yellow-300"></span> Python 3.12+
+        </span>
+        <span data-stack-category="tool web" class="px-3.5 py-1.5 rounded-xl bg-black/60 border border-white/15 text-xs font-bold text-white hover:border-customGreen transition flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-purple-400"></span> Vite
+        </span>
+        <span data-stack-category="runtime ai" class="px-3.5 py-1.5 rounded-xl bg-black/60 border border-white/15 text-xs font-bold text-white hover:border-customGreen transition flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-blue-300"></span> Gemini &amp; Claude AI SDKs
+        </span>
+        <span data-stack-category="runtime" class="px-3.5 py-1.5 rounded-xl bg-black/60 border border-white/15 text-xs font-bold text-white hover:border-customGreen transition flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Supabase &amp; PostgreSQL
+        </span>
+        <span data-stack-category="runtime" class="px-3.5 py-1.5 rounded-xl bg-black/60 border border-white/15 text-xs font-bold text-white hover:border-customGreen transition flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-purple-500"></span> WebAssembly (WASM)
+        </span>
+        <span data-stack-category="runtime" class="px-3.5 py-1.5 rounded-xl bg-black/60 border border-white/15 text-xs font-bold text-white hover:border-customGreen transition flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-yellow-500"></span> Pyodide (Python in Browser)
+        </span>
+        <span data-stack-category="tool" class="px-3.5 py-1.5 rounded-xl bg-black/60 border border-white/15 text-xs font-bold text-white hover:border-customGreen transition flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-red-400"></span> Git &amp; GitHub CLI
+        </span>
+        <span data-stack-category="tool" class="px-3.5 py-1.5 rounded-xl bg-black/60 border border-white/15 text-xs font-bold text-white hover:border-customGreen transition flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-white"></span> Vercel Cloud Platform
+        </span>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="rounded-2xl glass-card p-6 sm:p-8 space-y-5">
+      <div class="border-b border-white/10 pb-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-customGreen block mb-1">Foundations</span>
+        <h2 class="text-xl font-bold text-white">Education &amp; Credentials</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1.5">
+          <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-customYellow/20 text-customYellow border border-customYellow/30">
+            Current
+          </span>
+          <h3 class="text-sm font-bold text-white">Computer Science &amp; STEM</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Algorithms, systems programming, data structures, and computer architecture.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1.5">
+          <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-customOrange/20 text-customOrange border border-customOrange/30">
+            Completed
+          </span>
+          <h3 class="text-sm font-bold text-white">Harvard's CS50x</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Harvard University’s rigorous introduction to the intellectual enterprises of computer science and software development.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-1.5">
+          <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-customGreen/20 text-customGreen border border-customGreen/30">
+            Specialized
+          </span>
+          <h3 class="text-sm font-bold text-white">Prompt &amp; AI Engineering</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Advanced system prompts, context management, few-shot prompting, and cognitive agent patterns.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Connect -->
+    <section id="contact" class="rounded-2xl glass-card p-6 sm:p-8 space-y-6 border border-customOrange/30">
+      <div class="border-b border-white/10 pb-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-customOrange block mb-1">Get In Touch</span>
+        <h2 class="text-2xl font-black text-white">Let's Build Something Together</h2>
+        <p class="text-xs sm:text-sm text-zinc-400 mt-1">Available for software collaborations, open-source work, and serious conversations.</p>
+      </div>
+
+      <!-- Quick Copy Primary Email -->
+      <div 
+        data-copy-email 
+        data-email="tanzeemrockz@cyberslayercorpz.dev"
+        class="group p-5 rounded-2xl border border-customOrange/40 bg-customOrange/10 hover:bg-customOrange/15 cursor-pointer transition-all flex items-center justify-between flex-wrap gap-3"
+      >
+        <div class="space-y-1">
+          <span class="text-[11px] font-mono font-bold tracking-wider uppercase text-customOrange block">Primary Email (Click to copy)</span>
+          <span class="text-base sm:text-lg font-bold text-white group-hover:underline">tanzeemrockz@cyberslayercorpz.dev</span>
+        </div>
+        <span class="px-3.5 py-1.5 rounded-xl bg-customOrange text-white font-bold text-xs group-hover:scale-105 transition-transform flex items-center gap-1.5">
+          <span>Copy</span>
+          <span>📋</span>
+        </span>
+      </div>
+
+      <!-- Contact Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/917667271516" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-black/50 border border-white/10 hover:border-customGreen transition group space-y-1">
+          <span class="text-[11px] text-zinc-400 font-mono block">Instant Messaging</span>
+          <h3 class="text-sm font-bold text-white group-hover:text-customGreen flex items-center justify-between">
+            <span>WhatsApp</span>
+            <span>↗</span>
+          </h3>
+          <p class="text-xs text-zinc-400">+91 7667271516</p>
+        </a>
+
+        <!-- Linklee -->
+        <a href="https://tanzeemrockz.linklee.in/" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-black/50 border border-white/10 hover:border-customGreen transition group space-y-1">
+          <span class="text-[11px] text-zinc-400 font-mono block">Schedule</span>
+          <h3 class="text-sm font-bold text-white group-hover:text-customGreen flex items-center justify-between">
+            <span>Linklee Meeting</span>
+            <span>↗</span>
+          </h3>
+          <p class="text-xs text-zinc-400">Book 1-on-1 time</p>
+        </a>
+
+        <!-- Phone Calls -->
+        <div class="p-4 rounded-xl bg-black/50 border border-white/10 space-y-1">
+          <span class="text-[11px] text-zinc-400 font-mono block">Phone Call</span>
+          <a href="tel:+917667271516" class="text-sm font-bold text-white hover:text-customGreen block">+91 7667271516</a>
+          <p class="text-[10px] text-zinc-500">Sundays only, 09:00 – 17:00 IST</p>
+        </div>
+      </div>
+
+      <!-- Additional Channels & Socials -->
+      <div class="p-4 rounded-xl bg-black/40 border border-white/10 space-y-3">
+        <span class="text-[11px] font-mono font-bold uppercase text-zinc-500 block">Direct Channels &amp; Identifiers</span>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-zinc-300 font-mono">
+          <div class="truncate">📧 imohamedtanzeem@gmail.com</div>
+          <div class="truncate">⚡ tanzeemrockz@user.hackclub.app</div>
+          <div class="truncate">💬 @tanzeemrockz:matrix.org</div>
+        </div>
+
+        <div class="flex flex-wrap gap-2 pt-2 border-t border-white/10">
+          <a href="https://github.com/tanzeemrockz" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold hover:border-white/30 text-zinc-200 transition">GitHub ↗</a>
+          <a href="https://instagram.com/tanzeemrockz" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold hover:border-white/30 text-zinc-200 transition">Instagram ↗</a>
+          <a href="https://threads.net/@tanzeemrockz" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold hover:border-white/30 text-zinc-200 transition">Threads ↗</a>
+          <a href="https://cyberslayercorpz.dev/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold hover:border-customGreen text-customGreen transition">CyberSlayerCorpz ↗</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full border-t border-white/10 py-8 text-center text-xs text-zinc-500 px-4 space-y-2">
+    <div class="flex items-center justify-center gap-2 text-zinc-400 font-mono">
+      <span>© 2026 Metropolis</span>
+      <span>•</span>
+      <a href="https://cyberslayercorpz.dev/" target="_blank" rel="noopener noreferrer" class="text-customOrange hover:underline">CyberSlayerCorpz</a>
+      <span>•</span>
+      <span>Engineered by Mohamed Tanzeem I</span>
+    </div>
+    <p class="text-[11px] text-zinc-600">
+      Built with clean semantic HTML5, modern Tailwind CSS, and zero bloated frameworks. Press <kbd class="px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-300 font-mono">c</kbd> to copy email, <kbd class="px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-300 font-mono">u</kbd> for Uses.
+    </p>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 pointer-events-none transition-all duration-300 bg-zinc-900 border border-customGreen text-white px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3">
+    <span class="w-2 h-2 rounded-full bg-customGreen"></span>
+    <span id="toast-message" class="text-xs font-bold text-zinc-200"></span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

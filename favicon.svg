@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#000000" />
+
+  <!-- Simple Geometric Tech Badge -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer Shield / Hexagon -->
+    <polygon points="250,70 410,160 410,340 250,430 90,340 90,160" />
+
+    <!-- Inner Floating Triangle -->
+    <polygon points="250,150 350,330 150,330" />
+    
+    <!-- Central Accent Dot -->
+    <circle cx="250" cy="270" r="12" fill="#FFFFFF" />
+  </g>
+</svg>
