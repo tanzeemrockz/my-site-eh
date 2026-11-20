@@ -19,6 +19,8 @@ const FOOTER_COLUMNS = [
     title: "Studio",
     links: [
       { label: "Work", href: "/work" },
+      { label: "Demo Directory", href: "/demo" },
+      { label: "Club", href: "/club" },
       { label: "Process", href: "/process" },
       { label: "About", href: "/about" },
       { label: "Contact", href: "/contact" },

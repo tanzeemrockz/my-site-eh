@@ -13,6 +13,16 @@ const nextConfig = {
         destination: 'https://club.cyberslayercorpz.dev/:path*',
         permanent: false,
       },
+      {
+        source: '/demo',
+        destination: 'https://demo.cyberslayercorpz.dev',
+        permanent: false,
+      },
+      {
+        source: '/demo/:path*',
+        destination: 'https://demo.cyberslayercorpz.dev/:path*',
+        permanent: false,
+      },
     ];
   },
   async rewrites() {
