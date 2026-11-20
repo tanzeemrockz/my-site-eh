@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowUpRight, Cpu, Laptop, Server, HardDrive, Terminal, Code
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "Uses — Mohamed Tanzeem I | CyberSlayerCorpz",
+  title: "Uses | Mohamed Tanzeem I | CyberSlayerCorpz",
   description: "A complete catalog of Mohamed Tanzeem I's daily driver laptops, vintage testbench, software toolchains, and AI vibe-coding setup.",
 };
 

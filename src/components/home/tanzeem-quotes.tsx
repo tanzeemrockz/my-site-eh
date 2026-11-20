@@ -42,12 +42,16 @@ export function TanzeemQuotes() {
             </h2>
           </div>
 
-          <div className="flex items-center gap-1.5 p-1 rounded-full bg-white/[0.03] border border-white/[0.08]">
+          <div role="tablist" aria-label="Philosophy tabs" className="flex items-center gap-1.5 p-1 rounded-full bg-white/[0.03] border border-white/[0.08]">
             {QUOTES.map((q) => (
               <button
                 key={q.id}
+                role="tab"
+                id={`quote-tab-${q.id}`}
+                aria-selected={active === q.id}
+                aria-controls={`quote-panel-${q.id}`}
                 onClick={() => setActive(q.id)}
-                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
                   active === q.id
                     ? "bg-white/[0.14] text-white border border-white/20 shadow"
                     : "text-white/50 hover:text-white"
@@ -66,6 +70,9 @@ export function TanzeemQuotes() {
               return (
                 <motion.div
                   key={q.id}
+                  role="tabpanel"
+                  id={`quote-panel-${q.id}`}
+                  aria-labelledby={`quote-tab-${q.id}`}
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.98 }}
@@ -81,7 +88,7 @@ export function TanzeemQuotes() {
                     &ldquo;{q.translation}&rdquo;
                   </p>
                   <span className="text-xs text-white/40 font-mono block">
-                    — {q.source}
+                    Source: {q.source}
                   </span>
                 </motion.div>
               );

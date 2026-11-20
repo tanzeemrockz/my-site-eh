@@ -3,7 +3,7 @@ export type TechnologyGroup = {
   items: string[];
 };
 
-// Only list technologies actually used on client work — update once confirmed.
+// Only list technologies actually used on client work: update once confirmed.
 export const TECHNOLOGY_GROUPS: TechnologyGroup[] = [
   { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind"] },
   { category: "Backend", items: ["Node.js", "Python", "FastAPI"] },

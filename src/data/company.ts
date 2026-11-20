@@ -11,7 +11,7 @@ export type CompanyContact = {
 
 export const COMPANY_CONTACT: CompanyContact = {
   name: "CyberSlayerCorpz",
-  email: "hello@cyberslayercorpz.dev",
+  email: "me@tanzeem.xyz",
   whatsapp: "+91 76672 71516",
   instagram: "https://www.instagram.com/cyberslayercorpz",
   github: "https://github.com/tanzeemrockz",

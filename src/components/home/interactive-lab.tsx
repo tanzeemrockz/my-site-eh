@@ -57,16 +57,24 @@ export function InteractiveLab() {
         
         {/* Top Channel Switcher Bar */}
         <div className="flex items-center justify-between flex-wrap gap-3 border-b border-white/[0.08] pb-5 mb-6">
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-xs font-mono text-white/40 mr-1 flex items-center gap-1">
+          <div
+            role="tablist"
+            aria-label="Interactive testbench channels"
+            className="flex items-center gap-2 flex-wrap"
+          >
+            <span className="text-xs font-mono text-white/40 mr-1 flex items-center gap-1 select-none">
               <Radio className="size-3 text-accent-orange" />
               CHANNELS:
             </span>
             {CHANNELS.map((ch) => (
               <button
                 key={ch.id}
+                role="tab"
+                id={`tab-${ch.id}`}
+                aria-selected={activeChannel === ch.id}
+                aria-controls={`panel-${ch.id}`}
                 onClick={() => setActiveChannel(ch.id)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
+                className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange/70 ${
                   activeChannel === ch.id
                     ? "bg-white/[0.14] text-white border border-white/25 shadow-lg"
                     : "bg-white/[0.03] text-white/60 border border-white/[0.06] hover:text-white hover:bg-white/[0.08]"
@@ -84,7 +92,13 @@ export function InteractiveLab() {
         </div>
 
         {/* Screen Output Area */}
-        <div className="relative rounded-2xl border border-white/[0.08] bg-[#050608] p-6 sm:p-10 min-h-[300px] flex items-center justify-center text-center overflow-hidden">
+        <div
+          role="tabpanel"
+          id={`panel-${activeChannel}`}
+          aria-labelledby={`tab-${activeChannel}`}
+          tabIndex={0}
+          className="relative rounded-2xl border border-white/[0.08] bg-[#050608] p-6 sm:p-10 min-h-[300px] flex items-center justify-center text-center overflow-hidden focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/20"
+        >
           
           {/* Subtle Scanlines effect */}
           <div aria-hidden className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(142,203,255,0.03),transparent)]" />
