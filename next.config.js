@@ -1,6 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: '/club',
+        destination: 'https://club.cyberslayercorpz.dev',
+        permanent: false,
+      },
+      {
+        source: '/club/:path*',
+        destination: 'https://club.cyberslayercorpz.dev/:path*',
+        permanent: false,
+      },
+    ];
+  },
   async rewrites() {
     return [
       { source: '/assetslayer', destination: '/assetslayer/index.html' },
