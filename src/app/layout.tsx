@@ -5,8 +5,8 @@ import { Footer } from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Mohamed Tanzeem I – CyberSlayerCorpz | tanzeem.xyz",
-    template: "%s | Mohamed Tanzeem I – CyberSlayerCorpz",
+    default: "Mohamed Tanzeem I | CyberSlayerCorpz | tanzeem.xyz",
+    template: "%s | Mohamed Tanzeem I | CyberSlayerCorpz",
   },
   description:
     "Personal website and indie engineering studio of Mohamed Tanzeem I (CyberSlayerCorpz). High performance software, AI systems, interactive 3D, and low-spec optimization.",
@@ -37,8 +37,14 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-bg text-fg">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:font-medium focus:rounded-full focus:shadow-xl focus:outline-none"
+        >
+          Skip to content
+        </a>
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>

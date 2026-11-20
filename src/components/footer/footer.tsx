@@ -40,10 +40,10 @@ export function Footer() {
           </p>
           <div className="mt-2">
             <a
-              href="mailto:hello@cyberslayercorpz.dev"
+              href="mailto:me@tanzeem.xyz"
               className="text-xs text-white/40 transition-colors hover:text-white"
             >
-              hello@cyberslayercorpz.dev
+              me@tanzeem.xyz
             </a>
           </div>
         </div>

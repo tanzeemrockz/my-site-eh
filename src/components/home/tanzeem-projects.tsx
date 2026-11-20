@@ -39,7 +39,7 @@ const PROJECTS = [
     category: "Cognitive Architecture",
     tagline: "Zero-Hallucination Token Router",
     description:
-      "Deterministic Query Model — a deterministic, token-routed Python alternative to generative AI. Employs plug-and-play brains (.tqm, .sqm, .lqm) with zero hallucination.",
+      "Deterministic Query Model: a deterministic, token-routed Python alternative to generative AI. Employs plug-and-play brains (.tqm, .sqm, .lqm) with zero hallucination.",
     tech: ["Python 3.12", "SQLite DAG", "JSON Brains", "Graph Theory"],
     href: "https://cyberslayercorpz.dev",
     icon: Cpu,
